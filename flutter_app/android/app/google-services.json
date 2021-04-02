@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "247255319465",
+    "project_id": "iseedb",
+    "storage_bucket": "iseedb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247255319465:android:7fa933669149923fc73ab8",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247255319465-urkprg8hfl1p33r2752shre9145q8t65.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0FYe4vd_EeYPQeBCw-nq1wtQ7C8qFgYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247255319465-urkprg8hfl1p33r2752shre9145q8t65.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
