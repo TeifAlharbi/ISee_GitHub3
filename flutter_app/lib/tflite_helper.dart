@@ -11,10 +11,14 @@ class TFLiteHelper {
 
   static Future<String> loadModel() async {
     return Tflite.loadModel(
-      model: "assets/Colors.tflite",
-      labels: "assets/ColorsLabels.txt",
+      // model: "assets/model.tflite",
+      // labels: "assets/labels.txt",
+
+      model: "assets/ourColors.tflite",
+      labels: "assets/ourColors.txt",
     );
   }
+  //assets\ColorsLabels.txt
 
   static classifyImage(CameraImage image) async {
     await Tflite.runModelOnFrame(
