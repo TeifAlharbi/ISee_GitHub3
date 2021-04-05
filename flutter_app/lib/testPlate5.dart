@@ -1,19 +1,19 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Test.dart';
-import 'package:flutter_app/TestPlate1.dart';
-import 'package:flutter_app/TestInstructions.dart';
-import 'package:flutter_app/TestPlate2.dart';
-import 'package:flutter_app/TestPlate4.dart';
-import 'package:flutter_app/TestPlate6.dart';
+import 'package:flutter_app/testPlate1.dart';
+import 'package:flutter_app/testInstructions.dart';
+import 'package:flutter_app/testPlate2.dart';
+import 'package:flutter_app/testPlate4.dart';
+import 'package:flutter_app/testPlate6.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'globals.dart' as globals;
 
-class TestPlate5 extends StatefulWidget {
+class testPlate5 extends StatefulWidget {
   @override
-  _TestPlate5 createState() => _TestPlate5();
+  _testPlate5 createState() => _testPlate5();
 }
 
 //drop down menu variable
@@ -22,7 +22,7 @@ String valueChoose2;
 List listItem = ["Nothing","0","1","2","3","4","5","6","7","8","9"];
 
 
-class  _TestPlate5 extends State<TestPlate5> {
+class  _testPlate5 extends State<testPlate5> {
   void initState() {
     super.initState();
   }
@@ -249,7 +249,7 @@ class  _TestPlate5 extends State<TestPlate5> {
 
                     //3-Direct the user to next page
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => TestPlate6()));
+                        MaterialPageRoute(builder: (context) => testPlate6()));
                   }else{
                     showDialog(
                       context: context,
@@ -284,7 +284,7 @@ class  _TestPlate5 extends State<TestPlate5> {
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TestPlate4()));
+                      MaterialPageRoute(builder: (context) => testPlate4()));
                 },
                 child: Icon(
                   Icons.arrow_back_ios_sharp,

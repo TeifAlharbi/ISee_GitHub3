@@ -5,19 +5,19 @@ import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_app/UserSettings.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class AboutIshihara extends StatefulWidget {
+  class aboutColorBlindness extends StatefulWidget {
   @override
-  _AboutIshihara createState() => _AboutIshihara();
-}
+  _aboutColorBlindness createState() => _aboutColorBlindness();
+  }
 
-class  _AboutIshihara extends State<AboutIshihara> {
+  class  _aboutColorBlindness extends State<aboutColorBlindness> {
   void initState() {
-    super.initState();
+  super.initState();
   }
 
   @override
   void dispose() {
-    super.dispose();
+  super.dispose();
   }
 
   @override
@@ -29,7 +29,6 @@ class  _AboutIshihara extends State<AboutIshihara> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-
           new Container(
             decoration: new BoxDecoration(
               image: new DecorationImage(
@@ -39,7 +38,8 @@ class  _AboutIshihara extends State<AboutIshihara> {
             ),
           ),//----------Background----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.10 , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.10
+                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
             child: Container(
               alignment: Alignment(-0.78, -0.37),
               width:screenWeidth ,
@@ -55,7 +55,7 @@ class  _AboutIshihara extends State<AboutIshihara> {
               ),
 
               child: AutoSizeText(
-                'About Ishihara Test',
+                'About Color-Blindness',
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
                   //   fontSize: screenText * 12.0,
@@ -89,8 +89,10 @@ class  _AboutIshihara extends State<AboutIshihara> {
                 , right:screenWeidth * 0.08 , bottom: screenHeight  * 0.200),
             child: Container(
               child: SizedBox(
-                width:screenWeidth,
-                height: screenHeight/01,
+             //   width: 328.0,
+              //  height: 480.0,
+               width:screenWeidth,
+               height: screenHeight/01,
                 child: Stack(
                   children: <Widget>[
                     Pinned.fromSize(
@@ -117,21 +119,21 @@ class  _AboutIshihara extends State<AboutIshihara> {
                       pinTop: true,
                       pinBottom: true,
                       child: AutoSizeText(
-                        'A color vision test, also known as the Ishihara color test, measures your ability to tell the difference among colours.\n\nTry your best! If you can see all of them you are definitely color abnormal.',
+                        'CVD is more common than we think. According to the  National Eye Institute statistics: ‎One out of twelve men and one out of two hundred women are suffering from color-‎blindness.‎\n\nColor blindness or Color Vision Deficiency (CVD) is a genetic condition where people can ‎not differentiate between different shades of colors or identical colors.‎\n',
                         style: TextStyle(
                           fontFamily: 'Segoe UI',
                           fontSize: 24,
                           color: const Color(0xff6981b5),
                         ),
                         textAlign: TextAlign.center,
-                        maxLines: 16,
+                       maxLines: 16,
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-          ), //----------Ishihara-test Description----------
+          ), //----------Color-Blindness Description----------
           InkWell(
             onTap: () {
               Navigator.push(context,

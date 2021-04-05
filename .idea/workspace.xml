@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fa067046-78a8-43ca-b295-161f9927cbef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/flutter_app/test/language_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flutter_app/test/signIn_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flutter_app/test/signUp_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flutter_app/test/testPlate12_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flutter_app/test/testPlate_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/AboutColorBlindness.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/aboutColorBlindness.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/AboutISee.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/aboutISee.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/AboutIshihara.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/aboutIshihara.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/IshiharaTest.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/IshiharaTest.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/LogIn.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/Profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/Security.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/security.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/SignIn.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/signIn.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/SignIn2.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/SignUp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/signUp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/Support.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/support.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/Test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/Test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/Test1.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestInstructions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testInstructions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate1.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate10.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/TestPlate10.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate11.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/TestPlate11.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate12.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/TestPlate12.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate3.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate4.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate4.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate5.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate5.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate6.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate6.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate7.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate7.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate8.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/TestPlate8.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate9.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/TestPlate9.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestResultNew.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/TestResultNew.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/UserSettings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/UserSettings.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/language.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/language.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/test/widget_test.dart" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qfkvoh6Te5Gbb0848CmEg1CU5r" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/flutter_app/test" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/flutter_app/test" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/flutter_app/test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Flutter Test.Test Result Red_Green (Deutran)">
+    <configuration name="Drop-Down Menu Correct Selection" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Drop-Down Menu Correct Selection" />
+      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/testPlate_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Drop-Down Menu Wrong Selection" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Drop-Down Menu Wrong Selection" />
+      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/testPlate_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test Result Normale" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Test Result Normale" />
+      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/testPlate12_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test Result Red_Green (Deutran)" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Test Result Red_Green (Deutran)" />
+      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/testPlate12_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test Result Red_Green (Protan)" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Test Result Red_Green (Protan)" />
+      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/testPlate12_test.dart" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter Test.Test Result Red_Green (Deutran)" />
+        <item itemvalue="Flutter Test.Test Result Red_Green (Protan)" />
+        <item itemvalue="Flutter Test.Test Result Normale" />
+        <item itemvalue="Flutter Test.Drop-Down Menu Wrong Selection" />
+        <item itemvalue="Flutter Test.Drop-Down Menu Correct Selection" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fa067046-78a8-43ca-b295-161f9927cbef" name="Default Changelist" comment="" />
+      <created>1617478264994</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617478264994</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="364" y="127" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617647720759">
+      <screen x="0" y="25" width="1280" height="703" />
+    </state>
+    <state x="364" y="127" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1280.703@0.25.1280.703" timestamp="1617647720759" />
+    <state x="379" y="235" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1617486505673">
+      <screen x="0" y="25" width="1280" height="703" />
+    </state>
+    <state x="379" y="235" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.25.1280.703@0.25.1280.703" timestamp="1617486505673" />
+    <state width="1191" height="222" key="GridCell.Tab.0.bottom" timestamp="1617600850368">
+      <screen x="0" y="25" width="1280" height="703" />
+    </state>
+    <state width="1191" height="222" key="GridCell.Tab.0.bottom/0.25.1280.703@0.25.1280.703" timestamp="1617600850368" />
+    <state width="1191" height="222" key="GridCell.Tab.0.center" timestamp="1617600850367">
+      <screen x="0" y="25" width="1280" height="703" />
+    </state>
+    <state width="1191" height="222" key="GridCell.Tab.0.center/0.25.1280.703@0.25.1280.703" timestamp="1617600850367" />
+    <state width="1191" height="222" key="GridCell.Tab.0.left" timestamp="1617600850367">
+      <screen x="0" y="25" width="1280" height="703" />
+    </state>
+    <state width="1191" height="222" key="GridCell.Tab.0.left/0.25.1280.703@0.25.1280.703" timestamp="1617600850367" />
+    <state width="1191" height="222" key="GridCell.Tab.0.right" timestamp="1617600850367">
+      <screen x="0" y="25" width="1280" height="703" />
+    </state>
+    <state width="1191" height="222" key="GridCell.Tab.0.right/0.25.1280.703@0.25.1280.703" timestamp="1617600850367" />
+    <state x="181" y="105" width="892" height="623" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1617489698442">
+      <screen x="0" y="25" width="1280" height="703" />
+    </state>
+    <state x="181" y="105" width="892" height="623" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.25.1280.703@0.25.1280.703" timestamp="1617489698442" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/flutter_app/lib/signUp.dart</url>
+          <line>95</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/flutter_app/lib/signUp.dart</url>
+          <line>151</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

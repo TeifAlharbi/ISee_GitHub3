@@ -9,7 +9,16 @@ import 'globals.dart' as globals;
 class language extends StatefulWidget {
   @override
   _language createState() => _language();
+
+
+//---------- translate Method ----------
+static String translate(int languageNum) {
+
+  //if the lanugeNum = 0 then the current language is English otherwise it is in Arabic
+    return languageNum == 0 ? 'Choose language' : 'اختر اللغة';
+  }
 }
+
 
 class _language extends State<language> {
   void initState() {
@@ -22,8 +31,10 @@ class _language extends State<language> {
   }
 
   // ignore: non_constant_identifier_names
-  String Language ;
+  String Language;
   String ChooseLanguage;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +55,7 @@ class _language extends State<language> {
               setState(() {
                 Language = 'اللغة';
                 ChooseLanguage = "اختر اللغة";
-                    });
+              });
               return "";
             }
           })()),//----------Translations----------

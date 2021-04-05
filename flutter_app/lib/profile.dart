@@ -3,7 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Camera.dart';
-import 'package:flutter_app/SignIn.dart';
+import 'package:flutter_app/signIn.dart';
 import 'package:flutter_app/UserSettings.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -518,7 +518,7 @@ class _Profile extends State<Profile> {
               ),
               onTap: () async{
                 await FirebaseAuth.instance.signOut();
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignIn()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => signIn()));
               },
             ),
           ),//----------Logout Icon----------

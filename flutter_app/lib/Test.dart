@@ -3,10 +3,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/IshiharaTest.dart';
-import 'package:flutter_app/TestInstructions.dart';
-import 'package:flutter_app/TestResult.dart';
-import 'package:flutter_app/TestResultNew.dart';
-import 'package:flutter_app/AboutIshihara.dart';
+import 'package:flutter_app/testInstructions.dart';
+import 'package:flutter_app/testResult.dart';
+import 'package:flutter_app/testResultNew.dart';
+import 'package:flutter_app/aboutIshihara.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_app/UserSettings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -130,7 +130,7 @@ class  _Test extends State<Test> {
                               MaterialPageRoute(builder: (context) => IshiharaTest()));
                         }else{
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => TestInstructions()));
+                              MaterialPageRoute(builder: (context) => testInstructions()));
                         }
                       },
                       child:
@@ -196,7 +196,7 @@ class  _Test extends State<Test> {
                     InkWell(
                       onTap: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => AboutIshihara()));
+                            MaterialPageRoute(builder: (context) => aboutIshihara()));
                       },
                       child:
                       Container(

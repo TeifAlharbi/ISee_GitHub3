@@ -1,16 +1,98 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_app/AboutISee.dart';
+import 'package:flutter_app/aboutISee.dart';
 import 'package:flutter_app/Camera.dart';
-import 'package:flutter_app/SignUp.dart';
+import 'package:flutter_app/signUp.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SignIn extends StatefulWidget {
+class signIn extends StatefulWidget {
   @override
-  _SignIn createState() => _SignIn();
+  _signIn createState() => _signIn();
+
+
+  //---------- validateEmail Method ----------
+  static String validateEmail(String email) {
+    return email.isEmpty ? 'Please Fill The Email Field' : null;
+  }
+
+
+//---------- validatePassword Method ----------
+  static String validatePassword (String password){
+    return password.isEmpty ? 'Please Fill The Password Field' : null;
+  }
+
+
+
+
+  @override
+  static Future<bool> userCheck (TextEditingController _emailcontroller
+      , TextEditingController _passwordcontroller , BuildContext context) async {
+  try {
+      var result = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+          email: _emailcontroller.text,
+          password: _passwordcontroller.text);
+      if (result != null) {
+        print('WELCOME');
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => Camera()),
+        );
+      }else {
+        print('user not found');
+      }
+      return true;
+
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text("Please Try Again!!"),
+            content: Text("No user found for that email."),
+            actions: <Widget>[
+              FlatButton(
+                onPressed: () {
+                  Navigator.of(ctx).pop();
+                },
+                child: Text("OK"),
+              ),
+            ],
+          ),
+        );//Alert Dialog
+       // print('No user found for that email.');
+      }else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+        showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text("Please Try Again!!"),
+            content: Text("Wrong password provided for that user."),
+            actions: <Widget>[
+              FlatButton(
+                onPressed: () {
+                  Navigator.of(ctx).pop();
+                },
+                child: Text("OK"),
+              ),
+            ],
+          ),
+        );//Alert Dialog
+      }
+      return false;
+    }
+
+
+  }
+
+
+
+
+
 }
 
-class _SignIn extends State<SignIn> {
+
+class _signIn extends State<signIn> {
   void initState() {
     super.initState();
   }
@@ -50,7 +132,6 @@ class _SignIn extends State<SignIn> {
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-
                   Padding(
                     padding: EdgeInsets.only(left:30 ,top: screenHeight  * 0.120
                         , right:screenWeidth * 0.08 ),
@@ -67,35 +148,28 @@ class _SignIn extends State<SignIn> {
                       ),
                     ),
                   ), //----------ISee LOGO----------
-
                   TextFormField(
                     controller: _emailcontroller,
                     decoration: InputDecoration(
-                    //  contentPadding: new EdgeInsets.only(top: 390.0, left: 50.0),
                       contentPadding:  EdgeInsets.only(left:screenWeidth *0.10  ),
                       hintText: 'Email',
                     ),
                     // ignore: missing_return
                     validator: (value) {
-                      if (value.isEmpty) {
-                        return 'Please Fill Email Input';
-                      }
+                    return signIn.validateEmail(value);
                     },
                   ), //----------Text Email----------
                   TextFormField(
                     controller: _passwordcontroller,
                     obscureText: true,
                     decoration: InputDecoration(
-                   //   contentPadding: new EdgeInsets.only(top: 30.0, left: 50.0),
                       contentPadding:  EdgeInsets.only(left:screenWeidth *0.10 ,top: screenHeight  * 0.05),
                       hintText: 'Password',
 
                     ),
                     // ignore: missing_return
                     validator: (value) {
-                      if (value.isEmpty) {
-                        return 'Please Fill Password Input';
-                      }
+                    return signIn.validatePassword(value);
                     },
                   ), //----------Text Password----------
                   Padding(
@@ -110,58 +184,7 @@ class _SignIn extends State<SignIn> {
                       //Sign In Step
                       onPressed: () async {
                         if (_formkey.currentState.validate()) {
-                          try {
-                            var result = await FirebaseAuth.instance
-                                .signInWithEmailAndPassword(
-                                email: _emailcontroller.text,
-                                password: _passwordcontroller.text);
-                            if (result != null) {
-                              print('WELCOME');
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(builder: (context) => Camera()),
-                              );
-                            }else {
-                              print('user not found');
-                            }
-
-                          } on FirebaseAuthException catch (e) {
-                            if (e.code == 'user-not-found') {
-                              showDialog(
-                                context: context,
-                                builder: (ctx) => AlertDialog(
-                                  title: Text("Please Try Again!!"),
-                                  content: Text("No user found for that email."),
-                                  actions: <Widget>[
-                                    FlatButton(
-                                      onPressed: () {
-                                        Navigator.of(ctx).pop();
-                                      },
-                                      child: Text("OK"),
-                                    ),
-                                  ],
-                                ),
-                              );//Alert Dialog
-                             // print('No user found for that email.');
-                            } else if (e.code == 'wrong-password') {
-                              print('Wrong password provided for that user.');
-                              showDialog(
-                                context: context,
-                                builder: (ctx) => AlertDialog(
-                                  title: Text("Please Try Again!!"),
-                                  content: Text("Wrong password provided for that user."),
-                                  actions: <Widget>[
-                                    FlatButton(
-                                      onPressed: () {
-                                        Navigator.of(ctx).pop();
-                                      },
-                                      child: Text("OK"),
-                                    ),
-                                  ],
-                                ),
-                              );//Alert Dialog
-                            }
-                          }
+                          signIn.userCheck(_emailcontroller ,  _passwordcontroller , context);
                         }
                       },
                     ),
@@ -174,7 +197,7 @@ class _SignIn extends State<SignIn> {
                       ),
                       onPressed: () async {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => SignUp()));
+                            MaterialPageRoute(builder: (context) => signUp()));
                       },
                   ), //----------SignUp Button----------
                   Padding(
@@ -186,7 +209,7 @@ class _SignIn extends State<SignIn> {
                         height: 33.0,
                       ),
                       onTap: () {
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => AboutISee()));
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => aboutISee()));
                       },
                     ),
                   ), //----------About Icon----------

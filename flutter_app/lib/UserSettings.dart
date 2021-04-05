@@ -2,11 +2,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:flutter_app/AboutColorBlindness.dart';
-import 'package:flutter_app/AboutISee.dart';
-import 'package:flutter_app/Profile.dart';
-import 'package:flutter_app/Security.dart';
-import 'package:flutter_app/Support.dart';
+import 'package:flutter_app/aboutColorBlindness.dart';
+import 'package:flutter_app/aboutISee.dart';
+import 'package:flutter_app/profile.dart';
+import 'package:flutter_app/security.dart';
+import 'package:flutter_app/support.dart';
 import 'package:flutter_app/Test.dart';
 import 'package:flutter_app/Camera.dart';
 import 'package:flutter_app/language.dart';
@@ -600,7 +600,7 @@ class  _UserSettings  extends State<UserSettings> {
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Security()));
+                        MaterialPageRoute(builder: (context) => security()));
                   },
                   child: Padding(
                     padding:const EdgeInsets.only(left:300 , top:10),
@@ -614,7 +614,7 @@ class  _UserSettings  extends State<UserSettings> {
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Support()));
+                        MaterialPageRoute(builder: (context) => support()));
                   },
                   child: Padding(
                     padding:const EdgeInsets.only(left:300 , top:10),
@@ -642,7 +642,7 @@ class  _UserSettings  extends State<UserSettings> {
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) =>AboutColorBlindness()));
+                        MaterialPageRoute(builder: (context) =>aboutColorBlindness()));
                   },
                   child: Padding(
                     padding:const EdgeInsets.only(left:300 , top:10),
@@ -656,7 +656,7 @@ class  _UserSettings  extends State<UserSettings> {
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AboutISee()));
+                        MaterialPageRoute(builder: (context) => aboutISee()));
                   },
                   child: Padding(
                     padding:const EdgeInsets.only(left:300 , top:10),

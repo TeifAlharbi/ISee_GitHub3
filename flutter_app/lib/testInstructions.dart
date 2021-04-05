@@ -2,16 +2,16 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Test.dart';
-import 'package:flutter_app/TestPlate1.dart';
+import 'package:flutter_app/testPlate1.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 
-class TestInstructions extends StatefulWidget {
+class testInstructions extends StatefulWidget {
   @override
-  _TestInstructions createState() => _TestInstructions();
+  _testInstructions createState() => _testInstructions();
 }
 
-class _TestInstructions extends State<TestInstructions> {
+class _testInstructions extends State<testInstructions> {
   void initState() {
     super.initState();
   }
@@ -187,7 +187,7 @@ class _TestInstructions extends State<TestInstructions> {
                   height: 39.91,
                 ),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => TestPlate1()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context) => testPlate1()));
                 },
               ),
             ),

@@ -2,37 +2,37 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_app/AboutColorBlindness.dart';
-import 'package:flutter_app/AboutISee.dart';
-import 'package:flutter_app/AboutIshihara.dart';
+import 'package:flutter_app/aboutColorBlindness.dart';
+import 'package:flutter_app/aboutISee.dart';
+import 'package:flutter_app/aboutIshihara.dart';
 import 'package:flutter_app/IshiharaTest.dart';
-import 'package:flutter_app/Profile.dart';
-import 'package:flutter_app/Security.dart';
-import 'package:flutter_app/SignIn.dart';
+import 'package:flutter_app/profile.dart';
+import 'package:flutter_app/security.dart';
+import 'package:flutter_app/signIn.dart';
 import 'package:flutter_app/Camera.dart';
 import 'package:camera/camera.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_app/SignUp.dart';
-import 'package:flutter_app/Support.dart';
+import 'package:flutter_app/signUp.dart';
+import 'package:flutter_app/support.dart';
 import 'package:flutter_app/Test.dart';
-import 'package:flutter_app/TestInstructions.dart';
-import 'package:flutter_app/TestPlate1.dart';
-import 'package:flutter_app/TestPlate10.dart';
-import 'package:flutter_app/TestPlate11.dart';
-import 'package:flutter_app/TestPlate12.dart';
-import 'package:flutter_app/TestPlate3.dart';
-import 'package:flutter_app/TestPlate4.dart';
-import 'package:flutter_app/TestPlate5.dart';
-import 'package:flutter_app/TestPlate6.dart';
-import 'package:flutter_app/TestPlate7.dart';
-import 'package:flutter_app/TestPlate8.dart';
-import 'package:flutter_app/TestPlate9.dart';
-import 'package:flutter_app/TestResult.dart';
-import 'package:flutter_app/TestResultNew.dart';
+import 'package:flutter_app/testInstructions.dart';
+import 'package:flutter_app/testPlate1.dart';
+import 'package:flutter_app/testPlate10.dart';
+import 'package:flutter_app/testPlate11.dart';
+import 'package:flutter_app/testPlate12.dart';
+import 'package:flutter_app/testPlate3.dart';
+import 'package:flutter_app/testPlate4.dart';
+import 'package:flutter_app/testPlate5.dart';
+import 'package:flutter_app/testPlate6.dart';
+import 'package:flutter_app/testPlate7.dart';
+import 'package:flutter_app/testPlate8.dart';
+import 'package:flutter_app/testPlate9.dart';
+import 'package:flutter_app/testResult.dart';
+import 'package:flutter_app/testResultNew.dart';
 import 'package:flutter_app/UserSettings.dart';
 import 'package:flutter_app/language.dart';
-import 'TestPlate2.dart';
-import 'TestPlate2.dart';
+import 'testPlate2.dart';
+import 'testPlate2.dart';
 
 List<CameraDescription> cameras;
 
@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
                 theme: ThemeData(
                   primarySwatch: Colors.blue,
                 ),
-                home:Camera()
+                home:TestResultNew()
             );
           }else{
             return MaterialApp(
@@ -82,7 +82,7 @@ class MyApp extends StatelessWidget {
                 theme: ThemeData(
                   primarySwatch: Colors.blue,
                 ),
-                home: SignIn()
+                home: signIn()
             );
           }
         }

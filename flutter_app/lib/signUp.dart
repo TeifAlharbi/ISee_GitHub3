@@ -3,18 +3,61 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_app/SignIn.dart';
-import 'package:flutter_app/TestInstructions.dart';
+import 'package:flutter_app/signIn.dart';
+import 'package:flutter_app/testInstructions.dart';
 import 'package:flutter_app/Camera.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:email_validator/email_validator.dart';
 
-class SignUp extends StatefulWidget {
+class signUp extends StatefulWidget {
   @override
-  _SignUp createState() => _SignUp();
+  _signUp createState() => _signUp();
+
+
+  //---------- validateEmailFormat Method ----------
+  static String validateEmailFormat(String email) {
+    if (email.isEmpty) {
+      return 'Please Fill The Email Field';
+    }else if(!EmailValidator.validate(email)){
+      return 'The Email is badly formatted.';
+    }
+  }
+
+
+  //---------- validatePasswordFormat Method ----------
+  static String validatePasswordFormat(String password) {
+    if (password.isEmpty) {
+      return 'Please Fill Password Input';
+    }
+    if (password.trim().length < 6) {
+      return 'Password should be at least 6 characters';
+    }
+  }
+
+
+  static String addToFirebase(String finalResult,TextEditingController _firstNamecontroller,
+      TextEditingController _lastNamecontroller , TextEditingController _phoneNOcontroller
+      ,TextEditingController _emailcontroller ,   TextEditingController _gendercontroller ,
+      TextEditingController _CVDTypecontroller){
+
+
+    FirebaseFirestore.instance
+        .collection("CVD_User")
+        .doc(finalResult)
+        .set({
+      'firstName': _firstNamecontroller.text,
+      'lastName': _lastNamecontroller.text,
+      'phoneNo': _phoneNOcontroller.text,
+      'email': _emailcontroller.text,
+      'gender': _gendercontroller.text,
+      'CVDType': _CVDTypecontroller.text,
+    }
+    );
+    return 'User Successfully Added';
+  }
 }
 
-class _SignUp extends State<SignUp> {
+class _signUp extends State<signUp> {
   void initState() {
     super.initState();
     selectedRadio = 0;
@@ -158,11 +201,7 @@ class _SignUp extends State<SignUp> {
                     ),
                     // ignore: missing_return
                     validator: (value) {
-                      if (value.isEmpty) {
-                        return 'Please Fill Email Input';
-                      }else if(!EmailValidator.validate(value)){
-                        return 'The Email is badly formatted.';
-                      }
+                      return signUp.validateEmailFormat(value);
                     },
                   ), //----------Text Email----------
                   TextFormField(
@@ -185,13 +224,7 @@ class _SignUp extends State<SignUp> {
                     ),
                     // ignore: missing_return
                     validator: (value) {
-                      if (value.isEmpty) {
-                        return 'Please Fill Password Input';
-                      }
-                      if (value.trim().length < 6) {
-                        return 'Password should be at least 6 characters';
-                      }
-
+                     return signUp.validatePasswordFormat(value);
                     },
                   ), //----------Text Password----------
                   TextFormField(
@@ -272,11 +305,12 @@ class _SignUp extends State<SignUp> {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TestInstructions()),
+                                  builder: (context) => testInstructions()),
                             );
                             print("Directed to Test page");
 
                           } else {
+                        //    String finalResult =  result.user.uid;
                             //2-Add user information into CVD_User table
                             FirebaseFirestore.instance
                                 .collection("CVD_User")
@@ -287,9 +321,14 @@ class _SignUp extends State<SignUp> {
                               'phoneNo': _phoneNOcontroller.text,
                               'email': _emailcontroller.text,
                               'gender': _gendercontroller.text,
-                              'CVDType': _CVDTypecontroller.text,
+                              'CVDType': _CVDTypecontroller,
                             });
-                            print("Successfully Registered with CVD type = "+ selectedRadio.toString());
+
+                         //   SignUp.addToFirebase(finalResult, _firstNamecontroller, _lastNamecontroller
+                           //     , _phoneNOcontroller, _emailcontroller, _gendercontroller
+                             //   , _CVDTypecontroller);
+
+                             print("Successfully Registered with CVD type = "+ selectedRadio.toString());
                             //not working IDK why
                             showDialog(
                               context: context,
@@ -330,7 +369,7 @@ class _SignUp extends State<SignUp> {
                         height: 22.5,
                       ),
                       onTap: () {
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => SignIn()));
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => signIn()));
                       },
                     ),
                   ), //----------Back Icon----------

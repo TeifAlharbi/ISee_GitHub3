@@ -1,41 +1,43 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Test.dart';
-import 'package:flutter_app/TestPlate1.dart';
-import 'package:flutter_app/TestInstructions.dart';
-import 'package:flutter_app/TestPlate3.dart';
-import 'package:flutter_app/TestPlate5.dart';
-import 'package:flutter_app/TestPlate7.dart';
+import 'package:flutter_app/testPlate1.dart';
+import 'package:flutter_app/testInstructions.dart';
+import 'package:flutter_app/testPlate2.dart';
+import 'package:flutter_app/testPlate4.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'globals.dart' as globals;
 
-class TestPlate6 extends StatefulWidget {
+class testPlate3 extends StatefulWidget {
   @override
-  _TestPlate6 createState() => _TestPlate6();
+  _testPlate3 createState() => _testPlate3();
 }
 
 //drop down menu variable
 String valueChoose1;
+String valueChoose2;
 List listItem = ["Nothing","0","1","2","3","4","5","6","7","8","9"];
 
 
-class  _TestPlate6 extends State<TestPlate6> {
+class  _testPlate3 extends State<testPlate3> {
   void initState() {
     super.initState();
   }
   //variables
   TextEditingController _firstNumbercontroller = TextEditingController();
-
+  TextEditingController _secondNumbercontroller = TextEditingController();
 
 
 
   @override
   void dispose() {
     _firstNumbercontroller.dispose();
+    _secondNumbercontroller.dispose();
     super.dispose();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +60,9 @@ class  _TestPlate6 extends State<TestPlate6> {
                 , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
             child: Container(
               alignment: Alignment(-0.78, -0.37),
+              //   width: 343.0,
+              //  height: 56.0,
+
               width:screenWeidth ,
               height: screenHeight/13,
               decoration: BoxDecoration(
@@ -107,9 +112,10 @@ class  _TestPlate6 extends State<TestPlate6> {
               width: 100.0,
               height: 50.0,
               child: AutoSizeText(
-                '6/12 ',
+                '3/12 ',
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
+              //    fontSize: 25.0,
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                 ),
@@ -122,7 +128,7 @@ class  _TestPlate6 extends State<TestPlate6> {
           Padding(
             padding: EdgeInsets.only(left:screenWeidth * 0.08 ,top: screenHeight  * 0.260
                 ,  right:screenWeidth * 0.08 , bottom: screenHeight  * 0.200 ),
-            child:
+            child: // Group: Group 38
             Container(
               alignment: Alignment(0.0, 0.02),
               width: 313.0,
@@ -140,7 +146,7 @@ class  _TestPlate6 extends State<TestPlate6> {
                 height: 277.0,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('images/Ishihara_06.jpg'),
+                    image: AssetImage('images/Ishihara_03.jpg'),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -149,6 +155,8 @@ class  _TestPlate6 extends State<TestPlate6> {
           ),  //----------Image Plate Box----------
           Padding(
             padding: EdgeInsets.only(left:screenWeidth * 0.11 ,top: screenHeight  * 0.760 ),
+        //    child: Padding(
+          //    padding: const EdgeInsets.all(16.0),
               child: Container(
                 padding: EdgeInsets.only(left: 16.0 , right: 16),
                 decoration: BoxDecoration(
@@ -159,9 +167,9 @@ class  _TestPlate6 extends State<TestPlate6> {
                 child: DropdownButton(
                   hint: AutoSizeText("Select The First Number      "),
                   style: TextStyle(
-                      fontFamily: 'Segoe UI',
-                      fontSize: 12,
-                      color: Colors.black
+                    fontFamily: 'Segoe UI',
+                    fontSize: 12,
+                    color: Colors.black
                   ),
                   value: valueChoose1,
                   onChanged: (newValue){
@@ -180,24 +188,50 @@ class  _TestPlate6 extends State<TestPlate6> {
               ),
             ), //---------- first drop down  ----------
           Padding(
+            padding: EdgeInsets.only(left:screenWeidth * 0.11 ,top: screenHeight  * 0.840 ),
+              child: Container(
+                padding: EdgeInsets.only(left: 16.0 , right: 16),
+                decoration: BoxDecoration(
+                    border: Border.all(color:Colors.black , width: 0.5),
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.white
+                ),
+                child: DropdownButton(
+                  hint: AutoSizeText("Select The Second Number"),
+                  style: TextStyle(
+                    fontFamily: 'Segoe UI',
+                    fontSize: 12,
+                    color: Colors.black
+                  ),
+                  value: valueChoose2,
+                  onChanged: (newValue){
+                    setState(() {
+                      valueChoose2=  _secondNumbercontroller.toString();
+                      valueChoose2 = newValue;
+                    });
+                  },
+                  items: listItem.map((valueItem){
+                    return DropdownMenuItem(
+                      value: valueItem,
+                      child:Text(valueItem),
+                    );
+                  }).toList(),
+
+                ),
+              ),
+            ), //---------- second drop down  ----------
+          Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               padding: EdgeInsets.only(left:screenWeidth * 0.820 ,top: screenHeight  * 0.910),
               child: InkWell(
                 onTap: () async{
+                  if (valueChoose1 != null && valueChoose2 != null ){
 
-                  if (valueChoose1 != null){
-
-
-
-                    //correct answers counter
-                    if(valueChoose1 == "7") {
+                    if(valueChoose1 == "1" && valueChoose2 == "6") {
                       globals.correctAnswerCount++ ;
-                    }
-
-                    //wrong answers counter
-                    if(valueChoose1 != "7"){
-                      globals.wrongAnswerCount++ ;
+                    } else{
+                      globals.wrongAnswerCount++;
                     }
 
                     //2-Add user information into CVD_User table
@@ -206,21 +240,21 @@ class  _TestPlate6 extends State<TestPlate6> {
                         .collection("Ishihara_Test")
                         .doc(current_user.uid)
                         .update({
-
-                      'page6_choice1': valueChoose1,
-                      'correct_answer':  globals.correctAnswerCount,
-                      'wrong_answer':  globals.wrongAnswerCount
+                      'page3_choice1': valueChoose1,
+                      'page3_choice2': valueChoose2,
+                      'correct_answer':globals.correctAnswerCount,
+                      'wrong_answer':globals.wrongAnswerCount
 
                     });
                     print(valueChoose1);
+                    print(valueChoose2);
                     print(globals.correctAnswerCount);
                     print(globals.wrongAnswerCount);
-                    print("Successfully Complete The Six Page");
+                    print("Successfully Complete The Third Page");
 
                     //3-Direct the user to next page
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => TestPlate7()));
-
+                        MaterialPageRoute(builder: (context) => testPlate4()));
                   }else{
                     showDialog(
                       context: context,
@@ -237,8 +271,8 @@ class  _TestPlate6 extends State<TestPlate6> {
                         ],
                       ),
                     );//Alert Dialog
-                  }
 
+                  }
                 },
                 child: Icon(
                   Icons.arrow_forward_ios_sharp,
@@ -255,7 +289,7 @@ class  _TestPlate6 extends State<TestPlate6> {
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TestPlate5()));
+                      MaterialPageRoute(builder: (context) => testPlate2()));
                 },
                 child: Icon(
                   Icons.arrow_back_ios_sharp,
@@ -264,7 +298,7 @@ class  _TestPlate6 extends State<TestPlate6> {
                 ),
               ),
             ),
-          ), //----------Back Button----------
+          ),//back button
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
@@ -281,7 +315,7 @@ class  _TestPlate6 extends State<TestPlate6> {
                 ),
               ),
             ),
-          ), //----------Cancel Icon----------
+          ),//cancel
         ],
       ),
     );
