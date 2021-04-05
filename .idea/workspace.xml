@@ -20,44 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa067046-78a8-43ca-b295-161f9927cbef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flutter_app/test/language_test.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flutter_app/test/signIn_test.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flutter_app/test/signUp_test.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flutter_app/test/testPlate12_test.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flutter_app/test/testPlate_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/AboutColorBlindness.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/aboutColorBlindness.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/AboutISee.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/aboutISee.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/AboutIshihara.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/aboutIshihara.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/IshiharaTest.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/IshiharaTest.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/LogIn.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/Profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/profile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/Security.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/security.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/SignIn.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/signIn.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/SignIn2.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/SignUp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/signUp.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/Support.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/support.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/Test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/Test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/Test1.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestInstructions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testInstructions.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate1.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate10.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/TestPlate10.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate11.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/TestPlate11.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate12.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/TestPlate12.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate2.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate3.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate4.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate4.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate5.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate5.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate6.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate6.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate7.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate7.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate8.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/TestPlate8.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestPlate9.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/TestPlate9.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/TestResultNew.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/TestResultNew.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/UserSettings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/UserSettings.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/language.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/language.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/test/widget_test.dart" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/flutter_app/lib/widgetStyle.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/test/language_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/test/language_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/test/signIn_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/test/signIn_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/test/signUp_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/test/signUp_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/test/testPlate12_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/test/testPlate12_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/test/testPlate_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/test/testPlate_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,15 +53,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/flutter_app/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/flutter_app/lib" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/flutter_app/lib" />
       <recent name="$PROJECT_DIR$/flutter_app/test" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/flutter_app/test" />
     </key>
   </component>

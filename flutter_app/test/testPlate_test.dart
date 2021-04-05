@@ -1,15 +1,5 @@
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_app/signIn.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_app/aboutISee.dart';
-import 'package:flutter_app/Camera.dart';
-import 'package:flutter_app/signUp.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mockito/mockito.dart';
-import 'package:rxdart/rxdart.dart';
 import 'package:flutter_app/testPlate1.dart';
 
 
@@ -55,11 +45,6 @@ main(){
     //check if the actual result matches the expected result
     expect(value,false);
   });
-
-
-
-
-
 
 }
 
