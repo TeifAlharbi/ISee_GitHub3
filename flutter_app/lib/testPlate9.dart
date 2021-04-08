@@ -10,6 +10,7 @@ import 'package:flutter_app/testPlate8.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'IshiharaTestPlates.dart';
 import 'globals.dart' as globals;
 
 class TestPlate9 extends StatefulWidget {
@@ -17,10 +18,6 @@ class TestPlate9 extends StatefulWidget {
   _TestPlate9 createState() => _TestPlate9();
 }
 
-//drop down menu variable
-String valueChoose1;
-String valueChoose2;
-List listItem = ["Nothing","0","1","2","3","4","5","6","7","8","9"];
 
 
 class  _TestPlate9 extends State<TestPlate9> {
@@ -28,15 +25,20 @@ class  _TestPlate9 extends State<TestPlate9> {
     super.initState();
   }
   //variables
-  TextEditingController _firstNumbercontroller = TextEditingController();
-  TextEditingController _secondNumbercontroller = TextEditingController();
+  IshiharaTestPlates IshiharaTestPlatesObject = new IshiharaTestPlates();
+ // TextEditingController _firstNumbercontroller = TextEditingController();
+  //TextEditingController _secondNumbercontroller = TextEditingController();
+//drop down menu variable
+//  String valueChoose1;
+ // String valueChoose2;
+ // List listItem = ["Nothing","0","1","2","3","4","5","6","7","8","9"];
 
 
 
   @override
   void dispose() {
-    _firstNumbercontroller.dispose();
-    _secondNumbercontroller.dispose();
+    IshiharaTestPlatesObject.getFirstNumbercontroller.dispose();
+    IshiharaTestPlatesObject.getSecondNumbercontroller.dispose();
     super.dispose();
   }
 
@@ -166,14 +168,14 @@ class  _TestPlate9 extends State<TestPlate9> {
                       fontSize: 12,
                       color: Colors.black
                   ),
-                  value: valueChoose1,
+                  value: IshiharaTestPlatesObject.valueChoose1,
                   onChanged: (newValue){
                     setState(() {
-                      valueChoose1=_firstNumbercontroller.toString();
-                      valueChoose1 = newValue;
+                      IshiharaTestPlatesObject.valueChoose1=IshiharaTestPlatesObject.getFirstNumbercontroller.toString();
+                      IshiharaTestPlatesObject.valueChoose1 = newValue;
                     });
                   },
-                  items: listItem.map((valueItem){
+                  items: IshiharaTestPlatesObject.listItem.map((valueItem){
                     return DropdownMenuItem(
                       value: valueItem,
                       child:Text(valueItem),
@@ -198,14 +200,14 @@ class  _TestPlate9 extends State<TestPlate9> {
                       fontSize: 12,
                       color: Colors.black
                   ),
-                  value: valueChoose2,
+                  value: IshiharaTestPlatesObject.valueChoose2,
                   onChanged: (newValue){
                     setState(() {
-                      valueChoose2=  _secondNumbercontroller.toString();
-                      valueChoose2 = newValue;
+                      IshiharaTestPlatesObject.valueChoose2=  IshiharaTestPlatesObject.getSecondNumbercontroller.toString();
+                      IshiharaTestPlatesObject.valueChoose2 = newValue;
                     });
                   },
-                  items: listItem.map((valueItem){
+                  items: IshiharaTestPlatesObject.listItem.map((valueItem){
                     return DropdownMenuItem(
                       value: valueItem,
                       child:Text(valueItem),
@@ -222,9 +224,9 @@ class  _TestPlate9 extends State<TestPlate9> {
               child: InkWell(
                 onTap: () async{
 
-                  if (valueChoose1 != null){
+                  if (IshiharaTestPlatesObject.valueChoose1 != null){
 
-                    if(valueChoose1 == "9" && valueChoose2 == "7") {
+                    if(IshiharaTestPlatesObject.valueChoose1 == "9" && IshiharaTestPlatesObject.valueChoose2 == "7") {
                       globals.correctAnswerCount++ ;
                     } else{
                       globals.wrongAnswerCount++;
@@ -236,12 +238,12 @@ class  _TestPlate9 extends State<TestPlate9> {
                         .collection("Ishihara_Test")
                         .doc(current_user.uid)
                         .update({
-                      'page9_choice1': valueChoose1,
-                      'page9_choice2': valueChoose2,
+                      'page9_choice1': IshiharaTestPlatesObject.valueChoose1,
+                      'page9_choice2': IshiharaTestPlatesObject.valueChoose2,
                       'correct_answer':globals.correctAnswerCount,
                       'wrong_answer':globals.wrongAnswerCount
                     });
-                    print(valueChoose1);
+                    print(IshiharaTestPlatesObject.valueChoose1);
                     print(globals.correctAnswerCount);
                     print(globals.wrongAnswerCount);
                     print("Successfully Complete The Ninth Page");

@@ -1,10 +1,13 @@
 //ALL DONE
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/user.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_app/Test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+import 'IshiharaTestPlates.dart';
 
 class TestResult extends StatefulWidget {
   @override
@@ -18,11 +21,12 @@ class  _TestResult extends State<TestResult> {
 
   //variables
   final _formkey = GlobalKey<FormState>();
-  TextEditingController _datecontroller = TextEditingController();
-  TextEditingController _testResultcontroller = TextEditingController();
-  TextEditingController _correctAnswerscontroller = TextEditingController();
-  TextEditingController _incorrectAnswerscontroller = TextEditingController();
-  TextEditingController _CVDTypecontroller = TextEditingController();
+  user userObject = new user();
+ // TextEditingController _datecontroller = TextEditingController();
+  //TextEditingController _testResultcontroller = TextEditingController();
+ // TextEditingController _correctAnswerscontroller = TextEditingController();
+//  TextEditingController _incorrectAnswerscontroller = TextEditingController();
+//  TextEditingController _CVDTypecontroller = TextEditingController();
   String formattedDate;
   String cuurDate;
   int correctAnswer;
@@ -31,11 +35,11 @@ class  _TestResult extends State<TestResult> {
 
   @override
   void dispose() {
-    _datecontroller.dispose();
-    _testResultcontroller.dispose();
-    _correctAnswerscontroller.dispose();
-    _incorrectAnswerscontroller.dispose();
-    _CVDTypecontroller.dispose();
+    userObject .getDatecontroller.dispose();
+    userObject.getTestResultcontroller.dispose();
+    userObject.getCorrectAnswerscontroller.dispose();
+    userObject.getIncorrectAnswerscontroller.dispose();
+    userObject.getCVDTypecontroller.dispose();
     super.dispose();
   }
 
@@ -182,7 +186,7 @@ class  _TestResult extends State<TestResult> {
                             correctAnswer = document['correct_answer'];
                             incorrectanswer = document['wrong_answer'];
                             finalResult = document['final_result'];
-                            _datecontroller.text = document['Date'];
+                            userObject.getDatecontroller.text = document['Date'];
                           });
                         return new ListTile();
                       });
@@ -211,7 +215,7 @@ class  _TestResult extends State<TestResult> {
                       if (document.id == currentUser.uid) {
                         Future.delayed(Duration(), () async {
                           await setState(() {
-                            _CVDTypecontroller.text = document['CVDType'];
+                            userObject.getCVDTypecontroller.text = document['CVDType'];
                           });
                         });
                         return new ListTile();
@@ -279,7 +283,7 @@ class  _TestResult extends State<TestResult> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 TextFormField(
-                  controller: _datecontroller,
+                  controller: userObject.getDatecontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -287,7 +291,7 @@ class  _TestResult extends State<TestResult> {
                   ),
                 ), //----------Date----------
                 TextFormField(
-                  controller:_testResultcontroller,
+                  controller:userObject.getTestResultcontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -296,7 +300,7 @@ class  _TestResult extends State<TestResult> {
                   ),
                 ), //----------Test Result----------
                 TextFormField(
-                  controller: _correctAnswerscontroller,
+                  controller:userObject.getCorrectAnswerscontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -305,7 +309,7 @@ class  _TestResult extends State<TestResult> {
                   ),
                 ), //----------Correct Answers----------
                 TextFormField(
-                  controller: _incorrectAnswerscontroller,
+                  controller: userObject.getIncorrectAnswerscontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -314,12 +318,12 @@ class  _TestResult extends State<TestResult> {
                   ),
                 ), //----------Incorrect Answers----------
                 TextFormField(
-                  controller: _CVDTypecontroller,
+                  controller: userObject.getCVDTypecontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
                     contentPadding: new EdgeInsets.only(top: 40.0, left: 180.0),
-                    hintText: _CVDTypecontroller.text,
+                    hintText: userObject.getCVDTypecontroller.text,
                   ),
                 ), //----------My CVD Type---------
               ],

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/Camera.dart';
 import 'package:flutter_app/signIn.dart';
 import 'package:flutter_app/UserSettings.dart';
+import 'package:flutter_app/user.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'globals.dart' as globals;
@@ -21,11 +22,11 @@ class _Profile extends State<Profile> {
 
   //variables
   final _formkey = GlobalKey<FormState>();
-  TextEditingController _CVDTypecontroller = TextEditingController();
-  TextEditingController _lastTestDatecontroller = TextEditingController();
-  TextEditingController _emailcontroller = TextEditingController();
-  TextEditingController _phoneNOcontroller = TextEditingController();
-  TextEditingController _gendercontroller = TextEditingController();
+ // TextEditingController _CVDTypecontroller = TextEditingController();
+  //TextEditingController _lastTestDatecontroller = TextEditingController();
+//  TextEditingController _emailcontroller = TextEditingController();
+ // TextEditingController _phoneNOcontroller = TextEditingController();
+ // TextEditingController _gendercontroller = TextEditingController();
   String fname;
   String cvd;
   String lastTest;
@@ -47,13 +48,15 @@ class _Profile extends State<Profile> {
   int count_phone = 0;
   int count_gender = 0;
 
+  user userObject = new user();
+
   @override
   void dispose() {
-    _CVDTypecontroller.dispose();
-    _lastTestDatecontroller.dispose();
-    _emailcontroller.dispose();
-    _phoneNOcontroller.dispose();
-    _gendercontroller.dispose();
+    userObject.getCVDTypecontroller.dispose();
+    userObject.getLastTestDatecontroller.dispose();
+    userObject.getEmailcontroller.dispose();
+    userObject.getPhoneNOcontroller.dispose();
+    userObject.getGendercontroller.dispose();
     super.dispose();
   }
 
@@ -236,7 +239,7 @@ class _Profile extends State<Profile> {
                           .collection('CVD_User')
                           .doc(currentUser.uid)
                           .update({
-                        'phoneNo': _phoneNOcontroller.text,
+                        'phoneNo': userObject.getPhoneNOcontroller.text,
                       }).then((value) {
                         print('Phone updated successfully');
                       });
@@ -248,7 +251,7 @@ class _Profile extends State<Profile> {
                           .collection('CVD_User')
                           .doc(currentUser.uid)
                           .update({
-                        'email': _emailcontroller.text,
+                        'email': userObject.getEmailcontroller.text,
                       }).then((value) {
                         print('Email updated successfully');
                       });
@@ -260,7 +263,7 @@ class _Profile extends State<Profile> {
                           .collection('CVD_User')
                           .doc(currentUser.uid)
                           .update({
-                        'gender': _gendercontroller.text,
+                        'gender': userObject.getGendercontroller.text,
                       }).then((value) {
                         print('Gender updated successfully');
                       });
@@ -407,7 +410,7 @@ class _Profile extends State<Profile> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 TextFormField(
-                  controller: _CVDTypecontroller,
+                  controller: userObject.getCVDTypecontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -416,7 +419,7 @@ class _Profile extends State<Profile> {
                   ),
                 ), //----------Text CVD----------
                 TextFormField(
-                  controller:_lastTestDatecontroller,
+                  controller:userObject.getLastTestDatecontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -427,7 +430,7 @@ class _Profile extends State<Profile> {
                 ), //----------Test Date----------
                 TextFormField(
                   //  autofocus: true,
-                    controller: _emailcontroller,
+                    controller: userObject.getEmailcontroller,
                     decoration: InputDecoration(
                    //   contentPadding:
                      //     new EdgeInsets.only(top: 45.0, left: 180.0),
@@ -440,7 +443,7 @@ class _Profile extends State<Profile> {
                       count_email++;
                     }), //----------Email----------
                 TextFormField(
-                    controller: _phoneNOcontroller,
+                    controller: userObject.getPhoneNOcontroller,
                     decoration: InputDecoration(
                     //  contentPadding:
                       //    new EdgeInsets.only(top: 40.0, left: 180.0),
@@ -451,7 +454,7 @@ class _Profile extends State<Profile> {
                       count_phone++;
                     }), //----------Phone Number----------
                 TextFormField(
-                    controller: _gendercontroller,
+                    controller: userObject.getGendercontroller,
                     decoration: InputDecoration(
                     //  contentPadding:
                       //    new EdgeInsets.only(top: 40.0, left: 180.0),

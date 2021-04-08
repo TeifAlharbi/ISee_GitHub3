@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:dcdg/dcdg.dart';
 import 'package:flutter_app/aboutColorBlindness.dart';
 import 'package:flutter_app/aboutISee.dart';
 import 'package:flutter_app/aboutIshihara.dart';
@@ -33,6 +34,7 @@ import 'package:flutter_app/UserSettings.dart';
 import 'package:flutter_app/language.dart';
 import 'testPlate2.dart';
 import 'testPlate2.dart';
+
 
 List<CameraDescription> cameras;
 
@@ -73,7 +75,7 @@ class MyApp extends StatelessWidget {
                 theme: ThemeData(
                   primarySwatch: Colors.blue,
                 ),
-                home:TestResultNew()
+                home:testPlate1()
             );
           }else{
             return MaterialApp(

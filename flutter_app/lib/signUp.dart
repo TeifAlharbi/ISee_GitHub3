@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_app/signIn.dart';
 import 'package:flutter_app/testInstructions.dart';
 import 'package:flutter_app/Camera.dart';
+import 'package:flutter_app/user.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:email_validator/email_validator.dart';
 
@@ -65,24 +66,27 @@ class _signUp extends State<signUp> {
 
   //variables
   final _formkey = GlobalKey<FormState>();
-  TextEditingController _firstNamecontroller = TextEditingController();
-  TextEditingController _lastNamecontroller = TextEditingController();
-  TextEditingController _phoneNOcontroller = TextEditingController();
-  TextEditingController _emailcontroller = TextEditingController();
-  TextEditingController _gendercontroller = TextEditingController();
-  TextEditingController _passwordcontroller = TextEditingController();
-  TextEditingController _CVDTypecontroller = TextEditingController();
+  user userObject = new user();
+//  TextEditingController _firstNamecontroller = TextEditingController();
+ // TextEditingController _lastNamecontroller = TextEditingController();
+//  TextEditingController _phoneNOcontroller = TextEditingController();
+//  TextEditingController _emailcontroller = TextEditingController();
+  //TextEditingController _gendercontroller = TextEditingController();
+ // TextEditingController _passwordcontroller = TextEditingController();
+  //TextEditingController _CVDTypecontroller = TextEditingController();
   int selectedRadio;
 
   @override
   void dispose() {
-    _firstNamecontroller.dispose();
-    _lastNamecontroller.dispose();
-    _phoneNOcontroller.dispose();
-    _emailcontroller.dispose();
-    _gendercontroller.dispose();
-    _passwordcontroller.dispose();
-    _CVDTypecontroller.dispose();
+  //  _firstNamecontroller.dispose();
+
+    userObject.getFirstNamecontroller.dispose();
+    userObject.getLastNamecontroller.dispose();
+    userObject.getPhoneNOcontroller.dispose();
+    userObject.getEmailcontroller.dispose();
+    userObject.getGendercontroller.dispose();
+    userObject.getPasswordcontroller.dispose();
+    userObject.getCVDTypecontroller.dispose();
     super.dispose();
   }
 
@@ -158,7 +162,7 @@ class _signUp extends State<signUp> {
                   Padding(
                     padding: EdgeInsets.only( top: screenHeight  * 0.20),
                     child: TextFormField(
-                      controller: _firstNamecontroller,
+                      controller: userObject.getFirstNamecontroller,
                       decoration: InputDecoration(
                         labelText: 'First Name'
                       ),
@@ -171,7 +175,7 @@ class _signUp extends State<signUp> {
                     ),
                   ), //----------Text First Name----------
                   TextFormField(
-                    controller: _lastNamecontroller,
+                    controller: userObject.getLastNamecontroller,
                     decoration: InputDecoration(
                         labelText: 'Last Name'
                     ),
@@ -183,7 +187,7 @@ class _signUp extends State<signUp> {
                     },
                   ), //----------Text Last Name----------
                   TextFormField(
-                    controller: _phoneNOcontroller,
+                    controller: userObject.getPhoneNOcontroller,
                     decoration: InputDecoration(
                         labelText: 'Phone Number'
                     ),
@@ -195,7 +199,7 @@ class _signUp extends State<signUp> {
                     },
                   ), //----------Text Phone Number----------
                   TextFormField(
-                    controller: _emailcontroller,
+                    controller: userObject.getEmailcontroller,
                     decoration: InputDecoration(
                         labelText: 'Email'
                     ),
@@ -205,7 +209,7 @@ class _signUp extends State<signUp> {
                     },
                   ), //----------Text Email----------
                   TextFormField(
-                    controller: _gendercontroller,
+                    controller: userObject.getGendercontroller,
                     decoration: InputDecoration(
                         labelText: 'Gender'
                     ),
@@ -217,7 +221,7 @@ class _signUp extends State<signUp> {
                     },
                   ), //----------Text Gender----------
                   TextFormField(
-                    controller: _passwordcontroller,
+                    controller: userObject.getPasswordcontroller,
                     obscureText: true,
                     decoration: InputDecoration(
                         labelText: 'Password'
@@ -228,7 +232,7 @@ class _signUp extends State<signUp> {
                     },
                   ), //----------Text Password----------
                   TextFormField(
-                    controller: _CVDTypecontroller,
+                    controller: userObject.getCVDTypecontroller,
                     decoration: InputDecoration(
                         labelText: 'My CVD Type'
                     ),
@@ -264,8 +268,8 @@ class _signUp extends State<signUp> {
                         //1-Create user with email and pass
                         var result = await FirebaseAuth.instance
                             .createUserWithEmailAndPassword(
-                                email: _emailcontroller.text,
-                                password: _passwordcontroller.text);
+                                email: userObject.getEmailcontroller.text,
+                                password: userObject.getPasswordcontroller.text);
 
                         if (result != null) {
                           //Check if Directed to Camera Or Test page based on CVD Radio
@@ -275,21 +279,22 @@ class _signUp extends State<signUp> {
                                 .collection("CVD_User")
                                 .doc(result.user.uid)
                                 .set({
-                              'firstName': _firstNamecontroller.text,
-                              'lastName': _lastNamecontroller.text,
-                              'phoneNo': _phoneNOcontroller.text,
-                              'email': _emailcontroller.text,
-                              'gender': _gendercontroller.text,
+                              'firstName': userObject.getFirstNamecontroller.text,
+                              'lastName': userObject.getLastNamecontroller.text,
+                              'phoneNo': userObject.getPhoneNOcontroller.text,
+                              'email': userObject.getEmailcontroller.text,
+                              'gender': userObject.getGendercontroller.text,
                               'CVDType': 'none',
+
                             });
                             print("Successfully Registered without CVD type = " + selectedRadio.toString());
-
+                            print(userObject.getFirstNamecontroller);
                             //not working IDK why
                             showDialog(
                               context: context,
                               builder: (ctx) => AlertDialog(
                                 title: Text("Successfully Registered"),
-                                content: Text("Welcome "+ _firstNamecontroller.text + "." +"\n You will be directed to Test page"),
+                                content: Text("Welcome "+ userObject.getFirstNamecontroller.text + "." +"\n You will be directed to Test page"),
                                 actions: <Widget>[
                                   FlatButton(
                                     onPressed: () {
@@ -316,12 +321,12 @@ class _signUp extends State<signUp> {
                                 .collection("CVD_User")
                                 .doc(result.user.uid)
                                 .set({
-                              'firstName': _firstNamecontroller.text,
-                              'lastName': _lastNamecontroller.text,
-                              'phoneNo': _phoneNOcontroller.text,
-                              'email': _emailcontroller.text,
-                              'gender': _gendercontroller.text,
-                              'CVDType': _CVDTypecontroller,
+                              'firstName': userObject.getFirstNamecontroller.text,
+                              'lastName': userObject.getLastNamecontroller.text,
+                              'phoneNo':userObject.getPhoneNOcontroller.text,
+                              'email': userObject.getEmailcontroller.text,
+                              'gender': userObject.getGendercontroller.text,
+                              'CVDType': userObject.getCVDTypecontroller.text,
                             });
 
                          //   SignUp.addToFirebase(finalResult, _firstNamecontroller, _lastNamecontroller
@@ -334,7 +339,7 @@ class _signUp extends State<signUp> {
                               context: context,
                               builder: (ctx) => AlertDialog(
                                 title: Text("Successfully Registered"),
-                                content: Text("Welcome "+ _firstNamecontroller.text + "." +"\n You will be directed to Camera page"),
+                                content: Text("Welcome "+userObject.getFirstNamecontroller.text + "." +"\n You will be directed to Camera page"),
                                 actions: <Widget>[
                                   FlatButton(
                                     onPressed: () {
