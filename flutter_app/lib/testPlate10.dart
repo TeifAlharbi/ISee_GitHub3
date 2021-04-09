@@ -5,6 +5,7 @@ import 'package:flutter_app/testPlate11.dart';
 import 'package:flutter_app/testPlate9.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'IshiharaTestPlates.dart';
 import 'globals.dart' as globals;
 
 class TestPlate10 extends StatefulWidget {
@@ -12,24 +13,25 @@ class TestPlate10 extends StatefulWidget {
   _TestPlate10 createState() => _TestPlate10();
 }
 
-//drop down menu variable
-String valueChoose1;
-List listItem = ["Nothing","0","1","2","3","4","5","6","7","8","9"];
-
 
 class  _TestPlate10 extends State<TestPlate10> {
   void initState() {
     super.initState();
   }
   //variables
-  TextEditingController _firstNumbercontroller = TextEditingController();
+  IshiharaTestPlates IshiharaTestPlatesObject = new IshiharaTestPlates();
+ // TextEditingController _firstNumbercontroller = TextEditingController();
+//drop down menu variable
+ // String valueChoose1;
+  //List listItem = ["Nothing","0","1","2","3","4","5","6","7","8","9"];
+
 
 
 
 
   @override
   void dispose() {
-    _firstNumbercontroller.dispose();
+    IshiharaTestPlatesObject.getFirstNumbercontroller.dispose();
     super.dispose();
   }
 
@@ -159,14 +161,14 @@ class  _TestPlate10 extends State<TestPlate10> {
                       fontSize: 12,
                       color: Colors.black
                   ),
-                  value: valueChoose1,
+                  value: IshiharaTestPlatesObject.valueChoose1,
                   onChanged: (newValue){
                     setState(() {
-                      valueChoose1=_firstNumbercontroller.toString();
-                      valueChoose1 = newValue;
+                      IshiharaTestPlatesObject.valueChoose1=IshiharaTestPlatesObject.getFirstNumbercontroller.toString();
+                      IshiharaTestPlatesObject.valueChoose1 = newValue;
                     });
                   },
-                  items: listItem.map((valueItem){
+                  items: IshiharaTestPlatesObject.listItem.map((valueItem){
                     return DropdownMenuItem(
                       value: valueItem,
                       child:Text(valueItem),
@@ -182,15 +184,15 @@ class  _TestPlate10 extends State<TestPlate10> {
               child: InkWell(
                 onTap: () async{
 
-                  if (valueChoose1 != null){
+                  if (IshiharaTestPlatesObject.valueChoose1 != null){
 
                     //correct answers counter
-                    if(valueChoose1 == "8") {
+                    if(IshiharaTestPlatesObject.valueChoose1 == "8") {
                       globals.correctAnswerCount++ ;
                     }
 
                     //wrong answers counter
-                    if(valueChoose1 != "8"){
+                    if(IshiharaTestPlatesObject.valueChoose1 != "8"){
                       globals.wrongAnswerCount++ ;
                     }
 
@@ -203,12 +205,12 @@ class  _TestPlate10 extends State<TestPlate10> {
                         .doc(current_user.uid)
                         .update({
 
-                      'page10_choice1': valueChoose1,
+                      'page10_choice1': IshiharaTestPlatesObject.valueChoose1,
                       'correct_answer':  globals.correctAnswerCount,
                       'wrong_answer':  globals.wrongAnswerCount
 
                     });
-                    print(valueChoose1);
+                    print(IshiharaTestPlatesObject.valueChoose1);
                     print(globals.correctAnswerCount);
                     print(globals.wrongAnswerCount);
                     print("Successfully Complete The Tenth Page");

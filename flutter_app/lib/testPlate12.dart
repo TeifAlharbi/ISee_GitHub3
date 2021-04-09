@@ -6,6 +6,7 @@ import 'package:flutter_app/testResult.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
+import 'IshiharaTestPlates.dart';
 import 'globals.dart' as globals;
 
 class TestPlate12 extends StatefulWidget {
@@ -40,9 +41,6 @@ class TestPlate12 extends StatefulWidget {
 
 }
 
-//drop down menu variable
-String valueChoose1;
-List listItem = ["Nothing", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 //current date
 //String cuurDate;
@@ -56,12 +54,16 @@ class _TestPlate12 extends State<TestPlate12> {
   }
 
   //variables
-  TextEditingController _firstNumbercontroller = TextEditingController();
-  double finalResult;
+  IshiharaTestPlates IshiharaTestPlatesObject = new IshiharaTestPlates();
+  //TextEditingController _firstNumbercontroller = TextEditingController();
+  //double finalResult;
+//drop down menu variable
+  //String valueChoose1;
+ // List listItem = ["Nothing", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   @override
   void dispose() {
-    _firstNumbercontroller.dispose();
+    IshiharaTestPlatesObject.getFirstNumbercontroller.dispose();
     super.dispose();
   }
 
@@ -193,14 +195,14 @@ class _TestPlate12 extends State<TestPlate12> {
                       fontSize: 12,
                       color: Colors.black
                   ),
-                  value: valueChoose1,
+                  value: IshiharaTestPlatesObject.valueChoose1,
                   onChanged: (newValue){
                     setState(() {
-                      valueChoose1=_firstNumbercontroller.toString();
-                      valueChoose1 = newValue;
+                      IshiharaTestPlatesObject.valueChoose1=IshiharaTestPlatesObject.getFirstNumbercontroller.toString();
+                      IshiharaTestPlatesObject.valueChoose1 = newValue;
                     });
                   },
-                  items: listItem.map((valueItem){
+                  items: IshiharaTestPlatesObject.listItem.map((valueItem){
                     return DropdownMenuItem(
                       value: valueItem,
                       child:Text(valueItem),
@@ -215,16 +217,17 @@ class _TestPlate12 extends State<TestPlate12> {
               padding: EdgeInsets.only(left:screenWeidth * 0.820 ,top: screenHeight  * 0.910),
               child: InkWell(
                 onTap: () async {
-                  if (valueChoose1 != null) {
+                  if (IshiharaTestPlatesObject.valueChoose1 != null) {
                     //correct answers counter
-                    if (valueChoose1 == "3") {
+                    if (IshiharaTestPlatesObject.valueChoose1 == "3") {
                       globals.correctAnswerCount++;
                     }
                     //wrong answers counter
-                    if (valueChoose1 != "3") {
+                    if (IshiharaTestPlatesObject.valueChoose1 != "3") {
                       globals.wrongAnswerCount++;
                     }
-                    finalResult = (globals.correctAnswerCount * 100) / 12;
+
+                    IshiharaTestPlatesObject.finalResult = (globals.correctAnswerCount * 100) / 12;
 
                     StreamBuilder(
                       stream:
@@ -290,17 +293,17 @@ class _TestPlate12 extends State<TestPlate12> {
                         .collection("Ishihara_Test")
                         .doc(current_user.uid)
                         .update({
-                      'page12_choice1': valueChoose1,
+                      'page12_choice1': IshiharaTestPlatesObject.valueChoose1,
                       'correct_answer': globals.correctAnswerCount,
                       'wrong_answer': globals.wrongAnswerCount,
-                      'final_result': finalResult.toStringAsFixed(2),
+                      'final_result': IshiharaTestPlatesObject.finalResult.toStringAsFixed(2),
                       'Date': formattedDate.toString(),
                     });
 
-                    print(valueChoose1);
+                    print(IshiharaTestPlatesObject.valueChoose1);
                     print(globals.correctAnswerCount);
                     print(globals.wrongAnswerCount);
-                    print(finalResult);
+                    print(IshiharaTestPlatesObject.finalResult);
                     print("Successfully Complete The Twelfth Page");
 
                     //3-Direct the user to next page

@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_app/aboutISee.dart';
 import 'package:flutter_app/Camera.dart';
 import 'package:flutter_app/signUp.dart';
+import 'package:flutter_app/user.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class signIn extends StatefulWidget {
@@ -20,7 +21,6 @@ class signIn extends StatefulWidget {
   static String validatePassword (String password){
     return password.isEmpty ? 'Please Fill The Password Field' : null;
   }
-
 
 
 
@@ -81,13 +81,7 @@ class signIn extends StatefulWidget {
       }
       return false;
     }
-
-
   }
-
-
-
-
 
 }
 
@@ -99,13 +93,17 @@ class _signIn extends State<signIn> {
 
   //variables
   final _formkey = GlobalKey<FormState>();
-  TextEditingController _emailcontroller = TextEditingController();
-  TextEditingController _passwordcontroller = TextEditingController();
+  user userObject = new user();
+
+
+
+ // TextEditingController _emailcontroller = TextEditingController();
+  //TextEditingController _passwordcontroller = TextEditingController();
 
   @override
   void dispose() {
-    _emailcontroller.dispose();
-    _passwordcontroller.dispose();
+    userObject.getEmailcontroller.dispose();
+    userObject.getPasswordcontroller.dispose();
     super.dispose();
   }
 
@@ -149,7 +147,7 @@ class _signIn extends State<signIn> {
                     ),
                   ), //----------ISee LOGO----------
                   TextFormField(
-                    controller: _emailcontroller,
+                    controller: userObject.getEmailcontroller,
                     decoration: InputDecoration(
                       contentPadding:  EdgeInsets.only(left:screenWeidth *0.10  ),
                       hintText: 'Email',
@@ -160,7 +158,7 @@ class _signIn extends State<signIn> {
                     },
                   ), //----------Text Email----------
                   TextFormField(
-                    controller: _passwordcontroller,
+                    controller: userObject.getPasswordcontroller,
                     obscureText: true,
                     decoration: InputDecoration(
                       contentPadding:  EdgeInsets.only(left:screenWeidth *0.10 ,top: screenHeight  * 0.05),
@@ -184,7 +182,7 @@ class _signIn extends State<signIn> {
                       //Sign In Step
                       onPressed: () async {
                         if (_formkey.currentState.validate()) {
-                          signIn.userCheck(_emailcontroller ,  _passwordcontroller , context);
+                          signIn.userCheck(userObject.getEmailcontroller ,  userObject.getPasswordcontroller , context);
                         }
                       },
                     ),
