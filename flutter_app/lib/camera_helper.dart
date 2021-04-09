@@ -22,13 +22,9 @@ class CameraHelper {
     camera = CameraController(
         await _getCamera(_direction),
         defaultTargetPlatform == TargetPlatform.android
-            ? ResolutionPreset.high
-            : ResolutionPreset.high,
+            ? ResolutionPreset.medium
+            : ResolutionPreset.medium,
         enableAudio: false);
-
-    // camera = CameraController(
-    // await _getCamera(_direction), ResolutionPreset.low, enableAudio: false);
-
     initializeControllerFuture = camera.initialize().then((value) {
       camera.startImageStream((CameraImage image) {
         if (!TFLiteHelper.modelLoaded) return;
@@ -42,23 +38,4 @@ class CameraHelper {
       });
     });
   }
-
-  // //camera initialization
-  // initCamera() {
-  //   cameraController = CameraController(cameras[0], ResolutionPreset.medium);
-  //   cameraController.initialize().then((value) {
-  //     if (!mounted) {
-  //       return;
-  //     }
-  //     setState(() {
-  //       cameraController.startImageStream((imageFromStream) => {
-  //             if (!isWorking)
-  //               {
-  //                 isWorking = true,
-  //                 imgCamera = imageFromStream,
-  //               }
-  //           });
-  //     });
-  //   });
-  // }
 }

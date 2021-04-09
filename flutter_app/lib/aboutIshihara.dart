@@ -2,7 +2,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:flutter_app/UserSettings.dart';
+import 'package:flutter_app/Test.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class aboutIshihara extends StatefulWidget {
@@ -24,7 +24,6 @@ class  _aboutIshihara extends State<aboutIshihara> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWeidth = MediaQuery.of(context).size.width;
-    double screenText = MediaQuery.textScaleFactorOf(context);
 
     return Scaffold(
       body: Stack(
@@ -63,7 +62,7 @@ class  _aboutIshihara extends State<aboutIshihara> {
                   fontWeight: FontWeight.w900,
                 ),
 
-                minFontSize: 10,
+                minFontSize: 25,
                 maxFontSize: 30,
                 maxLines: 1,
               ),
@@ -135,7 +134,7 @@ class  _aboutIshihara extends State<aboutIshihara> {
           InkWell(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => UserSettings()));
+                  MaterialPageRoute(builder: (context) => Test()));
             },
             child: Padding(
               padding:const EdgeInsets.only(left:30 , top:150),

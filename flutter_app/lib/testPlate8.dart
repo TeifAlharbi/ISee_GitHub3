@@ -1,12 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Test.dart';
-import 'package:flutter_app/TestPlate1.dart';
-import 'package:flutter_app/TestInstructions.dart';
-import 'package:flutter_app/TestPlate3.dart';
 import 'package:flutter_app/TestPlate7.dart';
 import 'package:flutter_app/testPlate9.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'globals.dart' as globals;
@@ -41,7 +37,6 @@ class  _testPlate8 extends State<testPlate8> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWeidth = MediaQuery.of(context).size.width;
-    double screenText = MediaQuery.textScaleFactorOf(context);
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -78,7 +73,7 @@ class  _testPlate8 extends State<testPlate8> {
                   fontWeight: FontWeight.w900,
                 ),
 
-                minFontSize: 10,
+                minFontSize: 20,
                 maxFontSize: 30,
                 maxLines: 1,
               ),
@@ -255,7 +250,7 @@ class  _testPlate8 extends State<testPlate8> {
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TestPlate7()));
+                      MaterialPageRoute(builder: (context) => testPlate7()));
                 },
                 child: Icon(
                   Icons.arrow_back_ios_sharp,

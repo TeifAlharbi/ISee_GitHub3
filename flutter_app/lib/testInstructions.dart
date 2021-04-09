@@ -64,7 +64,7 @@ class _testInstructions extends State<testInstructions> {
                     fontWeight: FontWeight.w900,
                   ),
 
-                 minFontSize: 10,
+                 minFontSize: 20,
                  maxFontSize: 30,
                   maxLines: 1,
                 ),

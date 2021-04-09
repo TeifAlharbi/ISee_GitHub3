@@ -1,7 +1,6 @@
 //ALL DONE
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_app/Test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -43,7 +42,6 @@ class  _TestResult extends State<TestResult> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWeidth = MediaQuery.of(context).size.width;
-    double screenText = MediaQuery.textScaleFactorOf(context);
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       body: Stack(
@@ -82,7 +80,7 @@ class  _TestResult extends State<TestResult> {
                   fontWeight: FontWeight.w900,
                 ),
 
-                minFontSize: 10,
+                minFontSize: 20,
                 maxFontSize: 30,
                 maxLines: 1,
               ),
@@ -139,7 +137,7 @@ class  _TestResult extends State<TestResult> {
                         ),
                         textAlign: TextAlign.center,
                         maxLines: 1,
-                        minFontSize: 16,
+                        minFontSize: 20,
                         maxFontSize: 30,
                       ),
                     ),

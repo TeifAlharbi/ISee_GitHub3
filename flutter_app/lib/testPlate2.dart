@@ -2,9 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Test.dart';
 import 'package:flutter_app/testPlate1.dart';
-import 'package:flutter_app/testInstructions.dart';
 import 'package:flutter_app/testPlate3.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'globals.dart' as globals;
@@ -39,7 +37,6 @@ class  _testPlate2 extends State<testPlate2> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWeidth = MediaQuery.of(context).size.width;
-    double screenText = MediaQuery.textScaleFactorOf(context);
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -80,7 +77,7 @@ class  _testPlate2 extends State<testPlate2> {
                   fontWeight: FontWeight.w900,
                 ),
 
-                minFontSize: 10,
+                minFontSize: 20,
                 maxFontSize: 30,
                 maxLines: 1,
               ),

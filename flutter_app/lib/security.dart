@@ -23,7 +23,6 @@ class  _security extends State<security> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWeidth = MediaQuery.of(context).size.width;
-    double screenText = MediaQuery.textScaleFactorOf(context);
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -63,7 +62,7 @@ class  _security extends State<security> {
                   fontWeight: FontWeight.w900,
                 ),
 
-                minFontSize: 10,
+                minFontSize: 25,
                 maxFontSize: 30,
                 maxLines: 1,
               ),

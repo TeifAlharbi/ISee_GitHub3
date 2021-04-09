@@ -30,7 +30,6 @@ class  _Test extends State<Test> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWeidth = MediaQuery.of(context).size.width;
-    double screenText = MediaQuery.textScaleFactorOf(context);
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -68,7 +67,7 @@ class  _Test extends State<Test> {
                   fontWeight: FontWeight.w900,
                 ),
 
-                minFontSize: 10,
+                minFontSize: 25,
                 maxFontSize: 30,
                 maxLines: 1,
               ),
@@ -151,6 +150,7 @@ class  _Test extends State<Test> {
                           style: TextStyle(
                             fontFamily: 'Segoe UI',
                             color: const Color(0xFF6A77AB),
+                            fontWeight: FontWeight.w900,
                           ),
                           maxLines: 1,
                           minFontSize: 15,
@@ -186,6 +186,7 @@ class  _Test extends State<Test> {
                           style: TextStyle(
                             fontFamily: 'Segoe UI',
                             color: const Color(0xFF6A77AB),
+                            fontWeight: FontWeight.w900,
                           ),
                           maxLines: 1,
                           minFontSize: 15,
@@ -216,6 +217,7 @@ class  _Test extends State<Test> {
                           style: TextStyle(
                             fontFamily: 'Segoe UI',
                             color: const Color(0xFF6A77AB),
+                            fontWeight: FontWeight.w900,
                           ),
                           maxLines: 1,
                           minFontSize: 15,

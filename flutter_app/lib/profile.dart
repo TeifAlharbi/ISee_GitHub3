@@ -61,7 +61,6 @@ class _Profile extends State<Profile> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWeidth = MediaQuery.of(context).size.width;
-    double screenText = MediaQuery.textScaleFactorOf(context);
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       body: Stack(
@@ -130,7 +129,7 @@ class _Profile extends State<Profile> {
                   fontWeight: FontWeight.w900,
                 ),
 
-                minFontSize: 10,
+                minFontSize: 25,
                 maxFontSize: 30,
                 maxLines: 1,
               ),
@@ -218,7 +217,7 @@ class _Profile extends State<Profile> {
             ),
           ), //----------Footer---------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.35 ,top: screenHeight  * 0.720
+            padding: EdgeInsets.only(left:screenWeidth * 0.37 ,top: screenHeight  * 0.70
                 , right:screenWeidth * 0.08 , bottom: screenHeight  * 0.200),
             child: Container(
               child: RaisedButton(
@@ -336,7 +335,7 @@ class _Profile extends State<Profile> {
             },
           ), //------Get last date from firebase--------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.20
+            padding: EdgeInsets.only(left:screenWeidth * 0.15 ,top: screenHeight  * 0.20
                 , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
             child: AutoSizeText(
              hello,
@@ -358,7 +357,7 @@ class _Profile extends State<Profile> {
             ),
           ), //CVD type text
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.38
+            padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.37
                 , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
             child: AutoSizeText(
               last,
@@ -369,7 +368,7 @@ class _Profile extends State<Profile> {
             ),
           ), //last test text
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.48
+            padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.457
                 , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
             child: AutoSizeText(
               eml,
@@ -380,7 +379,7 @@ class _Profile extends State<Profile> {
             ),
           ), //Email Text
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.58
+            padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.544
                 , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
             child: AutoSizeText(
               phon,
@@ -391,7 +390,7 @@ class _Profile extends State<Profile> {
             ),
           ), //phone number text
           Padding(
-         padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.68
+         padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.63
          , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
            child: AutoSizeText(
               gen,
@@ -411,7 +410,7 @@ class _Profile extends State<Profile> {
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
-                    contentPadding:  EdgeInsets.only(left:screenWeidth * 0.50 ,top: screenHeight  * 0.27),
+                    contentPadding:  EdgeInsets.only(left:screenWeidth * 0.50 ,top: screenHeight  * 0.28),
                     hintText:  cvd.toString(),
                   ),
                 ), //----------Text CVD----------
