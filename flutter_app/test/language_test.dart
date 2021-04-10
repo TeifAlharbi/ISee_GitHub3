@@ -19,8 +19,6 @@ main(){
     expect(actualLanguage,'اختر اللغة');
   });
 
-
-  /*
   //----------Second Test----------
   test("Switch Between Arabic/English --> English",(){
 
@@ -34,7 +32,6 @@ main(){
     expect(expectedLanguage,'Choose language');
   });
 
-   */
-
-
 }
+
+

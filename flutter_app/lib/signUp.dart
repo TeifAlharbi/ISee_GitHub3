@@ -293,8 +293,7 @@ class _signUp extends State<signUp> {
                         var result = await FirebaseAuth.instance
                             .createUserWithEmailAndPassword(
                                 email: userObject.getEmailcontroller.text,
-                                password:
-                                    userObject.getPasswordcontroller.text);
+                                password: userObject.getPasswordcontroller.text);
 
                         if (result != null) {
                           //Check if Directed to Camera Or Test page based on CVD Radio
@@ -350,8 +349,7 @@ class _signUp extends State<signUp> {
                                 .collection("CVD_User")
                                 .doc(result.user.uid)
                                 .set({
-                              'firstName':
-                                  userObject.getFirstNamecontroller.text,
+                              'firstName': userObject.getFirstNamecontroller.text,
                               'lastName': userObject.getLastNamecontroller.text,
                               'phoneNo': userObject.getPhoneNOcontroller.text,
                               'email': userObject.getEmailcontroller.text,

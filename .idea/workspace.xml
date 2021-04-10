@@ -20,30 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa067046-78a8-43ca-b295-161f9927cbef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flutter_app/lib/IshiharaTestPlates.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flutter_app/lib/user.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/profile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/signIn.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/signIn.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/assets/ColorsLabels.txt" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/assets/ColorsLabels.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/IshiharaTestPlates.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/IshiharaTestPlates.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/lib/signUp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/signUp.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate1.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate10.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate10.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate11.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate11.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate12.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate12.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate2.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate3.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate4.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate4.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate5.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate5.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate6.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate6.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate7.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate7.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate8.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate8.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate9.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate9.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testResult.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testResult.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/widgetStyle.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/test/language_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/test/language_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/test/testPlate12_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/test/testPlate_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/test/IshiharaTestPlates_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,38 +70,39 @@
       <recent name="$PROJECT_DIR$/flutter_app/test" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.main.dart">
-    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
-      <option name="filePath" value="$PROJECT_DIR$/flutter_app/lib/main.dart" />
+  <component name="RunManager" selected="Flutter Test.Test Result Red_Green (Deutran)">
+    <configuration name="Drop-Down Menu Correct Selection" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="Drop-Down Menu Correct Selection" />
+      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/IshiharaTestPlates_test.dart" />
       <method v="2" />
     </configuration>
     <configuration name="Drop-Down Menu Wrong Selection" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="Drop-Down Menu Wrong Selection" />
-      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/testPlate_test.dart" />
+      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/IshiharaTestPlates_test.dart" />
       <method v="2" />
     </configuration>
     <configuration name="Test Result Normale" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="Test Result Normale" />
-      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/testPlate12_test.dart" />
+      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/IshiharaTestPlates_test.dart" />
       <method v="2" />
     </configuration>
     <configuration name="Test Result Red_Green (Deutran)" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="Test Result Red_Green (Deutran)" />
-      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/testPlate12_test.dart" />
+      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/IshiharaTestPlates_test.dart" />
       <method v="2" />
     </configuration>
     <configuration name="Test Result Red_Green (Protan)" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="Test Result Red_Green (Protan)" />
-      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/testPlate12_test.dart" />
+      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/IshiharaTestPlates_test.dart" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Flutter Test.Test Result Red_Green (Deutran)" />
         <item itemvalue="Flutter Test.Test Result Red_Green (Protan)" />
         <item itemvalue="Flutter Test.Test Result Normale" />
         <item itemvalue="Flutter Test.Drop-Down Menu Wrong Selection" />
+        <item itemvalue="Flutter Test.Drop-Down Menu Correct Selection" />
       </list>
     </recent_temporary>
   </component>
@@ -158,28 +144,32 @@
       <screen x="0" y="25" width="1280" height="703" />
     </state>
     <state x="118" y="125" width="1033" height="503" key="AVDManager/0.25.1280.703@0.25.1280.703" timestamp="1617868959003" />
-    <state width="1191" height="252" key="GridCell.Tab.0.bottom" timestamp="1617877748065">
-      <screen x="0" y="25" width="1280" height="707" />
+    <state width="1233" height="179" key="GridCell.Tab.0.bottom" timestamp="1618045344944">
+      <screen x="0" y="25" width="1280" height="703" />
     </state>
-    <state width="1191" height="547" key="GridCell.Tab.0.bottom/0.25.1280.703@0.25.1280.703" timestamp="1617872297460" />
+    <state width="1238" height="113" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1618041912894" />
+    <state width="1233" height="179" key="GridCell.Tab.0.bottom/0.25.1280.703@0.25.1280.703" timestamp="1618045344944" />
     <state width="1191" height="102" key="GridCell.Tab.0.bottom/0.25.1280.705@0.25.1280.705" timestamp="1617877576394" />
     <state width="1191" height="252" key="GridCell.Tab.0.bottom/0.25.1280.707@0.25.1280.707" timestamp="1617877748065" />
-    <state width="1191" height="252" key="GridCell.Tab.0.center" timestamp="1617877748064">
-      <screen x="0" y="25" width="1280" height="707" />
+    <state width="1233" height="179" key="GridCell.Tab.0.center" timestamp="1618045344943">
+      <screen x="0" y="25" width="1280" height="703" />
     </state>
-    <state width="1191" height="547" key="GridCell.Tab.0.center/0.25.1280.703@0.25.1280.703" timestamp="1617872297460" />
+    <state width="1238" height="113" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1618041912893" />
+    <state width="1233" height="179" key="GridCell.Tab.0.center/0.25.1280.703@0.25.1280.703" timestamp="1618045344943" />
     <state width="1191" height="102" key="GridCell.Tab.0.center/0.25.1280.705@0.25.1280.705" timestamp="1617877576393" />
     <state width="1191" height="252" key="GridCell.Tab.0.center/0.25.1280.707@0.25.1280.707" timestamp="1617877748064" />
-    <state width="1191" height="252" key="GridCell.Tab.0.left" timestamp="1617877748063">
-      <screen x="0" y="25" width="1280" height="707" />
+    <state width="1233" height="179" key="GridCell.Tab.0.left" timestamp="1618045344943">
+      <screen x="0" y="25" width="1280" height="703" />
     </state>
-    <state width="1191" height="547" key="GridCell.Tab.0.left/0.25.1280.703@0.25.1280.703" timestamp="1617872297459" />
+    <state width="1238" height="113" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1618041912893" />
+    <state width="1233" height="179" key="GridCell.Tab.0.left/0.25.1280.703@0.25.1280.703" timestamp="1618045344943" />
     <state width="1191" height="102" key="GridCell.Tab.0.left/0.25.1280.705@0.25.1280.705" timestamp="1617877576393" />
     <state width="1191" height="252" key="GridCell.Tab.0.left/0.25.1280.707@0.25.1280.707" timestamp="1617877748063" />
-    <state width="1191" height="252" key="GridCell.Tab.0.right" timestamp="1617877748064">
-      <screen x="0" y="25" width="1280" height="707" />
+    <state width="1233" height="179" key="GridCell.Tab.0.right" timestamp="1618045344944">
+      <screen x="0" y="25" width="1280" height="703" />
     </state>
-    <state width="1191" height="547" key="GridCell.Tab.0.right/0.25.1280.703@0.25.1280.703" timestamp="1617872297460" />
+    <state width="1238" height="113" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1618041912894" />
+    <state width="1233" height="179" key="GridCell.Tab.0.right/0.25.1280.703@0.25.1280.703" timestamp="1618045344944" />
     <state width="1191" height="102" key="GridCell.Tab.0.right/0.25.1280.705@0.25.1280.705" timestamp="1617877576393" />
     <state width="1191" height="252" key="GridCell.Tab.0.right/0.25.1280.707@0.25.1280.707" timestamp="1617877748064" />
     <state x="196" y="25" width="997" height="703" key="SettingsEditor" timestamp="1617846725410">
@@ -196,12 +186,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/flutter_app/lib/signUp.dart</url>
-          <line>99</line>
+          <line>97</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/flutter_app/lib/signUp.dart</url>
-          <line>155</line>
+          <line>152</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

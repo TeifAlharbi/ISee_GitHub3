@@ -12,25 +12,6 @@ import 'globals.dart' as globals;
 class TestPlate12 extends StatefulWidget {
   @override
   _TestPlate12 createState() => _TestPlate12();
-
-  static String ishiharaTestResult(
-      int wrongAnswersCounter, String page11_choice1, String page11_choice2) {
-    //less than or equal to three mistakes is a person with normal vision
-    if (wrongAnswersCounter <= 3) {
-      return "Normal vision";
-      //otherwise is not normal vision
-    } else if (wrongAnswersCounter >= 4) {
-      //the actual plate number is 42, if the user only see 2 then he/she
-      //is Protanopia
-      if (page11_choice1 == "Nothing" && page11_choice2 == "2") {
-        return "Protanopia";
-
-        //if the user only see 4 then he/she is Duetronopia
-      } else if (page11_choice1 == "4" && page11_choice2 == "Nothing") {
-        return "Duetronopia";
-      }
-    }
-  }
 }
 
 //current date
@@ -279,6 +260,7 @@ class _TestPlate12 extends State<TestPlate12> {
                                                   {'CVDType': "Duetronopia"});
                                         }
                                       }
+
                                     });
                                     return new ListTile();
                                   });
