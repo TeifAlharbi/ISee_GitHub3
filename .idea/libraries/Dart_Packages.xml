@@ -660,6 +660,13 @@
             </list>
           </value>
         </entry>
+        <entry key="styled_text">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/styled_text-1.0.3+4/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="term_glyph">
           <value>
             <list>
@@ -765,6 +772,13 @@
             </list>
           </value>
         </entry>
+        <entry key="xmlstream">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/xmlstream-0.12.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="yaml">
           <value>
             <list>
@@ -864,6 +878,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0-nullsafety.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0-nullsafety.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0-nullsafety.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/styled_text-1.0.3+4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.0-nullsafety.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.19-nullsafety.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/tflite-1.1.1/lib" />
@@ -879,6 +894,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/win32-1.7.4+1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/xdg_directories-0.1.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/xml-4.5.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/xmlstream-0.12.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/yaml-2.2.1/lib" />
       <root url="file://$USER_HOME$/tools/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$USER_HOME$/tools/flutter/packages/flutter/lib" />

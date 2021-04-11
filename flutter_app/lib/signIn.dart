@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_app/aboutISee.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_app/Camera.dart';
 import 'package:flutter_app/signUp.dart';
 import 'package:flutter_app/user.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:styled_text/styled_text.dart';
 
 class signIn extends StatefulWidget {
   @override
@@ -48,17 +50,33 @@ class signIn extends StatefulWidget {
         showDialog(
           context: context,
           builder: (ctx) => AlertDialog(
-            title: Text("Please Try Again!!"),
-            content: Text("No user found for that email."),
+            title: Row(
+                children:[
+                  Image.asset(
+                    "images/email.png",
+                    width: 240, height: 55,
+                    fit: BoxFit.contain,
+                  ),
+                ]
+            ),
+            content:
+            StyledText(
+              text: '<bold>Please Try Again!!</bold>           '
+                  'No user found for that email.',textAlign: TextAlign.center,
+              styles: {
+                'bold': TextStyle(fontWeight: FontWeight.bold),
+              },
+            ),
             actions: <Widget>[
               FlatButton(
                 onPressed: () {
                   Navigator.of(ctx).pop();
                 },
-                child: Text("OK"),
+                child: AutoSizeText("OK"),
               ),
             ],
           ),
+
         );//Alert Dialog
        // print('No user found for that email.');
       }else if (e.code == 'wrong-password') {
@@ -66,14 +84,29 @@ class signIn extends StatefulWidget {
         showDialog(
           context: context,
           builder: (ctx) => AlertDialog(
-            title: Text("Please Try Again!!"),
-            content: Text("Wrong password provided for that user."),
+            title: Row(
+                children:[
+                  Image.asset(
+                    "images/password.png",
+                    width: 240, height: 55,
+                    fit: BoxFit.contain,
+                  ),
+                ]
+            ),
+            content:
+            StyledText(
+              text: '<bold>Please Try Again!!</bold>           '
+                  'Wrong password provided for that user.',textAlign: TextAlign.center,
+              styles: {
+                'bold': TextStyle(fontWeight: FontWeight.bold),
+              },
+            ),
             actions: <Widget>[
               FlatButton(
                 onPressed: () {
                   Navigator.of(ctx).pop();
                 },
-                child: Text("OK"),
+                child: AutoSizeText("OK"),
               ),
             ],
           ),
@@ -94,6 +127,7 @@ class _signIn extends State<signIn> {
   //variables
   final _formkey = GlobalKey<FormState>();
   user userObject = new user();
+  bool _isObscure = true;
 
 
 
@@ -146,32 +180,50 @@ class _signIn extends State<signIn> {
                       ),
                     ),
                   ), //----------ISee LOGO----------
-                  TextFormField(
-                    controller: userObject.getEmailcontroller,
-                    decoration: InputDecoration(
-                      contentPadding:  EdgeInsets.only(left:screenWeidth *0.10  ),
-                      hintText: 'Email',
-                    ),
-                    // ignore: missing_return
-                    validator: (value) {
-                    return signIn.validateEmail(value);
-                    },
-                  ), //----------Text Email----------
-                  TextFormField(
-                    controller: userObject.getPasswordcontroller,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      contentPadding:  EdgeInsets.only(left:screenWeidth *0.10 ,top: screenHeight  * 0.05),
-                      hintText: 'Password',
-
-                    ),
-                    // ignore: missing_return
-                    validator: (value) {
-                    return signIn.validatePassword(value);
-                    },
-                  ), //----------Text Password----------
                   Padding(
-                    padding: EdgeInsets.only(top: 20.0),
+                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.01, right:screenWeidth *0.05),
+                    child: TextFormField(
+                      controller: userObject.getEmailcontroller,
+                      decoration: InputDecoration(
+                 //     contentPadding:  EdgeInsets.only(left:screenWeidth *0.10),
+                        prefixIcon: Icon(Icons.email),
+                     //   prefixIcon: Icon(Icons.email),
+                        hintText: 'Email',
+                      ),
+                      // ignore: missing_return
+                      validator: (value) {
+                      return signIn.validateEmail(value);
+                      },
+                    ),
+                  ), //----------Text Email----------
+                  Padding(
+                 //   padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    child: TextFormField(
+                      controller: userObject.getPasswordcontroller,
+                      obscureText:  _isObscure,
+                      decoration: InputDecoration(
+                      // contentPadding:  EdgeInsets.only(left:screenWeidth *0.10 ,top: screenHeight  * 0.05),
+                          prefixIcon: Icon(Icons.vpn_key),
+                        hintText: 'Password',
+                          suffixIcon: IconButton(
+                              icon: Icon(
+                                  _isObscure ? Icons.visibility : Icons.visibility_off),
+                              onPressed: () {
+                                setState(() {
+                                  _isObscure = !_isObscure;
+                                });
+                              })
+                      ),
+                      // ignore: missing_return
+                      validator: (value) {
+                      return signIn.validatePassword(value);
+                      },
+                    ),
+                  ),
+                  //----------Text Password----------
+                  Padding(
+                    padding: EdgeInsets.only(top: 30.0),
                     child: RaisedButton(
                       color: const Color(0xff6981b5),
                       padding: EdgeInsets.symmetric(vertical: 13.0),

@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_app/testInstructions.dart';
 import 'package:flutter_app/testPlate2.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:styled_text/styled_text.dart';
 import 'globals.dart' as globals;
 import 'IshiharaTestPlates.dart';
 
@@ -269,8 +270,24 @@ class  _testPlate1 extends State<testPlate1> {
                     showDialog(
                       context: context,
                       builder: (ctx) => AlertDialog(
-                        title: AutoSizeText("Please Try Again!!"),
-                        content: AutoSizeText("You Must Select a Number"),
+                        title: Row(
+                            children:[
+                              Image.asset(
+                                "images/warning.png",
+                                width: 240, height: 55,
+                                fit: BoxFit.contain,
+                              ),
+                            ]
+                        ),
+                        content:
+                        StyledText(
+                          text: '<bold>Please Try Again!!</bold>           '
+                              'You Must Select a Number.',textAlign: TextAlign.center,
+                          styles: {
+                            'bold': TextStyle(fontWeight: FontWeight.bold),
+
+                          },
+                        ),
                         actions: <Widget>[
                           FlatButton(
                             onPressed: () {
@@ -281,8 +298,6 @@ class  _testPlate1 extends State<testPlate1> {
                         ],
                       ),
                     );//Alert Dialog
-
-
                   }
                 },
                   child: Icon(

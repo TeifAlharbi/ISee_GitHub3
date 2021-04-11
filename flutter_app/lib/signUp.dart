@@ -71,6 +71,7 @@ class _signUp extends State<signUp> {
   //TextEditingController _CVDTypecontroller = TextEditingController();
   int selectedRadio;
   String chooseCVD;
+  bool _isObscure = true;
   TextEditingController _CVDTypecontroller = TextEditingController();
   List CVDlistItem = ["Duetronopia", "Protanopia", "Tritanopia"];
 
@@ -103,62 +104,37 @@ class _signUp extends State<signUp> {
               ),
             ),
           ), //----------Background----------
-          Padding(
-            padding: EdgeInsets.only(
-                left: screenWeidth * 0.05,
-                top: screenHeight * 0.10,
-                right: screenWeidth * 0.10),
-            child: Container(
-              alignment: Alignment(-0.78, -0.37),
-              width: screenWeidth,
-              height: screenHeight / 13,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(28.0),
-                color: Colors.white.withOpacity(0.72),
-                border: Border.all(
-                  width: 1.0,
-                  color: const Color(0xFF707070).withOpacity(0.72),
-                ),
-              ),
-              child: AutoSizeText(
-                'Sign Up',
-                style: TextStyle(
-                  fontFamily: 'Segoe UI',
-                  //   fontSize: screenText * 12.0,
-                  color: const Color(0xFF6981B5).withOpacity(0.72),
-                  fontWeight: FontWeight.w900,
-                ),
-                minFontSize: 25,
-                maxFontSize: 30,
-                maxLines: 1,
-              ),
-            ),
-          ), //----------Header----------
-          Padding(
-            padding: EdgeInsets.only(
-                left: screenWeidth * 0.73, top: screenHeight * 0.09),
-            child: Container(
-              width: screenWeidth * 0.20,
-              height: screenHeight * 0.09,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(178.0),
-                image: DecorationImage(
-                  image: const AssetImage('images/ISee.png'),
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
-          ), //----------ISee Logo----------
+
           Form(
             key: _formkey,
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
+
+                  // padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                   AppBar(
+                     backgroundColor: Colors.white.withOpacity(0.72),
+                    title: AutoSizeText('Sign Up',
+                      style:TextStyle(
+                      fontFamily: 'Segoe UI',
+                      //   fontSize: screenText * 12.0,
+                      color: const Color(0xFF6981B5).withOpacity(0.72),
+                      fontWeight: FontWeight.w900,
+                    ),
+                    minFontSize: 25,
+                    maxFontSize: 30,
+                    maxLines: 1,),
+                    centerTitle: true,
+                  ),
+
                   Padding(
-                    padding: EdgeInsets.only(top: screenHeight * 0.20),
+                   // padding: EdgeInsets.only(top: screenHeight * 0.20),
+                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
                     child: TextFormField(
                       controller: userObject.getFirstNamecontroller,
-                      decoration: InputDecoration(labelText: 'First Name'),
+                      decoration: InputDecoration(labelText: 'First Name',
+                        prefixIcon: Icon(Icons.drive_file_rename_outline),
+                      ),
                       // ignore: missing_return
                       validator: (value) {
                         if (value.isEmpty) {
@@ -167,65 +143,97 @@ class _signUp extends State<signUp> {
                       },
                     ),
                   ), //----------Text First Name----------
-                  TextFormField(
-                    controller: userObject.getLastNamecontroller,
-                    decoration: InputDecoration(labelText: 'Last Name'),
-                    // ignore: missing_return
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return 'Please Fill Last Name Input';
-                      }
-                    },
+                  Padding(
+                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    child: TextFormField(
+                      controller: userObject.getLastNamecontroller,
+                      decoration: InputDecoration(labelText: 'Last Name',
+                          prefixIcon: Icon(Icons.drive_file_rename_outline),),
+                      // ignore: missing_return
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return 'Please Fill Last Name Input';
+                        }
+                      },
+                    ),
                   ), //----------Text Last Name----------
-                  TextFormField(
-                    controller: userObject.getPhoneNOcontroller,
-                    decoration: InputDecoration(labelText: 'Phone Number'),
-                    // ignore: missing_return
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return 'Please Fill Phone Number Input';
-                      }
-                    },
+                  Padding(
+                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    child: TextFormField(
+                      controller: userObject.getPhoneNOcontroller,
+                      decoration: InputDecoration(labelText: 'Phone Number',
+                        prefixIcon: Icon(Icons.phone),),
+                      // ignore: missing_return
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return 'Please Fill Phone Number Input';
+                        }
+                      },
+                    ),
                   ), //----------Text Phone Number----------
-                  TextFormField(
-                    controller: userObject.getEmailcontroller,
-                    decoration: InputDecoration(labelText: 'Email'),
-                    // ignore: missing_return
-                    validator: (value) {
-                      return signUp.validateEmailFormat(value);
-                    },
+                  Padding(
+                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    child: TextFormField(
+                      controller: userObject.getEmailcontroller,
+                      decoration: InputDecoration(labelText: 'Email',
+                        prefixIcon: Icon(Icons.email),),
+                      // ignore: missing_return
+                      validator: (value) {
+                        return signUp.validateEmailFormat(value);
+                      },
+                    ),
                   ), //----------Text Email----------
-                  TextFormField(
-                    controller: userObject.getGendercontroller,
-                    decoration: InputDecoration(labelText: 'Gender'),
-                    // ignore: missing_return
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return 'Please Fill Gender Input';
-                      }
-                    },
+                  Padding(
+                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    child: TextFormField(
+                      controller: userObject.getGendercontroller,
+                      decoration: InputDecoration(labelText: 'Gender',
+                        prefixIcon: Icon(Icons.assignment_ind_rounded),),
+                      // ignore: missing_return
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return 'Please Fill Gender Input';
+                        }
+                      },
+                    ),
                   ), //----------Text Gender----------
-                  TextFormField(
-                    controller: userObject.getPasswordcontroller,
-                    obscureText: true,
-                    decoration: InputDecoration(labelText: 'Password'),
-                    // ignore: missing_return
-                    validator: (value) {
-                      return signUp.validatePasswordFormat(value);
-                    },
+                  Padding(
+                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    child: TextFormField(
+                      controller: userObject.getPasswordcontroller,
+                      obscureText: _isObscure,
+                      decoration: InputDecoration(labelText: 'Password',
+                        prefixIcon: Icon(Icons.vpn_key),
+                          suffixIcon: IconButton(
+                              icon: Icon(
+                                  _isObscure ? Icons.visibility : Icons.visibility_off),
+                              onPressed: () {
+                                setState(() {
+                                  _isObscure = !_isObscure;
+                                });
+                              })
+                      ),
+
+
+
+                      // ignore: missing_return
+                      validator: (value) {
+                        return signUp.validatePasswordFormat(value);
+                      },
+                    ),
                   ), //----------Text Password----------
 
                   Stack(
                     children: <Widget>[
                       Padding(
-                        padding: EdgeInsets.only(right: 270.0, top: 20.0),
+                        padding: EdgeInsets.only(right: 200.0, top: 30.0 ),
                         child: Text(
                           'My CVD Type',
                           textAlign: TextAlign.left,
                         ),
                       ), //----------Text CVD----------
                       Padding(
-                        padding: EdgeInsets.only(left: 120.0, top: 10.0),
+                        padding: EdgeInsets.only(left: 140.0, top: 16.0),
                         child: Container(
                           padding: EdgeInsets.only(left: 16.0),
                           decoration: BoxDecoration(
@@ -242,8 +250,7 @@ class _signUp extends State<signUp> {
                             value: chooseCVD,
                             onChanged: (newValue) {
                               setState(() {
-                                chooseCVD =
-                                    userObject.getCVDTypecontroller.toString();
+                                chooseCVD = userObject.getCVDTypecontroller.toString();
                                 chooseCVD = newValue;
                               });
                             },
@@ -263,10 +270,12 @@ class _signUp extends State<signUp> {
 
                   ListTile(
                     contentPadding: new EdgeInsets.only(
-                        right: 20.0),
+                        top:20,right: 20.0 ),
                     //    contentPadding: new EdgeInsets.only(left:screenWeidth * 0.20 ,top: screenHeight * 0.09),
                     title: const AutoSizeText(
-                        'I Don\'t Know My CVD Type, \n I Will Take The Test.'),
+                        'I Don\'t Know My CVD Type,\nI Will Take The Test.',
+                      maxLines: 2,
+                    ),
                     leading: Radio(
                       value: 1,
                       groupValue: selectedRadio,
@@ -279,118 +288,121 @@ class _signUp extends State<signUp> {
                       },
                     ),
                   ), //----------CVD Radio----------
-                  RaisedButton(
-                    color: const Color(0xff6981b5),
-                    padding:
-                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
-                    child: AutoSizeText(
-                      'Sign UP',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onPressed: () async {
-                      if (_formkey.currentState.validate()) {
-                        //1-Create user with email and pass
-                        var result = await FirebaseAuth.instance
-                            .createUserWithEmailAndPassword(
-                                email: userObject.getEmailcontroller.text,
-                                password: userObject.getPasswordcontroller.text);
+                  Padding(
+                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    child: RaisedButton(
+                      color: const Color(0xff6981b5),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+                      child: AutoSizeText(
+                        'Sign UP',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () async {
+                        if (_formkey.currentState.validate()) {
+                          //1-Create user with email and pass
+                          var result = await FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                                  email: userObject.getEmailcontroller.text,
+                                  password: userObject.getPasswordcontroller.text);
 
-                        if (result != null) {
-                          //Check if Directed to Camera Or Test page based on CVD Radio
-                          if (selectedRadio == 1) {
-                            //2-Add user information into CVD_User table
-                            FirebaseFirestore.instance
-                                .collection("CVD_User")
-                                .doc(result.user.uid)
-                                .set({
-                              'firstName':
-                                  userObject.getFirstNamecontroller.text,
-                              'lastName': userObject.getLastNamecontroller.text,
-                              'phoneNo': userObject.getPhoneNOcontroller.text,
-                              'email': userObject.getEmailcontroller.text,
-                              'gender': userObject.getGendercontroller.text,
-                              'CVDType': 'none',
-                            });
-                            print(
-                                "Successfully Registered without CVD type = " +
-                                    selectedRadio.toString());
-                            print(userObject.getFirstNamecontroller);
-                            //not working IDK why
-                            showDialog(
-                              context: context,
-                              builder: (ctx) => AlertDialog(
-                                title: Text("Successfully Registered"),
-                                content: Text("Welcome " +
-                                    userObject.getFirstNamecontroller.text +
-                                    "." +
-                                    "\n You will be directed to Test page"),
-                                actions: <Widget>[
-                                  FlatButton(
-                                    onPressed: () {
-                                      Navigator.of(ctx).pop();
-                                    },
-                                    child: Text("OK"),
-                                  ),
-                                ],
-                              ),
-                            ); //Alert Dialog
+                          if (result != null) {
+                            //Check if Directed to Camera Or Test page based on CVD Radio
+                            if (selectedRadio == 1) {
+                              //2-Add user information into CVD_User table
+                              FirebaseFirestore.instance
+                                  .collection("CVD_User")
+                                  .doc(result.user.uid)
+                                  .set({
+                                'firstName':
+                                    userObject.getFirstNamecontroller.text,
+                                'lastName': userObject.getLastNamecontroller.text,
+                                'phoneNo': userObject.getPhoneNOcontroller.text,
+                                'email': userObject.getEmailcontroller.text,
+                                'gender': userObject.getGendercontroller.text,
+                                'CVDType': 'none',
+                              });
+                              print(
+                                  "Successfully Registered without CVD type = " +
+                                      selectedRadio.toString());
+                              print(userObject.getFirstNamecontroller);
+                              //not working IDK why
+                              showDialog(
+                                context: context,
+                                builder: (ctx) => AlertDialog(
+                                  title: Text("Successfully Registered"),
+                                  content: Text("Welcome " +
+                                      userObject.getFirstNamecontroller.text +
+                                      "." +
+                                      "\n You will be directed to Test page"),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      onPressed: () {
+                                        Navigator.of(ctx).pop();
+                                      },
+                                      child: Text("OK"),
+                                    ),
+                                  ],
+                                ),
+                              ); //Alert Dialog
 
-                            //3-Direct the user to test page
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => testInstructions()),
-                            );
-                            print("Directed to Test page");
+                              //3-Direct the user to test page
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => testInstructions()),
+                              );
+                              print("Directed to Test page");
+                            } else {
+                              //    String finalResult =  result.user.uid;
+                              //2-Add user information into CVD_User table
+                              FirebaseFirestore.instance
+                                  .collection("CVD_User")
+                                  .doc(result.user.uid)
+                                  .set({
+                                'firstName': userObject.getFirstNamecontroller.text,
+                                'lastName': userObject.getLastNamecontroller.text,
+                                'phoneNo': userObject.getPhoneNOcontroller.text,
+                                'email': userObject.getEmailcontroller.text,
+                                'gender': userObject.getGendercontroller.text,
+                                'CVDType': userObject.getCVDTypecontroller.text,
+                              });
+
+                              print("Successfully Registered with CVD type = " +
+                                  selectedRadio.toString());
+                              //not working IDK why
+                              showDialog(
+                                context: context,
+                                builder: (ctx) => AlertDialog(
+                                  title: Text("Successfully Registered"),
+                                  content: Text("Welcome " +
+                                      userObject.getFirstNamecontroller.text +
+                                      "." +
+                                      "\n You will be directed to Camera page"),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      onPressed: () {
+                                        Navigator.of(ctx).pop();
+                                      },
+                                      child: Text("OK"),
+                                    ),
+                                  ],
+                                ),
+                              ); //Alert Dialog
+
+                              //3-Direct the user to camera page
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => Camera()),
+                              );
+                              print("Directed to Camera page");
+                            }
                           } else {
-                            //    String finalResult =  result.user.uid;
-                            //2-Add user information into CVD_User table
-                            FirebaseFirestore.instance
-                                .collection("CVD_User")
-                                .doc(result.user.uid)
-                                .set({
-                              'firstName': userObject.getFirstNamecontroller.text,
-                              'lastName': userObject.getLastNamecontroller.text,
-                              'phoneNo': userObject.getPhoneNOcontroller.text,
-                              'email': userObject.getEmailcontroller.text,
-                              'gender': userObject.getGendercontroller.text,
-                              'CVDType': userObject.getCVDTypecontroller.text,
-                            });
-
-                            print("Successfully Registered with CVD type = " +
-                                selectedRadio.toString());
-                            //not working IDK why
-                            showDialog(
-                              context: context,
-                              builder: (ctx) => AlertDialog(
-                                title: Text("Successfully Registered"),
-                                content: Text("Welcome " +
-                                    userObject.getFirstNamecontroller.text +
-                                    "." +
-                                    "\n You will be directed to Camera page"),
-                                actions: <Widget>[
-                                  FlatButton(
-                                    onPressed: () {
-                                      Navigator.of(ctx).pop();
-                                    },
-                                    child: Text("OK"),
-                                  ),
-                                ],
-                              ),
-                            ); //Alert Dialog
-
-                            //3-Direct the user to camera page
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(builder: (context) => Camera()),
-                            );
-                            print("Directed to Camera page");
+                            print('Something went wrong. Please Try Again!!');
                           }
-                        } else {
-                          print('Something went wrong. Please Try Again!!');
                         }
-                      }
-                    },
+                      },
+                    ),
                   ), //----------SignUP Button----------
                   Padding( padding: const EdgeInsets.only(top: 10.0, right: 300.0),
                     child: InkWell(
