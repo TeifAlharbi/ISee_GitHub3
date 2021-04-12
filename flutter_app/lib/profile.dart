@@ -467,6 +467,7 @@ class _Profile extends State<Profile> {
             ),
           ),
           Padding(
+            //for me padding: const EdgeInsets.only(top: 600.0, left: 65.0),
             padding: const EdgeInsets.only(top: 575.0, left: 65.0),
             child: Container(
               child: InkWell(
@@ -482,6 +483,7 @@ class _Profile extends State<Profile> {
             ),
           ), //----------Setting Icon----------
           Padding(
+            //for me padding: const EdgeInsets.only(top: 605.0, left: 250.0),
             padding: const EdgeInsets.only(top: 580.0, left: 250.0),
             child: Container(
               child: InkWell(
@@ -497,6 +499,7 @@ class _Profile extends State<Profile> {
             ),
           ), //----------Profile Icon----------
           Padding(
+            //for me padding: const EdgeInsets.only(top: 595.0, left: 145.0),
             padding: const EdgeInsets.only(top: 565.0, left: 145.0),
             child: Container(
               child: InkWell(
@@ -510,6 +513,7 @@ class _Profile extends State<Profile> {
             ),
           ), //----------Camera Icon----------
         Padding(
+          //for me padding: const EdgeInsets.only(top: 680.0, left: 25.0),
           padding: const EdgeInsets.only(top: 650.0, left: 25.0),
             child: InkWell(
               child: SvgPicture.string(

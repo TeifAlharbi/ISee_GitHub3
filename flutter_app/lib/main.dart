@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
                 theme: ThemeData(
                   primarySwatch: Colors.blue,
                 ),
-                home: signUp());
+                home: Profile());
           } else {
             return MaterialApp(
                 debugShowCheckedModeBanner: false,

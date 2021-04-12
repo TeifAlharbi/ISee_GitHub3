@@ -269,8 +269,7 @@ class _signUp extends State<signUp> {
                   ), //---------- CVD drop down  ----------
 
                   ListTile(
-                    contentPadding: new EdgeInsets.only(
-                        top:20,right: 20.0 ),
+                    contentPadding: new EdgeInsets.only(right: 20.0 ),
                     //    contentPadding: new EdgeInsets.only(left:screenWeidth * 0.20 ,top: screenHeight * 0.09),
                     title: const AutoSizeText(
                         'I Don\'t Know My CVD Type,\nI Will Take The Test.',
@@ -289,7 +288,7 @@ class _signUp extends State<signUp> {
                     ),
                   ), //----------CVD Radio----------
                   Padding(
-                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.01, right:screenWeidth *0.05),
                     child: RaisedButton(
                       color: const Color(0xff6981b5),
                       padding:
@@ -404,7 +403,7 @@ class _signUp extends State<signUp> {
                       },
                     ),
                   ), //----------SignUP Button----------
-                  Padding( padding: const EdgeInsets.only(top: 10.0, right: 300.0),
+                  Padding( padding: const EdgeInsets.only(top: 0.0, right: 300.0),
                     child: InkWell(
                       child: SvgPicture.string(
                         // arrow-return-left

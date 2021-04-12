@@ -177,10 +177,10 @@ class  _TestResult extends State<TestResult> {
                       if (document.id == currentUser.uid) {
                       Future.delayed(Duration(), () async {
                           await setState(() {
-                            correctAnswer = document['correct_answer'];
-                            incorrectanswer = document['wrong_answer'];
-                            finalResult = document['final_result'];
-                            _datecontroller.text = document['Date'];
+                            correctAnswer = document.data()['correct_answer'];
+                            incorrectanswer = document.data()['wrong_answer'];
+                            finalResult = document.data()['final_result'];
+                            _datecontroller.text = document.data()['Date'];
                           });
                         return new ListTile();
                       });
@@ -209,7 +209,7 @@ class  _TestResult extends State<TestResult> {
                       if (document.id == currentUser.uid) {
                         Future.delayed(Duration(), () async {
                           await setState(() {
-                            _CVDTypecontroller.text = document['CVDType'];
+                            _CVDTypecontroller.text = document.data()['CVDType'];
                           });
                         });
                         return new ListTile();

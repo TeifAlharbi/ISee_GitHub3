@@ -158,6 +158,7 @@ class _Camera extends State<Camera> with SingleTickerProviderStateMixin {
             ),
           ), //----------Footer---------
           Padding(
+            //for me padding: const EdgeInsets.only(top: 600.0, left: 65.0),
             padding: const EdgeInsets.only(top: 575.0, left: 65.0),
             child: Container(
               child: InkWell(
@@ -174,6 +175,7 @@ class _Camera extends State<Camera> with SingleTickerProviderStateMixin {
             ),
           ), //----------Setting Icon----------
           Padding(
+            //for me padding: const EdgeInsets.only(top: 605.0, left: 250.0),
             padding: const EdgeInsets.only(top: 580.0, left: 250.0),
             child: Container(
               child: InkWell(
@@ -190,6 +192,7 @@ class _Camera extends State<Camera> with SingleTickerProviderStateMixin {
             ),
           ), //----------Profile Icon----------
           Padding(
+            //for me padding: const EdgeInsets.only(top: 595.0, left: 145.0),
             padding: const EdgeInsets.only(top: 565.0, left: 145.0),
             child: Container(
               child: InkWell(

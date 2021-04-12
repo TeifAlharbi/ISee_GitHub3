@@ -187,6 +187,37 @@ class _TestPlate12 extends State<TestPlate12> {
             ),
           ), //---------- first drop down  ----------
           Padding(
+            padding: EdgeInsets.only(left:screenWeidth * 0.70 ,top: screenHeight  * 0.910),
+            child: Container(
+              child: SizedBox(
+                width: screenWeidth * 0.70,
+                height: screenHeight/02,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: AutoSizeText(
+                        'Submit',
+                        style: TextStyle(
+                          fontFamily: 'Segoe UI',
+                          //    fontSize: 24,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                        ),
+                        textAlign: TextAlign.center,
+
+                        minFontSize: 16,
+                        maxFontSize: 25,
+                        maxLines: 1,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ), //----------Submit Text----------
+          Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               padding: EdgeInsets.only(
@@ -338,7 +369,7 @@ class _TestPlate12 extends State<TestPlate12> {
                 ),
               ),
             ),
-          ), //----------next button----------
+          ), //----------Submit button----------
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(

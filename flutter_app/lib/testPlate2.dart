@@ -232,6 +232,7 @@ class  _testPlate2 extends State<testPlate2> {
                             children:[
                               Image.asset(
                                 "images/warning.png",
+                                // for me width: 230
                                 width: 240, height: 55,
                                 fit: BoxFit.contain,
                               ),
@@ -239,6 +240,7 @@ class  _testPlate2 extends State<testPlate2> {
                         ),
                         content:
                         StyledText(
+                          //for me '<bold>Please Try Again!!</bold>                       '
                           text: '<bold>Please Try Again!!</bold>           '
                               'You Must Select a Number.',textAlign: TextAlign.center,
                           styles: {
