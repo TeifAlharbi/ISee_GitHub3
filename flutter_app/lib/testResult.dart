@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_app/Test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_app/user.dart';
+import 'globals.dart' as globals;
 
 class TestResult extends StatefulWidget {
   @override
@@ -17,11 +19,12 @@ class  _TestResult extends State<TestResult> {
 
   //variables
   final _formkey = GlobalKey<FormState>();
-  TextEditingController _datecontroller = TextEditingController();
-  TextEditingController _testResultcontroller = TextEditingController();
-  TextEditingController _correctAnswerscontroller = TextEditingController();
-  TextEditingController _incorrectAnswerscontroller = TextEditingController();
-  TextEditingController _CVDTypecontroller = TextEditingController();
+  user userObject = new user();
+  //TextEditingController _datecontroller = TextEditingController();
+  //TextEditingController _testResultcontroller = TextEditingController();
+ // TextEditingController _correctAnswerscontroller = TextEditingController();
+  //TextEditingController _incorrectAnswerscontroller = TextEditingController();
+  //TextEditingController _CVDTypecontroller = TextEditingController();
   String formattedDate;
   String cuurDate;
   int correctAnswer;
@@ -30,11 +33,11 @@ class  _TestResult extends State<TestResult> {
 
   @override
   void dispose() {
-    _datecontroller.dispose();
-    _testResultcontroller.dispose();
-    _correctAnswerscontroller.dispose();
-    _incorrectAnswerscontroller.dispose();
-    _CVDTypecontroller.dispose();
+    userObject.getDatecontroller.dispose();
+    userObject.getTestResultcontroller.dispose();
+    userObject.getCorrectAnswerscontroller.dispose();
+    userObject.getIncorrectAnswerscontroller.dispose();
+    userObject.getCVDTypecontroller.dispose();
     super.dispose();
   }
 
@@ -180,7 +183,7 @@ class  _TestResult extends State<TestResult> {
                             correctAnswer = document.data()['correct_answer'];
                             incorrectanswer = document.data()['wrong_answer'];
                             finalResult = document.data()['final_result'];
-                            _datecontroller.text = document.data()['Date'];
+                            userObject.getDatecontroller.text = document.data()['Date'];
                           });
                         return new ListTile();
                       });
@@ -209,7 +212,7 @@ class  _TestResult extends State<TestResult> {
                       if (document.id == currentUser.uid) {
                         Future.delayed(Duration(), () async {
                           await setState(() {
-                            _CVDTypecontroller.text = document.data()['CVDType'];
+                            userObject.getCVDTypecontroller.text = document.data()['CVDType'];
                           });
                         });
                         return new ListTile();
@@ -271,13 +274,82 @@ class  _TestResult extends State<TestResult> {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),//My CVD Type text
+
+
+          StreamBuilder(
+            stream: FirebaseFirestore.instance
+                .collection('Ishihara_Test')
+                .snapshots(),
+            builder: (BuildContext context,
+                AsyncSnapshot<QuerySnapshot> snapshot) {
+              if (!snapshot.hasData) return Text('');
+              switch (snapshot.connectionState) {
+                case ConnectionState.waiting:
+                  return new Text('');
+                default:
+                  return new ListView(
+                    children: snapshot.data.docs
+                        .map((DocumentSnapshot document) {
+                      var currentUser =
+                          FirebaseAuth.instance.currentUser;
+                      if (document.id == currentUser.uid) {
+                        Future.delayed(Duration(), () async {
+                          await setState(() {
+                            String page11_choice1 =
+                            document['page11_choice1'];
+                            String page11_choice2 =
+                            document['page11_choice2'];
+
+                            //1- normal vision
+                            if (incorrectanswer <= 3) {
+                              //update the CVDType value
+                              FirebaseFirestore.instance
+                                  .collection("CVD_User")
+                                  .doc(currentUser.uid)
+                                  .update(
+                                  {
+                                    'CVDType': "Normal vision"});
+                            } else if (incorrectanswer >= 4) {
+                              //2- Red_green (Portan -> makes red look more green)
+                              if (page11_choice1 == "Nothing" &&
+                                  page11_choice2 == "2") {
+                                //update the CVDType value
+                                FirebaseFirestore.instance
+                                    .collection("CVD_User")
+                                    .doc(currentUser.uid)
+                                    .update(
+                                    {'CVDType': "Protanopia"});
+                                //3- Red_green (Deutran -> common type makes green look more red)
+                              } else if (page11_choice1 == "4" &&
+                                  page11_choice2 == "Nothing") {
+                                //update the CVDType value
+                                FirebaseFirestore.instance
+                                    .collection("CVD_User")
+                                    .doc(currentUser.uid)
+                                    .update(
+                                    {'CVDType': "Duetronopia"});
+                              }
+                            }
+
+                          });
+                          return new ListTile();
+                        });
+                      } else {
+                        return new ListTile();
+                      }
+                    }).toList(),
+                  );
+              }
+            },
+          ), //------Get info from firebase--------
+
           Form(
             key: _formkey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 TextFormField(
-                  controller: _datecontroller,
+                  controller: userObject.getDatecontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -285,7 +357,7 @@ class  _TestResult extends State<TestResult> {
                   ),
                 ), //----------Date----------
                 TextFormField(
-                  controller:_testResultcontroller,
+                  controller:userObject.getTestResultcontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -294,7 +366,7 @@ class  _TestResult extends State<TestResult> {
                   ),
                 ), //----------Test Result----------
                 TextFormField(
-                  controller: _correctAnswerscontroller,
+                  controller: userObject.getCorrectAnswerscontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -303,7 +375,7 @@ class  _TestResult extends State<TestResult> {
                   ),
                 ), //----------Correct Answers----------
                 TextFormField(
-                  controller: _incorrectAnswerscontroller,
+                  controller: userObject.getIncorrectAnswerscontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -311,13 +383,16 @@ class  _TestResult extends State<TestResult> {
                    hintText: incorrectanswer.toString(),
                   ),
                 ), //----------Incorrect Answers----------
+
+
+
                 TextFormField(
-                  controller: _CVDTypecontroller,
+                  controller:userObject.getCVDTypecontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
                     contentPadding: new EdgeInsets.only(top: 40.0, left: 180.0),
-                    hintText: _CVDTypecontroller.text,
+                    hintText: userObject.getCVDTypecontroller.text,
                   ),
                 ), //----------My CVD Type---------
               ],

@@ -7,6 +7,7 @@ import 'package:camera/camera.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_app/signUp.dart';
 import 'package:flutter_app/testPlate1.dart';
+import 'package:flutter_app/testResult.dart';
 import 'package:styled_text/styled_text.dart';
 
 List<CameraDescription> cameras;
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
                 theme: ThemeData(
                   primarySwatch: Colors.blue,
                 ),
-                home: Profile());
+                home: testPlate1());
           } else {
             return MaterialApp(
                 debugShowCheckedModeBanner: false,

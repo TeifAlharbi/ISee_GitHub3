@@ -9,13 +9,13 @@ import 'package:styled_text/styled_text.dart';
 import 'IshiharaTestPlates.dart';
 import 'globals.dart' as globals;
 
-class TestPlate11 extends StatefulWidget {
+class testPlate11 extends StatefulWidget {
   @override
-  _TestPlate11 createState() => _TestPlate11();
+  _testPlate11 createState() => _testPlate11();
 }
 
 
-class  _TestPlate11 extends State<TestPlate11> {
+class  _testPlate11 extends State<testPlate11> {
   void initState() {
     super.initState();
   }
@@ -298,7 +298,7 @@ class  _TestPlate11 extends State<TestPlate11> {
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TestPlate10()));
+                      MaterialPageRoute(builder: (context) => testPlate10()));
                 },
                 child: Icon(
                   Icons.arrow_back_ios_sharp,

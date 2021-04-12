@@ -245,7 +245,7 @@ class  _TestPlate9 extends State<TestPlate9> {
 
                     //3-Direct the user to next page
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => TestPlate10()));
+                        MaterialPageRoute(builder: (context) => testPlate10()));
 
                   }else{
                     showDialog(

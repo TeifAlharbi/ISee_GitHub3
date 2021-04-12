@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Test.dart';
-import 'package:flutter_app/TestPlate7.dart';
+import 'package:flutter_app/testPlate7.dart';
 import 'package:flutter_app/testPlate9.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';

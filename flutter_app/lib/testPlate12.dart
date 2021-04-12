@@ -236,7 +236,7 @@ class _TestPlate12 extends State<TestPlate12> {
 
                     IshiharaTestPlatesObject.finalResult =
                         (globals.correctAnswerCount * 100) / 12;
-
+/*
                     StreamBuilder(
                       stream: FirebaseFirestore.instance
                           .collection('Ishihara_Test')
@@ -305,6 +305,7 @@ class _TestPlate12 extends State<TestPlate12> {
                       },
                     ); //------Get info from firebase--------
 
+ */
                     //2-Add user information into CVD_User table
                     var current_user = await FirebaseAuth.instance.currentUser;
                     FirebaseFirestore.instance
@@ -378,7 +379,7 @@ class _TestPlate12 extends State<TestPlate12> {
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TestPlate11()));
+                      MaterialPageRoute(builder: (context) => testPlate11()));
                 },
                 child: Icon(
                   Icons.arrow_back_ios_sharp,

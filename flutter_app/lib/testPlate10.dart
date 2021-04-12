@@ -9,13 +9,13 @@ import 'package:styled_text/styled_text.dart';
 import 'IshiharaTestPlates.dart';
 import 'globals.dart' as globals;
 
-class TestPlate10 extends StatefulWidget {
+class testPlate10 extends StatefulWidget {
   @override
-  _TestPlate10 createState() => _TestPlate10();
+  _testPlate10 createState() => _testPlate10();
 }
 
 
-class  _TestPlate10 extends State<TestPlate10> {
+class  _testPlate10 extends State<testPlate10> {
   void initState() {
     super.initState();
   }
@@ -218,7 +218,7 @@ class  _TestPlate10 extends State<TestPlate10> {
 
                     //3-Direct the user to next page
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => TestPlate11()));
+                        MaterialPageRoute(builder: (context) => testPlate11()));
 
                   }else{
                     showDialog(
