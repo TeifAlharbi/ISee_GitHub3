@@ -32,7 +32,8 @@ class TFLiteHelper {
         //Clear previous results
         _outputs.clear();
         value.forEach((element) {
-          _outputs.add(Result(element['confidence'], element['index'], element['label']));
+          _outputs.add(Result(
+              element['confidence'], element['index'], element['label']));
           print(element['label']);
         });
       }

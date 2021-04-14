@@ -12,57 +12,49 @@ class signIn extends StatefulWidget {
   @override
   _signIn createState() => _signIn();
 
-
   //---------- validateEmail Method ----------
   static String validateEmail(String email) {
     return email.isEmpty ? 'Please Fill The Email Field' : null;
   }
 
-
 //---------- validatePassword Method ----------
-  static String validatePassword (String password){
+  static String validatePassword(String password) {
     return password.isEmpty ? 'Please Fill The Password Field' : null;
   }
 
-
-
   @override
-  static Future<bool> userCheck (TextEditingController _emailcontroller
-      , TextEditingController _passwordcontroller , BuildContext context) async {
-  try {
-      var result = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(
-          email: _emailcontroller.text,
-          password: _passwordcontroller.text);
+  static Future<bool> userCheck(TextEditingController _emailcontroller,
+      TextEditingController _passwordcontroller, BuildContext context) async {
+    try {
+      var result = await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: _emailcontroller.text, password: _passwordcontroller.text);
       if (result != null) {
         print('WELCOME');
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => Camera()),
         );
-      }else {
+      } else {
         print('user not found');
       }
       return true;
-
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         showDialog(
           context: context,
           builder: (ctx) => AlertDialog(
-            title: Row(
-                children:[
-                  Image.asset(
-                    "images/email.png",
-                    width: 240, height: 55,
-                    fit: BoxFit.contain,
-                  ),
-                ]
-            ),
-            content:
-            StyledText(
+            title: Row(children: [
+              Image.asset(
+                "images/email.png",
+                width: 240,
+                height: 55,
+                fit: BoxFit.contain,
+              ),
+            ]),
+            content: StyledText(
               text: '<bold>Please Try Again!!</bold>           '
-                  'No user found for that email.',textAlign: TextAlign.center,
+                  'No user found for that email.',
+              textAlign: TextAlign.center,
               styles: {
                 'bold': TextStyle(fontWeight: FontWeight.bold),
               },
@@ -76,27 +68,25 @@ class signIn extends StatefulWidget {
               ),
             ],
           ),
-
-        );//Alert Dialog
-       // print('No user found for that email.');
-      }else if (e.code == 'wrong-password') {
+        ); //Alert Dialog
+        // print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
         showDialog(
           context: context,
           builder: (ctx) => AlertDialog(
-            title: Row(
-                children:[
-                  Image.asset(
-                    "images/password.png",
-                    width: 240, height: 55,
-                    fit: BoxFit.contain,
-                  ),
-                ]
-            ),
-            content:
-            StyledText(
+            title: Row(children: [
+              Image.asset(
+                "images/password.png",
+                width: 240,
+                height: 55,
+                fit: BoxFit.contain,
+              ),
+            ]),
+            content: StyledText(
               text: '<bold>Please Try Again!!</bold>           '
-                  'Wrong password provided for that user.',textAlign: TextAlign.center,
+                  'Wrong password provided for that user.',
+              textAlign: TextAlign.center,
               styles: {
                 'bold': TextStyle(fontWeight: FontWeight.bold),
               },
@@ -110,14 +100,12 @@ class signIn extends StatefulWidget {
               ),
             ],
           ),
-        );//Alert Dialog
+        ); //Alert Dialog
       }
       return false;
     }
   }
-
 }
-
 
 class _signIn extends State<signIn> {
   void initState() {
@@ -130,10 +118,6 @@ class _signIn extends State<signIn> {
   bool _isObscure = true;
 
 
-
- // TextEditingController _emailcontroller = TextEditingController();
-  //TextEditingController _passwordcontroller = TextEditingController();
-
   @override
   void dispose() {
     userObject.getEmailcontroller.dispose();
@@ -144,11 +128,9 @@ class _signIn extends State<signIn> {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
-    double screenWeidth = MediaQuery.of(context).size.width;
-    double screenText = MediaQuery.textScaleFactorOf(context);
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-   //   resizeToAvoidBottomPadding: false,
       body: Stack(
         children: <Widget>[
           new Container(
@@ -157,7 +139,7 @@ class _signIn extends State<signIn> {
                 image: new AssetImage("images/fram2.png"),
                 fit: BoxFit.cover,
               ),
-            ),//----------Background----------
+            ), //----------Background----------
           ),
           Form(
             key: _formkey,
@@ -165,10 +147,11 @@ class _signIn extends State<signIn> {
               child: Column(
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.only(left:30 ,top: screenHeight  * 0.120
-                        , right:screenWeidth * 0.08 ),
-                    child:
-                    Container(
+                    padding: EdgeInsets.only(
+                        left: 30,
+                        top: screenHeight * 0.120,
+                        right: screenWidth * 0.08),
+                    child: Container(
                       width: 270.0,
                       height: 270.0,
                       decoration: BoxDecoration(
@@ -181,43 +164,45 @@ class _signIn extends State<signIn> {
                     ),
                   ), //----------ISee LOGO----------
                   Padding(
-                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.01, right:screenWeidth *0.05),
+                    padding: EdgeInsets.only(
+                        left: screenWidth * 0.05,
+                        top: screenHeight * 0.01,
+                        right: screenWidth * 0.05),
                     child: TextFormField(
                       controller: userObject.getEmailcontroller,
                       decoration: InputDecoration(
-                 //     contentPadding:  EdgeInsets.only(left:screenWeidth *0.10),
                         prefixIcon: Icon(Icons.email),
-                     //   prefixIcon: Icon(Icons.email),
                         hintText: 'Email',
                       ),
                       // ignore: missing_return
                       validator: (value) {
-                      return signIn.validateEmail(value);
+                        return signIn.validateEmail(value);
                       },
                     ),
                   ), //----------Text Email----------
                   Padding(
-                 //   padding: const EdgeInsets.all(8.0),
-                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    padding: EdgeInsets.only(
+                        left: screenWidth * 0.05,
+                        top: screenHeight * 0.02,
+                        right: screenWidth * 0.05),
                     child: TextFormField(
                       controller: userObject.getPasswordcontroller,
-                      obscureText:  _isObscure,
+                      obscureText: _isObscure,
                       decoration: InputDecoration(
-                      // contentPadding:  EdgeInsets.only(left:screenWeidth *0.10 ,top: screenHeight  * 0.05),
                           prefixIcon: Icon(Icons.vpn_key),
-                        hintText: 'Password',
+                          hintText: 'Password',
                           suffixIcon: IconButton(
-                              icon: Icon(
-                                  _isObscure ? Icons.visibility : Icons.visibility_off),
+                              icon: Icon(_isObscure
+                                  ? Icons.visibility
+                                  : Icons.visibility_off),
                               onPressed: () {
                                 setState(() {
                                   _isObscure = !_isObscure;
                                 });
-                              })
-                      ),
+                              })),
                       // ignore: missing_return
                       validator: (value) {
-                      return signIn.validatePassword(value);
+                        return signIn.validatePassword(value);
                       },
                     ),
                   ),
@@ -234,21 +219,22 @@ class _signIn extends State<signIn> {
                       //Sign In Step
                       onPressed: () async {
                         if (_formkey.currentState.validate()) {
-                          signIn.userCheck(userObject.getEmailcontroller ,  userObject.getPasswordcontroller , context);
+                          signIn.userCheck(userObject.getEmailcontroller,
+                              userObject.getPasswordcontroller, context);
                         }
                       },
                     ),
                   ), //----------SignIn Button----------
                   RaisedButton(
-                      color: const Color(0xff6981b5),
-                     child:Text(
-                        'Or Sign Up Here',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      onPressed: () async {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => signUp()));
-                      },
+                    color: const Color(0xff6981b5),
+                    child: Text(
+                      'Or Sign Up Here',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: () async {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => signUp()));
+                    },
                   ), //----------SignUp Button----------
                   Padding(
                     padding: const EdgeInsets.only(top: 60.0, right: 320.0),
@@ -259,7 +245,10 @@ class _signIn extends State<signIn> {
                         height: 33.0,
                       ),
                       onTap: () {
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => aboutISee()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => aboutISee()));
                       },
                     ),
                   ), //----------About Icon----------

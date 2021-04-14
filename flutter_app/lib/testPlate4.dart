@@ -14,21 +14,13 @@ class testPlate4 extends StatefulWidget {
   _testPlate4 createState() => _testPlate4();
 }
 
-
-
-class  _testPlate4 extends State<testPlate4> {
+class _testPlate4 extends State<testPlate4> {
   void initState() {
     super.initState();
   }
+
   //variables
   IshiharaTestPlates IshiharaTestPlatesObject = new IshiharaTestPlates();
- // TextEditingController _firstNumbercontroller = TextEditingController();
-//drop down menu variable
- // String valueChoose1;
-  //List listItem = ["Nothing","0","1","2","3","4","5","6","7","8","9"];
-
-
-
 
   @override
   void dispose() {
@@ -50,14 +42,17 @@ class  _testPlate4 extends State<testPlate4> {
                 fit: BoxFit.cover,
               ),
             ),
-          ),//----------Background----------
+          ), //----------Background----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.10
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.10,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               alignment: Alignment(-0.78, -0.37),
-              width:screenWeidth ,
-              height: screenHeight/13,
+              width: screenWeidth,
+              height: screenHeight / 13,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(28.0),
                 color: Colors.white.withOpacity(0.72),
@@ -66,7 +61,6 @@ class  _testPlate4 extends State<testPlate4> {
                   color: const Color(0xFF707070).withOpacity(0.72),
                 ),
               ),
-
               child: AutoSizeText(
                 'Ishihara Test',
                 style: TextStyle(
@@ -75,19 +69,18 @@ class  _testPlate4 extends State<testPlate4> {
                   color: const Color(0xFF6981B5).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
-
                 minFontSize: 20,
                 maxFontSize: 30,
                 maxLines: 1,
               ),
-
             ),
           ), //----------Header----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.73 ,top: screenHeight  * 0.09 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.73, top: screenHeight * 0.09),
             child: Container(
               width: screenWeidth * 0.20,
-              height: screenHeight* 0.09,
+              height: screenHeight * 0.09,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(178.0),
                 image: DecorationImage(
@@ -98,12 +91,15 @@ class  _testPlate4 extends State<testPlate4> {
             ),
           ), //----------ISee Logo----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.40 ,top: screenHeight  * 0.20
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.40,
+                top: screenHeight * 0.20,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: SizedBox(
               width: 100.0,
               height: 50.0,
-              child:AutoSizeText(
+              child: AutoSizeText(
                 '4/12 ',
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
@@ -118,10 +114,12 @@ class  _testPlate4 extends State<testPlate4> {
             ),
           ), //----------Plate Number----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.08 ,top: screenHeight  * 0.260
-                ,  right:screenWeidth * 0.08 , bottom: screenHeight  * 0.200 ),
-            child:
-            Container(
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.08,
+                top: screenHeight * 0.260,
+                right: screenWeidth * 0.08,
+                bottom: screenHeight * 0.200),
+            child: Container(
               alignment: Alignment(0.0, 0.02),
               width: 313.0,
               height: 338.0,
@@ -144,58 +142,54 @@ class  _testPlate4 extends State<testPlate4> {
                 ),
               ),
             ),
-          ),   //----------Image Plate Box----------
+          ), //----------Image Plate Box----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.11 ,top: screenHeight  * 0.760 ),
-              child: Container(
-                padding: EdgeInsets.only(left: 16.0 , right: 16),
-                decoration: BoxDecoration(
-                    border: Border.all(color:Colors.black , width: 0.5),
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.white
-                ),
-                child: DropdownButton(
-                  hint: AutoSizeText("Select The First Number      "),
-                  style: TextStyle(
-                    fontFamily: 'Segoe UI',
-                    fontSize: 12,
-                    color: Colors.black
-                  ),
-                  value: IshiharaTestPlatesObject.valueChoose1,
-                  onChanged: (newValue){
-                    setState(() {
-                      IshiharaTestPlatesObject.valueChoose1=IshiharaTestPlatesObject.getFirstNumbercontroller.toString();
-                      IshiharaTestPlatesObject.valueChoose1 = newValue;
-                    });
-                  },
-                  items: IshiharaTestPlatesObject.listItem.map((valueItem){
-                    return DropdownMenuItem(
-                      value: valueItem,
-                      child:Text(valueItem),
-                    );
-                  }).toList(),
-                ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.11, top: screenHeight * 0.760),
+            child: Container(
+              padding: EdgeInsets.only(left: 16.0, right: 16),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black, width: 0.5),
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.white),
+              child: DropdownButton(
+                hint: AutoSizeText("Select The First Number      "),
+                style: TextStyle(
+                    fontFamily: 'Segoe UI', fontSize: 12, color: Colors.black),
+                value: IshiharaTestPlatesObject.valueChoose1,
+                onChanged: (newValue) {
+                  setState(() {
+                    IshiharaTestPlatesObject.valueChoose1 =
+                        IshiharaTestPlatesObject.getFirstNumbercontroller
+                            .toString();
+                    IshiharaTestPlatesObject.valueChoose1 = newValue;
+                  });
+                },
+                items: IshiharaTestPlatesObject.listItem.map((valueItem) {
+                  return DropdownMenuItem(
+                    value: valueItem,
+                    child: Text(valueItem),
+                  );
+                }).toList(),
               ),
-            ), //---------- first drop down  ----------
-           Padding(
+            ),
+          ), //---------- first drop down  ----------
+          Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              padding: EdgeInsets.only(left:screenWeidth * 0.820 ,top: screenHeight  * 0.910),
+              padding: EdgeInsets.only(
+                  left: screenWeidth * 0.820, top: screenHeight * 0.910),
               child: InkWell(
-                onTap: () async{
-
-
-                  if (IshiharaTestPlatesObject.valueChoose1 != null){
-
-
+                onTap: () async {
+                  if (IshiharaTestPlatesObject.valueChoose1 != null) {
                     //correct answers counter
-                    if(IshiharaTestPlatesObject.valueChoose1 == "2") {
-                      globals.correctAnswerCount++ ;
+                    if (IshiharaTestPlatesObject.valueChoose1 == "2") {
+                      globals.correctAnswerCount++;
                     }
 
                     //wrong answers counter
-                    if(IshiharaTestPlatesObject.valueChoose1 != "2"){
-                      globals.wrongAnswerCount++ ;
+                    if (IshiharaTestPlatesObject.valueChoose1 != "2") {
+                      globals.wrongAnswerCount++;
                     }
 
                     //2-Add user information into CVD_User table
@@ -204,11 +198,9 @@ class  _testPlate4 extends State<testPlate4> {
                         .collection("Ishihara_Test")
                         .doc(current_user.uid)
                         .update({
-
                       'page4_choice1': IshiharaTestPlatesObject.valueChoose1,
-                      'correct_answer':  globals.correctAnswerCount,
-                      'wrong_answer':  globals.wrongAnswerCount
-
+                      'correct_answer': globals.correctAnswerCount,
+                      'wrong_answer': globals.wrongAnswerCount
                     });
                     print(IshiharaTestPlatesObject.valueChoose1);
                     print(globals.correctAnswerCount);
@@ -218,27 +210,24 @@ class  _testPlate4 extends State<testPlate4> {
                     //3-Direct the user to next page
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => testPlate5()));
-
-                  }else{
+                  } else {
                     showDialog(
                       context: context,
                       builder: (ctx) => AlertDialog(
-                        title: Row(
-                            children:[
-                              Image.asset(
-                                "images/warning.png",
-                                width: 240, height: 55,
-                                fit: BoxFit.contain,
-                              ),
-                            ]
-                        ),
-                        content:
-                        StyledText(
+                        title: Row(children: [
+                          Image.asset(
+                            "images/warning.png",
+                            width: 240,
+                            height: 55,
+                            fit: BoxFit.contain,
+                          ),
+                        ]),
+                        content: StyledText(
                           text: '<bold>Please Try Again!!</bold>           '
-                              'You Must Select a Number.',textAlign: TextAlign.center,
+                              'You Must Select a Number.',
+                          textAlign: TextAlign.center,
                           styles: {
                             'bold': TextStyle(fontWeight: FontWeight.bold),
-
                           },
                         ),
                         actions: <Widget>[
@@ -250,7 +239,7 @@ class  _testPlate4 extends State<testPlate4> {
                           ),
                         ],
                       ),
-                    );//Alert Dialog
+                    ); //Alert Dialog
                   }
                 },
                 child: Icon(
@@ -258,13 +247,14 @@ class  _testPlate4 extends State<testPlate4> {
                   color: Colors.white,
                   size: 40.0,
                 ),
-                ),
+              ),
             ),
           ), //----------next button----------
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              padding: EdgeInsets.only(right:screenWeidth * 0.820 ,top: screenHeight  * 0.910),
+              padding: EdgeInsets.only(
+                  right: screenWeidth * 0.820, top: screenHeight * 0.910),
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -281,11 +271,12 @@ class  _testPlate4 extends State<testPlate4> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              padding: EdgeInsets.only(left:screenWeidth * 0.100 ,top: screenHeight  * 0.18),
+              padding: EdgeInsets.only(
+                  left: screenWeidth * 0.100, top: screenHeight * 0.18),
               child: InkWell(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Test()));
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Test()));
                 },
                 child: Icon(
                   Icons.cancel,
@@ -294,7 +285,7 @@ class  _testPlate4 extends State<testPlate4> {
                 ),
               ),
             ),
-          ),//cancel
+          ), //cancel
         ],
       ),
     );

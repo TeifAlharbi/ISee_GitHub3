@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 
-
-
-class IshiharaTestPlates{
-
+class IshiharaTestPlates {
   TextEditingController _firstNumbercontroller = TextEditingController();
   TextEditingController _secondNumbercontroller = TextEditingController();
   String valueChoose1;
   String valueChoose2;
-  List listItem = ["Nothing","0","1","2","3","4","5","6","7","8","9"];
+  List listItem = ["Nothing", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   double finalResult;
- // double finalResult = (globals.correctAnswerCount * 100) / 12;
-
 
   //getter
   TextEditingController get getFirstNumbercontroller => _firstNumbercontroller;
-  TextEditingController get getSecondNumbercontroller => _secondNumbercontroller;
+  TextEditingController get getSecondNumbercontroller =>
+      _secondNumbercontroller;
 
   static String ishiharaTestResult(
       int wrongAnswersCounter, String page11_choice1, String page11_choice2) {
@@ -37,8 +33,19 @@ class IshiharaTestPlates{
   }
 
   static bool testUserSelection(String choice) {
-
-    List listItem = ["Nothing","0","1","2","3","4","5","6","7","8","9"];
+    List listItem = [
+      "Nothing",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ];
 
     //user did not enter a value
     if (choice == null) {
@@ -47,7 +54,6 @@ class IshiharaTestPlates{
 
       //user entered a value
     } else if (choice != null) {
-
       //value found
       if (listItem.contains(choice)) {
         print("correctly select a value from the drop-down menu");
@@ -60,7 +66,4 @@ class IshiharaTestPlates{
       }
     }
   }
-
-
-
 }

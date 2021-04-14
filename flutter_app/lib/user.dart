@@ -30,15 +30,4 @@ class user{
   TextEditingController get getCorrectAnswerscontroller  => _correctAnswerscontroller ;
   TextEditingController get getIncorrectAnswerscontroller  => _incorrectAnswerscontroller ;
 
-
-
-
-  /*
-  set SetFirstNamecontroller ( TextEditingController firstNamecontroller){
-    _firstNamecontroller = firstNamecontroller;
-  }
-   */
-
-
-
 }

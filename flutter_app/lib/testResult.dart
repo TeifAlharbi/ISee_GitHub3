@@ -1,18 +1,16 @@
-//ALL DONE
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_app/Test.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_app/user.dart';
-import 'globals.dart' as globals;
 
 class TestResult extends StatefulWidget {
   @override
   _TestResult createState() => _TestResult();
 }
 
-class  _TestResult extends State<TestResult> {
+class _TestResult extends State<TestResult> {
   void initState() {
     super.initState();
   }
@@ -20,11 +18,6 @@ class  _TestResult extends State<TestResult> {
   //variables
   final _formkey = GlobalKey<FormState>();
   user userObject = new user();
-  //TextEditingController _datecontroller = TextEditingController();
-  //TextEditingController _testResultcontroller = TextEditingController();
- // TextEditingController _correctAnswerscontroller = TextEditingController();
-  //TextEditingController _incorrectAnswerscontroller = TextEditingController();
-  //TextEditingController _CVDTypecontroller = TextEditingController();
   String formattedDate;
   String cuurDate;
   int correctAnswer;
@@ -56,24 +49,25 @@ class  _TestResult extends State<TestResult> {
                 fit: BoxFit.cover,
               ),
             ),
-          ),//----------Background----------
+          ), //----------Background----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.10
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.10,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               alignment: Alignment(-0.78, -0.37),
-              width:screenWeidth ,
-              height: screenHeight/13,
+              width: screenWeidth,
+              height: screenHeight / 13,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(28.0),
                 color: Colors.white.withOpacity(0.72),
                 border: Border.all(
                   width: 1.0,
                   color: const Color(0xFF707070).withOpacity(0.72),
-
                 ),
               ),
-
               child: AutoSizeText(
                 'Ishihara Test Result',
                 style: TextStyle(
@@ -82,19 +76,18 @@ class  _TestResult extends State<TestResult> {
                   color: const Color(0xFF6981B5).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
-
                 minFontSize: 20,
                 maxFontSize: 30,
                 maxLines: 1,
               ),
-
             ),
           ), //----------Header----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.73 ,top: screenHeight  * 0.09 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.73, top: screenHeight * 0.09),
             child: Container(
               width: screenWeidth * 0.20,
-              height: screenHeight* 0.09,
+              height: screenHeight * 0.09,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(178.0),
                 image: DecorationImage(
@@ -105,8 +98,11 @@ class  _TestResult extends State<TestResult> {
             ),
           ), //----------ISee Logo----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.25
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.25,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: SizedBox(
               width: 313.0,
               height: 96.0,
@@ -134,7 +130,7 @@ class  _TestResult extends State<TestResult> {
                         'The Result of your test is:',
                         style: TextStyle(
                           fontFamily: 'Segoe UI',
-                       //   fontSize: 24.0,
+                          //   fontSize: 24.0,
                           color: const Color(0xFF6A77AB),
                           fontWeight: FontWeight.w600,
                         ),
@@ -150,22 +146,24 @@ class  _TestResult extends State<TestResult> {
             ),
           ), //---------- Box note ----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.700 ,top: screenHeight  * 0.910),
-            child:RaisedButton(
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.700, top: screenHeight * 0.910),
+            child: RaisedButton(
               color: const Color(0xff6981b5),
-              child:Text(
+              child: Text(
                 'Done',
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () async {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Test()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Test()));
               },
             ),
-          ),//----------Done Button----------
+          ), //----------Done Button----------
           StreamBuilder(
-            stream:
-            FirebaseFirestore.instance.collection('Ishihara_Test').snapshots(),
+            stream: FirebaseFirestore.instance
+                .collection('Ishihara_Test')
+                .snapshots(),
             builder:
                 (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
               if (!snapshot.hasData) return Text('');
@@ -175,20 +173,21 @@ class  _TestResult extends State<TestResult> {
                 default:
                   return new ListView(
                     children:
-                    snapshot.data.docs.map((DocumentSnapshot document) {
-                      var currentUser =  FirebaseAuth.instance.currentUser;
+                        snapshot.data.docs.map((DocumentSnapshot document) {
+                      var currentUser = FirebaseAuth.instance.currentUser;
                       if (document.id == currentUser.uid) {
-                      Future.delayed(Duration(), () async {
+                        Future.delayed(Duration(), () async {
                           await setState(() {
                             correctAnswer = document.data()['correct_answer'];
                             incorrectanswer = document.data()['wrong_answer'];
                             finalResult = document.data()['final_result'];
-                            userObject.getDatecontroller.text = document.data()['Date'];
+                            userObject.getDatecontroller.text =
+                                document.data()['Date'];
                           });
+                          return new ListTile();
+                        });
+                      } else {
                         return new ListTile();
-                      });
-                      }else{
-                      return new ListTile();
                       }
                     }).toList(),
                   );
@@ -197,7 +196,7 @@ class  _TestResult extends State<TestResult> {
           ), //------Get info from firebase--------
           StreamBuilder(
             stream:
-            FirebaseFirestore.instance.collection('CVD_User').snapshots(),
+                FirebaseFirestore.instance.collection('CVD_User').snapshots(),
             builder:
                 (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
               if (!snapshot.hasData) return Text('');
@@ -207,12 +206,13 @@ class  _TestResult extends State<TestResult> {
                 default:
                   return new ListView(
                     children:
-                    snapshot.data.docs.map((DocumentSnapshot document) {
-                      var currentUser =  FirebaseAuth.instance.currentUser;
+                        snapshot.data.docs.map((DocumentSnapshot document) {
+                      var currentUser = FirebaseAuth.instance.currentUser;
                       if (document.id == currentUser.uid) {
                         Future.delayed(Duration(), () async {
                           await setState(() {
-                            userObject.getCVDTypecontroller.text = document.data()['CVDType'];
+                            userObject.getCVDTypecontroller.text =
+                                document.data()['CVDType'];
                           });
                         });
                         return new ListTile();
@@ -225,7 +225,7 @@ class  _TestResult extends State<TestResult> {
             },
           ), //------Get cvd type from firebase--------
           Padding(
-            padding: new EdgeInsets.only(top:320.0, left: 50.0),
+            padding: new EdgeInsets.only(top: 320.0, left: 50.0),
             child: Text(
               'Test Date: ',
               textAlign: TextAlign.center,
@@ -233,9 +233,9 @@ class  _TestResult extends State<TestResult> {
               textScaleFactor: 1.2,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-          ),//date text
+          ), //date text
           Padding(
-            padding: new EdgeInsets.only(top:375.0, left: 50.0),
+            padding: new EdgeInsets.only(top: 375.0, left: 50.0),
             child: Text(
               'Test Result: ',
               textAlign: TextAlign.center,
@@ -243,9 +243,9 @@ class  _TestResult extends State<TestResult> {
               textScaleFactor: 1.2,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-          ),//test result text
+          ), //test result text
           Padding(
-            padding: new EdgeInsets.only(top:435.0, left: 50.0),
+            padding: new EdgeInsets.only(top: 435.0, left: 50.0),
             child: Text(
               'Correct Answers: ',
               textAlign: TextAlign.center,
@@ -253,9 +253,9 @@ class  _TestResult extends State<TestResult> {
               textScaleFactor: 1.2,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-          ),//correct answers text
+          ), //correct answers text
           Padding(
-            padding: new EdgeInsets.only(top:495.0, left: 50.0),
+            padding: new EdgeInsets.only(top: 495.0, left: 50.0),
             child: Text(
               'Incorrect Answers: ',
               textAlign: TextAlign.center,
@@ -263,9 +263,9 @@ class  _TestResult extends State<TestResult> {
               textScaleFactor: 1.2,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-          ),//Incorrect answers text
+          ), //Incorrect answers text
           Padding(
-            padding: new EdgeInsets.only(top:555.0, left: 50.0),
+            padding: new EdgeInsets.only(top: 555.0, left: 50.0),
             child: Text(
               'My CVD Type: ',
               textAlign: TextAlign.center,
@@ -273,32 +273,28 @@ class  _TestResult extends State<TestResult> {
               textScaleFactor: 1.2,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-          ),//My CVD Type text
-
+          ), //My CVD Type text
 
           StreamBuilder(
             stream: FirebaseFirestore.instance
                 .collection('Ishihara_Test')
                 .snapshots(),
-            builder: (BuildContext context,
-                AsyncSnapshot<QuerySnapshot> snapshot) {
+            builder:
+                (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
               if (!snapshot.hasData) return Text('');
               switch (snapshot.connectionState) {
                 case ConnectionState.waiting:
                   return new Text('');
                 default:
                   return new ListView(
-                    children: snapshot.data.docs
-                        .map((DocumentSnapshot document) {
-                      var currentUser =
-                          FirebaseAuth.instance.currentUser;
+                    children:
+                        snapshot.data.docs.map((DocumentSnapshot document) {
+                      var currentUser = FirebaseAuth.instance.currentUser;
                       if (document.id == currentUser.uid) {
                         Future.delayed(Duration(), () async {
                           await setState(() {
-                            String page11_choice1 =
-                            document['page11_choice1'];
-                            String page11_choice2 =
-                            document['page11_choice2'];
+                            String page11_choice1 = document['page11_choice1'];
+                            String page11_choice2 = document['page11_choice2'];
 
                             //1- normal vision
                             if (incorrectanswer <= 3) {
@@ -306,9 +302,7 @@ class  _TestResult extends State<TestResult> {
                               FirebaseFirestore.instance
                                   .collection("CVD_User")
                                   .doc(currentUser.uid)
-                                  .update(
-                                  {
-                                    'CVDType': "Normal vision"});
+                                  .update({'CVDType': "Normal vision"});
                             } else if (incorrectanswer >= 4) {
                               //2- Red_green (Portan -> makes red look more green)
                               if (page11_choice1 == "Nothing" &&
@@ -317,8 +311,7 @@ class  _TestResult extends State<TestResult> {
                                 FirebaseFirestore.instance
                                     .collection("CVD_User")
                                     .doc(currentUser.uid)
-                                    .update(
-                                    {'CVDType': "Protanopia"});
+                                    .update({'CVDType': "Protanopia"});
                                 //3- Red_green (Deutran -> common type makes green look more red)
                               } else if (page11_choice1 == "4" &&
                                   page11_choice2 == "Nothing") {
@@ -326,11 +319,9 @@ class  _TestResult extends State<TestResult> {
                                 FirebaseFirestore.instance
                                     .collection("CVD_User")
                                     .doc(currentUser.uid)
-                                    .update(
-                                    {'CVDType': "Duetronopia"});
+                                    .update({'CVDType': "Duetronopia"});
                               }
                             }
-
                           });
                           return new ListTile();
                         });
@@ -353,11 +344,12 @@ class  _TestResult extends State<TestResult> {
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
-                    contentPadding: new EdgeInsets.only(top: 320.0, left: 180.0),
+                    contentPadding:
+                        new EdgeInsets.only(top: 320.0, left: 180.0),
                   ),
                 ), //----------Date----------
                 TextFormField(
-                  controller:userObject.getTestResultcontroller,
+                  controller: userObject.getTestResultcontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -380,14 +372,12 @@ class  _TestResult extends State<TestResult> {
                   enabled: false,
                   decoration: InputDecoration(
                     contentPadding: new EdgeInsets.only(top: 40.0, left: 210.0),
-                   hintText: incorrectanswer.toString(),
+                    hintText: incorrectanswer.toString(),
                   ),
                 ), //----------Incorrect Answers----------
 
-
-
                 TextFormField(
-                  controller:userObject.getCVDTypecontroller,
+                  controller: userObject.getCVDTypecontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(

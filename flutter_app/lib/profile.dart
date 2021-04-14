@@ -22,18 +22,12 @@ class _Profile extends State<Profile> {
 
   //variables
   final _formkey = GlobalKey<FormState>();
- // TextEditingController _CVDTypecontroller = TextEditingController();
-  //TextEditingController _lastTestDatecontroller = TextEditingController();
-//  TextEditingController _emailcontroller = TextEditingController();
- // TextEditingController _phoneNOcontroller = TextEditingController();
- // TextEditingController _gendercontroller = TextEditingController();
   String fname;
   String cvd;
   String lastTest;
   String email;
   String phone;
   String gender;
-
 
   String pro;
   String hello;
@@ -71,30 +65,32 @@ class _Profile extends State<Profile> {
           AutoSizeText((() {
             if (globals.language == 0) {
               setState(() {
-                 pro ='Profile';
-                 hello =  'Hello ' + fname.toString().toUpperCase() + ', How are you?';
-                 cvdType = 'Your CVD Type:';
-                 last = 'Last Test Date:';
-                 eml = 'Email:';
-                 phon ='Phone No:';
-                 gen = 'Gender: ';
-                 mod ='Modify';
+                pro = 'Profile';
+                hello = 'Hello ' +
+                    fname.toString().toUpperCase() +
+                    ', How are you?';
+                cvdType = 'Your CVD Type:';
+                last = 'Last Test Date:';
+                eml = 'Email:';
+                phon = 'Phone No:';
+                gen = 'Gender: ';
+                mod = 'Modify';
               });
               return "";
-            }else{
+            } else {
               setState(() {
-                pro ='حسابي';
-                hello =  'مرحبا ' + fname.toString().toUpperCase() ;
+                pro = 'حسابي';
+                hello = 'مرحبا ' + fname.toString().toUpperCase();
                 cvdType = 'نوع عمى الالوان:';
                 last = 'تاريخ الاختبار:';
                 eml = 'البريد الالكتروني:';
-                phon ='رقم الجوال:';
+                phon = 'رقم الجوال:';
                 gen = 'الجنس: ';
-                mod ='تعديل';
+                mod = 'تعديل';
               });
               return "";
             }
-          })()),//----------Translations----------
+          })()), //----------Translations----------
           new Container(
             decoration: new BoxDecoration(
               image: new DecorationImage(
@@ -102,27 +98,25 @@ class _Profile extends State<Profile> {
                 fit: BoxFit.cover,
               ),
             ),
-          ),//----------Background----------
+          ), //----------Background----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.10
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.10,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               alignment: Alignment(-0.78, -0.37),
-              //   width: 343.0,
-              //  height: 56.0,
-
-              width:screenWeidth ,
-              height: screenHeight/13,
+              width: screenWeidth,
+              height: screenHeight / 13,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(28.0),
                 color: Colors.white.withOpacity(0.72),
                 border: Border.all(
                   width: 1.0,
                   color: const Color(0xFF707070).withOpacity(0.72),
-
                 ),
               ),
-
               child: AutoSizeText(
                 pro,
                 style: TextStyle(
@@ -131,19 +125,18 @@ class _Profile extends State<Profile> {
                   color: const Color(0xFF6981B5).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
-
                 minFontSize: 25,
                 maxFontSize: 30,
                 maxLines: 1,
               ),
-
             ),
           ), //----------Header----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.73 ,top: screenHeight  * 0.09 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.73, top: screenHeight * 0.09),
             child: Container(
               width: screenWeidth * 0.20,
-              height: screenHeight* 0.09,
+              height: screenHeight * 0.09,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(178.0),
                 image: DecorationImage(
@@ -154,12 +147,15 @@ class _Profile extends State<Profile> {
             ),
           ), //----------ISee Logo----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.08 ,top: screenHeight  * 0.800
-                , right:screenWeidth * 0.08 , bottom: screenHeight  * 0.01),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.08,
+                top: screenHeight * 0.800,
+                right: screenWeidth * 0.08,
+                bottom: screenHeight * 0.01),
             child: Container(
               child: SizedBox(
-                width: screenWeidth ,
-                height: screenHeight * 0.13 ,
+                width: screenWeidth,
+                height: screenHeight * 0.13,
                 child: Stack(
                   children: <Widget>[
                     Pinned.fromSize(
@@ -220,8 +216,11 @@ class _Profile extends State<Profile> {
             ),
           ), //----------Footer---------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.37 ,top: screenHeight  * 0.70
-                , right:screenWeidth * 0.08 , bottom: screenHeight  * 0.200),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.37,
+                top: screenHeight * 0.70,
+                right: screenWeidth * 0.08,
+                bottom: screenHeight * 0.200),
             child: Container(
               child: RaisedButton(
                   color: const Color(0xff6981b5),
@@ -284,7 +283,7 @@ class _Profile extends State<Profile> {
                   return new ListView(
                     children:
                         snapshot.data.docs.map((DocumentSnapshot document) {
-                          var currentUser =  FirebaseAuth.instance.currentUser;
+                      var currentUser = FirebaseAuth.instance.currentUser;
                       if (document.id == currentUser.uid) {
                         // print('document with id = : ' + document.id);
                         Future.delayed(Duration(), () async {
@@ -307,8 +306,9 @@ class _Profile extends State<Profile> {
             },
           ), //------Get info from firebase--------
           StreamBuilder(
-            stream:
-            FirebaseFirestore.instance.collection('Ishihara_Test').snapshots(),
+            stream: FirebaseFirestore.instance
+                .collection('Ishihara_Test')
+                .snapshots(),
             builder:
                 (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
               if (!snapshot.hasData) return Text('');
@@ -318,8 +318,8 @@ class _Profile extends State<Profile> {
                 default:
                   return new ListView(
                     children:
-                    snapshot.data.docs.map((DocumentSnapshot document) {
-                      var currentUser =  FirebaseAuth.instance.currentUser;
+                        snapshot.data.docs.map((DocumentSnapshot document) {
+                      var currentUser = FirebaseAuth.instance.currentUser;
                       if (document.id == currentUser.uid) {
                         // print('document with id = : ' + document.id);
                         Future.delayed(Duration(), () async {
@@ -338,10 +338,13 @@ class _Profile extends State<Profile> {
             },
           ), //------Get last date from firebase--------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.15 ,top: screenHeight  * 0.20
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.15,
+                top: screenHeight * 0.20,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: AutoSizeText(
-             hello,
+              hello,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
               textScaleFactor: 1.50,
@@ -349,8 +352,11 @@ class _Profile extends State<Profile> {
             ),
           ), //---------Hello Box ---------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.28
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.10,
+                top: screenHeight * 0.28,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: AutoSizeText(
               cvdType,
               textAlign: TextAlign.center,
@@ -360,8 +366,11 @@ class _Profile extends State<Profile> {
             ),
           ), //CVD type text
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.37
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.10,
+                top: screenHeight * 0.37,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: AutoSizeText(
               last,
               textAlign: TextAlign.center,
@@ -371,8 +380,11 @@ class _Profile extends State<Profile> {
             ),
           ), //last test text
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.457
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.10,
+                top: screenHeight * 0.457,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: AutoSizeText(
               eml,
               textAlign: TextAlign.center,
@@ -382,8 +394,11 @@ class _Profile extends State<Profile> {
             ),
           ), //Email Text
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.544
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.10,
+                top: screenHeight * 0.544,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: AutoSizeText(
               phon,
               textAlign: TextAlign.center,
@@ -393,9 +408,12 @@ class _Profile extends State<Profile> {
             ),
           ), //phone number text
           Padding(
-         padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.63
-         , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
-           child: AutoSizeText(
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.10,
+                top: screenHeight * 0.63,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
+            child: AutoSizeText(
               gen,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
@@ -413,30 +431,27 @@ class _Profile extends State<Profile> {
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
-                    contentPadding:  EdgeInsets.only(left:screenWeidth * 0.50 ,top: screenHeight  * 0.28),
-                    hintText:  cvd.toString(),
+                    contentPadding: EdgeInsets.only(
+                        left: screenWeidth * 0.50, top: screenHeight * 0.28),
+                    hintText: cvd.toString(),
                   ),
                 ), //----------Text CVD----------
                 TextFormField(
-                  controller:userObject.getLastTestDatecontroller,
+                  controller: userObject.getLastTestDatecontroller,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
-                    contentPadding:  EdgeInsets.only(left:screenWeidth * 0.50 ,top: screenHeight  * 0.06),
-                    hintText:  lastTest.toString(),
-
+                    contentPadding: EdgeInsets.only(
+                        left: screenWeidth * 0.50, top: screenHeight * 0.06),
+                    hintText: lastTest.toString(),
                   ),
                 ), //----------Test Date----------
                 TextFormField(
-                  //  autofocus: true,
                     controller: userObject.getEmailcontroller,
                     decoration: InputDecoration(
-                   //   contentPadding:
-                     //     new EdgeInsets.only(top: 45.0, left: 180.0),
-                      contentPadding:  EdgeInsets.only(left:screenWeidth * 0.35 ,top: screenHeight  * 0.06),
+                      contentPadding: EdgeInsets.only(
+                          left: screenWeidth * 0.35, top: screenHeight * 0.06),
                       hintText: email.toString(),
-                  //    labelText: 'Username',
-
                     ),
                     onTap: () {
                       count_email++;
@@ -444,9 +459,8 @@ class _Profile extends State<Profile> {
                 TextFormField(
                     controller: userObject.getPhoneNOcontroller,
                     decoration: InputDecoration(
-                    //  contentPadding:
-                      //    new EdgeInsets.only(top: 40.0, left: 180.0),
-                      contentPadding:  EdgeInsets.only(left:screenWeidth * 0.35 ,top: screenHeight  * 0.06),
+                      contentPadding: EdgeInsets.only(
+                          left: screenWeidth * 0.35, top: screenHeight * 0.06),
                       hintText: phone.toString(),
                     ),
                     onTap: () {
@@ -455,9 +469,8 @@ class _Profile extends State<Profile> {
                 TextFormField(
                     controller: userObject.getGendercontroller,
                     decoration: InputDecoration(
-                    //  contentPadding:
-                      //    new EdgeInsets.only(top: 40.0, left: 180.0),
-                      contentPadding:  EdgeInsets.only(left:screenWeidth * 0.35 ,top: screenHeight  * 0.06),
+                      contentPadding: EdgeInsets.only(
+                          left: screenWeidth * 0.35, top: screenHeight * 0.06),
                       hintText: gender.toString(),
                     ),
                     onTap: () {
@@ -467,54 +480,57 @@ class _Profile extends State<Profile> {
             ),
           ),
           Padding(
-            //for me padding: const EdgeInsets.only(top: 600.0, left: 65.0),
+            // padding: const EdgeInsets.only(top: 600.0, left: 65.0),
             padding: const EdgeInsets.only(top: 575.0, left: 65.0),
             child: Container(
               child: InkWell(
-                child:  SvgPicture.string(
+                child: SvgPicture.string(
                   _svg_hp4zgj,
                   width: 50.6,
                   height: 45.9,
                 ),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => UserSettings()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => UserSettings()));
                 },
               ),
             ),
           ), //----------Setting Icon----------
           Padding(
-            //for me padding: const EdgeInsets.only(top: 605.0, left: 250.0),
+            // padding: const EdgeInsets.only(top: 605.0, left: 250.0),
             padding: const EdgeInsets.only(top: 580.0, left: 250.0),
             child: Container(
               child: InkWell(
-                child:  SvgPicture.string(
+                child: SvgPicture.string(
                   _svg_15ia88,
                   width: 35.4,
                   height: 36.2,
                 ),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => Profile()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Profile()));
                 },
               ),
             ),
           ), //----------Profile Icon----------
           Padding(
-            //for me padding: const EdgeInsets.only(top: 595.0, left: 145.0),
+            // padding: const EdgeInsets.only(top: 595.0, left: 145.0),
             padding: const EdgeInsets.only(top: 565.0, left: 145.0),
             child: Container(
               child: InkWell(
-                child:  SvgPicture.string(
+                child: SvgPicture.string(
                   _svg_j0bnl7,
                 ),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => Camera()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Camera()));
                 },
               ),
             ),
           ), //----------Camera Icon----------
-        Padding(
-          //for me padding: const EdgeInsets.only(top: 680.0, left: 25.0),
-          padding: const EdgeInsets.only(top: 650.0, left: 25.0),
+          Padding(
+            // padding: const EdgeInsets.only(top: 680.0, left: 25.0),
+            padding: const EdgeInsets.only(top: 650.0, left: 25.0),
             child: InkWell(
               child: SvgPicture.string(
                 // arrow-return-left
@@ -522,12 +538,13 @@ class _Profile extends State<Profile> {
                 width: 27.0,
                 height: 22.5,
               ),
-              onTap: () async{
+              onTap: () async {
                 await FirebaseAuth.instance.signOut();
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => signIn()));
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => signIn()));
               },
             ),
-          ),//----------Logout Icon----------
+          ), //----------Logout Icon----------
         ],
       ),
     );

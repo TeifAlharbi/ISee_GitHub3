@@ -15,8 +15,6 @@ class TestPlate12 extends StatefulWidget {
   _TestPlate12 createState() => _TestPlate12();
 }
 
-//current date
-//String cuurDate;
 var now = new DateTime.now();
 var formatter = new DateFormat('dd-MM-yyyy');
 String formattedDate = formatter.format(now);
@@ -28,11 +26,6 @@ class _TestPlate12 extends State<TestPlate12> {
 
   //variables
   IshiharaTestPlates IshiharaTestPlatesObject = new IshiharaTestPlates();
-  //TextEditingController _firstNumbercontroller = TextEditingController();
-  //double finalResult;
-//drop down menu variable
-  //String valueChoose1;
-  // List listItem = ["Nothing", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   @override
   void dispose() {
@@ -43,7 +36,7 @@ class _TestPlate12 extends State<TestPlate12> {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
-    double screenWeidth = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -57,13 +50,13 @@ class _TestPlate12 extends State<TestPlate12> {
           ), //----------Background----------
           Padding(
             padding: EdgeInsets.only(
-                left: screenWeidth * 0.05,
+                left: screenWidth * 0.05,
                 top: screenHeight * 0.10,
-                right: screenWeidth * 0.10,
+                right: screenWidth * 0.10,
                 bottom: screenHeight * 0.05),
             child: Container(
               alignment: Alignment(-0.78, -0.37),
-              width: screenWeidth,
+              width: screenWidth,
               height: screenHeight / 13,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(28.0),
@@ -89,9 +82,9 @@ class _TestPlate12 extends State<TestPlate12> {
           ), //----------Header----------
           Padding(
             padding: EdgeInsets.only(
-                left: screenWeidth * 0.73, top: screenHeight * 0.09),
+                left: screenWidth * 0.73, top: screenHeight * 0.09),
             child: Container(
-              width: screenWeidth * 0.20,
+              width: screenWidth * 0.20,
               height: screenHeight * 0.09,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(178.0),
@@ -104,9 +97,9 @@ class _TestPlate12 extends State<TestPlate12> {
           ), //----------ISee Logo----------
           Padding(
             padding: EdgeInsets.only(
-                left: screenWeidth * 0.40,
+                left: screenWidth * 0.40,
                 top: screenHeight * 0.20,
-                right: screenWeidth * 0.10,
+                right: screenWidth * 0.10,
                 bottom: screenHeight * 0.05),
             child: SizedBox(
               width: 100.0,
@@ -127,9 +120,9 @@ class _TestPlate12 extends State<TestPlate12> {
           ), //----------Plate Number----------
           Padding(
             padding: EdgeInsets.only(
-                left: screenWeidth * 0.08,
+                left: screenWidth * 0.08,
                 top: screenHeight * 0.260,
-                right: screenWeidth * 0.08,
+                right: screenWidth * 0.08,
                 bottom: screenHeight * 0.200),
             child: Container(
               alignment: Alignment(0.0, 0.02),
@@ -157,7 +150,7 @@ class _TestPlate12 extends State<TestPlate12> {
           ), //----------Image Plate Box----------
           Padding(
             padding: EdgeInsets.only(
-                left: screenWeidth * 0.11, top: screenHeight * 0.760),
+                left: screenWidth * 0.11, top: screenHeight * 0.760),
             child: Container(
               padding: EdgeInsets.only(left: 16.0, right: 16),
               decoration: BoxDecoration(
@@ -187,11 +180,12 @@ class _TestPlate12 extends State<TestPlate12> {
             ),
           ), //---------- first drop down  ----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.70 ,top: screenHeight  * 0.910),
+            padding: EdgeInsets.only(
+                left: screenWidth * 0.70, top: screenHeight * 0.910),
             child: Container(
               child: SizedBox(
-                width: screenWeidth * 0.70,
-                height: screenHeight/02,
+                width: screenWidth * 0.70,
+                height: screenHeight / 02,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -206,7 +200,6 @@ class _TestPlate12 extends State<TestPlate12> {
                           fontWeight: FontWeight.w700,
                         ),
                         textAlign: TextAlign.center,
-
                         minFontSize: 16,
                         maxFontSize: 25,
                         maxLines: 1,
@@ -221,7 +214,7 @@ class _TestPlate12 extends State<TestPlate12> {
             padding: const EdgeInsets.all(8.0),
             child: Container(
               padding: EdgeInsets.only(
-                  left: screenWeidth * 0.820, top: screenHeight * 0.910),
+                  left: screenWidth * 0.820, top: screenHeight * 0.910),
               child: InkWell(
                 onTap: () async {
                   if (IshiharaTestPlatesObject.valueChoose1 != null) {
@@ -236,77 +229,8 @@ class _TestPlate12 extends State<TestPlate12> {
 
                     IshiharaTestPlatesObject.finalResult =
                         (globals.correctAnswerCount * 100) / 12;
-/*
-                    StreamBuilder(
-                      stream: FirebaseFirestore.instance
-                          .collection('Ishihara_Test')
-                          .snapshots(),
-                      builder: (BuildContext context,
-                          AsyncSnapshot<QuerySnapshot> snapshot) {
-                        if (!snapshot.hasData) return Text('');
-                        switch (snapshot.connectionState) {
-                          case ConnectionState.waiting:
-                            return new Text('');
-                          default:
-                            return new ListView(
-                              children: snapshot.data.docs
-                                  .map((DocumentSnapshot document) {
-                                var currentUser =
-                                    FirebaseAuth.instance.currentUser;
-                                if (document.id == currentUser.uid) {
-                                  Future.delayed(Duration(), () async {
-                                    await setState(() {
-                                      String page11_choice1 =
-                                          document['page11_choice1'];
-                                      String page11_choice2 =
-                                          document['page11_choice2'];
 
-                                      //1- normal vision
-                                      if (globals.wrongAnswerCount <= 3) {
-                                        //update the CVDType value
-                                        FirebaseFirestore.instance
-                                            .collection("CVD_User")
-                                            .doc(currentUser.uid)
-                                            .update(
-                                                {'CVDType': "Normal vision"});
-                                      } else if (globals.wrongAnswerCount >=
-                                          4) {
-                                        //2- Red_green (Portan -> makes red look more green)
-                                        if (page11_choice1 == "Nothing" &&
-                                            page11_choice2 == "2") {
-                                          //update the CVDType value
-                                          FirebaseFirestore.instance
-                                              .collection("CVD_User")
-                                              .doc(currentUser.uid)
-                                              .update(
-                                                  {'CVDType': "Protanopia"});
-
-                                          //3- Red_green (Deutran -> common type makes green look more red)
-                                        } else if (page11_choice1 == "4" &&
-                                            page11_choice2 == "Nothing") {
-                                          //update the CVDType value
-                                          FirebaseFirestore.instance
-                                              .collection("CVD_User")
-                                              .doc(currentUser.uid)
-                                              .update(
-                                                  {'CVDType': "Duetronopia"});
-                                        }
-                                      }
-
-                                    });
-                                    return new ListTile();
-                                  });
-                                } else {
-                                  return new ListTile();
-                                }
-                              }).toList(),
-                            );
-                        }
-                      },
-                    ); //------Get info from firebase--------
-
- */
-                    //2-Add user information into CVD_User table
+                    //Add user information into Ishihara_Test table
                     var current_user = await FirebaseAuth.instance.currentUser;
                     FirebaseFirestore.instance
                         .collection("Ishihara_Test")
@@ -326,29 +250,27 @@ class _TestPlate12 extends State<TestPlate12> {
                     print(IshiharaTestPlatesObject.finalResult);
                     print("Successfully Complete The Twelfth Page");
 
-                    //3-Direct the user to next page
+                    //Direct the user to next page
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => TestResult()));
                   } else {
                     showDialog(
                       context: context,
                       builder: (ctx) => AlertDialog(
-                        title: Row(
-                            children:[
-                              Image.asset(
-                                "images/warning.png",
-                                width: 240, height: 55,
-                                fit: BoxFit.contain,
-                              ),
-                            ]
-                        ),
-                        content:
-                        StyledText(
+                        title: Row(children: [
+                          Image.asset(
+                            "images/warning.png",
+                            width: 240,
+                            height: 55,
+                            fit: BoxFit.contain,
+                          ),
+                        ]),
+                        content: StyledText(
                           text: '<bold>Please Try Again!!</bold>           '
-                              'You Must Select a Number.',textAlign: TextAlign.center,
+                              'You Must Select a Number.',
+                          textAlign: TextAlign.center,
                           styles: {
                             'bold': TextStyle(fontWeight: FontWeight.bold),
-
                           },
                         ),
                         actions: <Widget>[
@@ -360,7 +282,7 @@ class _TestPlate12 extends State<TestPlate12> {
                           ),
                         ],
                       ),
-                    );//Alert Dialog
+                    ); //Alert Dialog
                   }
                 },
                 child: Icon(
@@ -375,7 +297,7 @@ class _TestPlate12 extends State<TestPlate12> {
             padding: const EdgeInsets.all(8.0),
             child: Container(
               padding: EdgeInsets.only(
-                  right: screenWeidth * 0.820, top: screenHeight * 0.910),
+                  right: screenWidth * 0.820, top: screenHeight * 0.910),
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
@@ -393,7 +315,7 @@ class _TestPlate12 extends State<TestPlate12> {
             padding: const EdgeInsets.all(8.0),
             child: Container(
               padding: EdgeInsets.only(
-                  left: screenWeidth * 0.100, top: screenHeight * 0.18),
+                  left: screenWidth * 0.100, top: screenHeight * 0.18),
               child: InkWell(
                 onTap: () {
                   Navigator.push(

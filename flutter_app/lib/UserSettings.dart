@@ -1,4 +1,3 @@
-//ALL DONE
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -18,10 +17,11 @@ class UserSettings extends StatefulWidget {
   _UserSettings createState() => _UserSettings();
 }
 
-class  _UserSettings  extends State<UserSettings> {
+class _UserSettings extends State<UserSettings> {
   void initState() {
     super.initState();
   }
+
   //variables
   final _formkey = GlobalKey<FormState>();
   String sett;
@@ -34,9 +34,7 @@ class  _UserSettings  extends State<UserSettings> {
 
   @override
   void dispose() {
-
     super.dispose();
-
   }
 
   @override
@@ -49,18 +47,18 @@ class  _UserSettings  extends State<UserSettings> {
           AutoSizeText((() {
             if (globals.language == 0) {
               setState(() {
-                 sett =  "Settings";
-                 lang = 'Language';
-                 sec = 'Security ';
-                 sup = 'Support';
-                 test = 'Ishihara Test';
-                 color = 'About Color-Blindness';
-                 ISee = 'About ISee';
+                sett = "Settings";
+                lang = 'Language';
+                sec = 'Security ';
+                sup = 'Support';
+                test = 'Ishihara Test';
+                color = 'About Color-Blindness';
+                ISee = 'About ISee';
               });
               return "";
-            }else{
+            } else {
               setState(() {
-                sett =  "الاعدادات";
+                sett = "الاعدادات";
                 lang = 'اللغه';
                 sec = 'الخصوصية';
                 sup = 'الدعم الفني';
@@ -78,24 +76,25 @@ class  _UserSettings  extends State<UserSettings> {
                 fit: BoxFit.cover,
               ),
             ),
-          ),//----------Background----------
+          ), //----------Background----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.10
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.10,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               alignment: Alignment(-0.78, -0.37),
-              width:screenWeidth ,
-              height: screenHeight/13,
+              width: screenWeidth,
+              height: screenHeight / 13,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(28.0),
                 color: Colors.white.withOpacity(0.72),
                 border: Border.all(
                   width: 1.0,
                   color: const Color(0xFF707070).withOpacity(0.72),
-
                 ),
               ),
-
               child: AutoSizeText(
                 sett,
                 style: TextStyle(
@@ -104,19 +103,18 @@ class  _UserSettings  extends State<UserSettings> {
                   color: const Color(0xFF6981B5).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
-
                 minFontSize: 25,
                 maxFontSize: 30,
                 maxLines: 1,
               ),
-
             ),
           ), //----------Header----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.73 ,top: screenHeight  * 0.09 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.73, top: screenHeight * 0.09),
             child: Container(
               width: screenWeidth * 0.20,
-              height: screenHeight* 0.09,
+              height: screenHeight * 0.09,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(178.0),
                 image: DecorationImage(
@@ -127,12 +125,15 @@ class  _UserSettings  extends State<UserSettings> {
             ),
           ), //----------ISee Logo----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.08 ,top: screenHeight  * 0.800
-                , right:screenWeidth * 0.08 , bottom: screenHeight  * 0.01),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.08,
+                top: screenHeight * 0.800,
+                right: screenWeidth * 0.08,
+                bottom: screenHeight * 0.01),
             child: Container(
               child: SizedBox(
-                width: screenWeidth ,
-                height: screenHeight * 0.13 ,
+                width: screenWeidth,
+                height: screenHeight * 0.13,
                 child: Stack(
                   children: <Widget>[
                     Pinned.fromSize(
@@ -193,14 +194,15 @@ class  _UserSettings  extends State<UserSettings> {
             ),
           ), //----------Footer---------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.22
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.22,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               child: SizedBox(
-               width: 333.0,
-              height: 32.0,
-         //     width:screenWeidth,
-           //   height: screenHeight *0.0,
+                width: 333.0,
+                height: 32.0,
                 child: Stack(
                   children: <Widget>[
                     Pinned.fromSize(
@@ -211,8 +213,8 @@ class  _UserSettings  extends State<UserSettings> {
                       pinBottom: true,
                       fixedWidth: true,
                       child:
-                      // Adobe XD layer: 'Icon metro-language' (shape)
-                      SvgPicture.string(
+                          // Adobe XD layer: 'Icon metro-language' (shape)
+                          SvgPicture.string(
                         _svg_wl43uz,
                         allowDrawingOutsideViewBox: true,
                         fit: BoxFit.fill,
@@ -227,11 +229,10 @@ class  _UserSettings  extends State<UserSettings> {
                       fixedHeight: true,
                       child: AutoSizeText(
                         lang,
-                          style: TextStyle(
+                        style: TextStyle(
                           fontFamily: 'Segoe UI',
-                        //  fontSize: 21.5,
                           color: const Color(0xff6a77ab),
-                            fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w900,
                         ),
                         textAlign: TextAlign.center,
                         maxLines: 1,
@@ -253,8 +254,11 @@ class  _UserSettings  extends State<UserSettings> {
             ),
           ), //----------Language Label----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.32
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.32,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               child: SizedBox(
                 width: 332.0,
@@ -269,8 +273,8 @@ class  _UserSettings  extends State<UserSettings> {
                       pinBottom: true,
                       fixedWidth: true,
                       child:
-                      // Adobe XD layer: 'Icon material-secur…' (shape)
-                      SvgPicture.string(
+                          // Adobe XD layer: 'Icon material-secur…' (shape)
+                          SvgPicture.string(
                         _svg_9tnfh8,
                         allowDrawingOutsideViewBox: true,
                         fit: BoxFit.fill,
@@ -287,7 +291,7 @@ class  _UserSettings  extends State<UserSettings> {
                         sec,
                         style: TextStyle(
                           fontFamily: 'Segoe UI',
-                       //   fontSize: 21.5,
+                          //   fontSize: 21.5,
                           color: const Color(0xff6a77ab),
                           fontWeight: FontWeight.w900,
                         ),
@@ -311,8 +315,11 @@ class  _UserSettings  extends State<UserSettings> {
             ),
           ), //----------Security Label----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.42
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.42,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               child: SizedBox(
                 width: 332.0,
@@ -327,8 +334,8 @@ class  _UserSettings  extends State<UserSettings> {
                       pinBottom: true,
                       fixedWidth: true,
                       child:
-                      // Adobe XD layer: 'Icon awesome-questi…' (shape)
-                      SvgPicture.string(
+                          // Adobe XD layer: 'Icon awesome-questi…' (shape)
+                          SvgPicture.string(
                         _svg_7s82km,
                         allowDrawingOutsideViewBox: true,
                         fit: BoxFit.fill,
@@ -345,7 +352,7 @@ class  _UserSettings  extends State<UserSettings> {
                         sup,
                         style: TextStyle(
                           fontFamily: 'Segoe UI',
-                        //  fontSize: 21.5,
+                          //  fontSize: 21.5,
                           color: const Color(0xff6a77ab),
                           fontWeight: FontWeight.w900,
                         ),
@@ -369,8 +376,11 @@ class  _UserSettings  extends State<UserSettings> {
             ),
           ), //----------Support Label----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.52
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.52,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               child: SizedBox(
                 width: 332.0,
@@ -385,8 +395,8 @@ class  _UserSettings  extends State<UserSettings> {
                       pinBottom: true,
                       fixedWidth: true,
                       child:
-                      // Adobe XD layer: 'Icon metro-clipboard' (shape)
-                      SvgPicture.string(
+                          // Adobe XD layer: 'Icon metro-clipboard' (shape)
+                          SvgPicture.string(
                         _svg_hkjrup,
                         allowDrawingOutsideViewBox: true,
                         fit: BoxFit.fill,
@@ -403,7 +413,7 @@ class  _UserSettings  extends State<UserSettings> {
                         test,
                         style: TextStyle(
                           fontFamily: 'Segoe UI',
-                         // fontSize: 21.5,
+                          // fontSize: 21.5,
                           color: const Color(0xff6a77ab),
                           fontWeight: FontWeight.w900,
                         ),
@@ -427,8 +437,11 @@ class  _UserSettings  extends State<UserSettings> {
             ),
           ), //----------About Ishihara-test Label----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.62
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.62,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               child: SizedBox(
                 width: 332.0,
@@ -443,8 +456,8 @@ class  _UserSettings  extends State<UserSettings> {
                       pinBottom: true,
                       fixedWidth: true,
                       child:
-                      // Adobe XD layer: 'Icon material-color…' (shape)
-                      SvgPicture.string(
+                          // Adobe XD layer: 'Icon material-color…' (shape)
+                          SvgPicture.string(
                         _svg_mv1ywq,
                         allowDrawingOutsideViewBox: true,
                         fit: BoxFit.fill,
@@ -465,7 +478,7 @@ class  _UserSettings  extends State<UserSettings> {
                           fontWeight: FontWeight.w900,
                         ),
                         textAlign: TextAlign.center,
-                       // maxLines: 1,
+                        // maxLines: 1,
                         minFontSize: 15,
                         maxFontSize: 20,
                       ),
@@ -484,8 +497,11 @@ class  _UserSettings  extends State<UserSettings> {
             ),
           ), //----------About color-blind Label----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.72
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.72,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               child: SizedBox(
                 width: 329.0,
@@ -500,8 +516,8 @@ class  _UserSettings  extends State<UserSettings> {
                       pinBottom: true,
                       fixedWidth: true,
                       child:
-                      // Adobe XD layer: 'Icon material-perm-…' (shape)
-                      SvgPicture.string(
+                          // Adobe XD layer: 'Icon material-perm-…' (shape)
+                          SvgPicture.string(
                         _svg_pclm24,
                         allowDrawingOutsideViewBox: true,
                         fit: BoxFit.fill,
@@ -518,7 +534,7 @@ class  _UserSettings  extends State<UserSettings> {
                         ISee,
                         style: TextStyle(
                           fontFamily: 'Segoe UI',
-                        //  fontSize: 21.5,
+                          //  fontSize: 21.5,
                           color: const Color(0xffffffff),
                           fontWeight: FontWeight.w900,
                         ),
@@ -542,47 +558,50 @@ class  _UserSettings  extends State<UserSettings> {
             ),
           ), //----------About ISee Label----------
           Padding(
-            //for me padding: const EdgeInsets.only(top: 600.0, left: 65.0),
+            //padding: const EdgeInsets.only(top: 600.0, left: 65.0),
             padding: const EdgeInsets.only(top: 575.0, left: 65.0),
             child: Container(
               child: InkWell(
-                child:  SvgPicture.string(
+                child: SvgPicture.string(
                   _svg_hp4zgj,
                   width: 50.6,
                   height: 45.9,
                 ),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => UserSettings()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => UserSettings()));
                 },
               ),
             ),
           ), //----------Setting Icon----------
           Padding(
-            //for me padding: const EdgeInsets.only(top: 605.0, left: 250.0),
+            //padding: const EdgeInsets.only(top: 605.0, left: 250.0),
             padding: const EdgeInsets.only(top: 580.0, left: 250.0),
             child: Container(
               child: InkWell(
-                child:  SvgPicture.string(
+                child: SvgPicture.string(
                   _svg_15ia88,
                   width: 35.4,
                   height: 36.2,
                 ),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => Profile()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Profile()));
                 },
               ),
             ),
           ), //----------Profile Icon----------
           Padding(
-            //for me padding: const EdgeInsets.only(top: 595.0, left: 145.0),
+            //padding: const EdgeInsets.only(top: 595.0, left: 145.0),
             padding: const EdgeInsets.only(top: 565.0, left: 145.0),
             child: Container(
               child: InkWell(
-                child:  SvgPicture.string(
+                child: SvgPicture.string(
                   _svg_j0bnl7,
                 ),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => Camera()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Camera()));
                 },
               ),
             ),
@@ -597,87 +616,89 @@ class  _UserSettings  extends State<UserSettings> {
                         MaterialPageRoute(builder: (context) => language()));
                   },
                   child: Padding(
-                    padding:const EdgeInsets.only(left:300 , top:145),
+                    padding: const EdgeInsets.only(left: 300, top: 145),
                     child: Icon(
                       Icons.arrow_right,
                       color: const Color(0xff6a77ab),
                       size: 60.0,
                     ),
                   ),
-                ),//----------language Icon----------
+                ), //----------language Icon----------
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => security()));
                   },
                   child: Padding(
-                    padding:const EdgeInsets.only(left:300 , top:10),
+                    padding: const EdgeInsets.only(left: 300, top: 10),
                     child: Icon(
                       Icons.arrow_right,
                       color: const Color(0xff6a77ab),
                       size: 60.0,
                     ),
                   ),
-                ),//----------Security Icon----------
+                ), //----------Security Icon----------
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => support()));
                   },
                   child: Padding(
-                    padding:const EdgeInsets.only(left:300 , top:10),
+                    padding: const EdgeInsets.only(left: 300, top: 10),
                     child: Icon(
                       Icons.arrow_right,
                       color: const Color(0xff6a77ab),
                       size: 60.0,
                     ),
                   ),
-                ),//---------- Support Icon----------
+                ), //---------- Support Icon----------
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) =>Test()));
+                        MaterialPageRoute(builder: (context) => Test()));
                   },
                   child: Padding(
-                    padding:const EdgeInsets.only(left:300 , top:10),
+                    padding: const EdgeInsets.only(left: 300, top: 10),
                     child: Icon(
                       Icons.arrow_right,
                       color: const Color(0xff6a77ab),
                       size: 60.0,
                     ),
                   ),
-                ),//----------Test Icon----------
+                ), //----------Test Icon----------
                 InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) =>aboutColorBlindness()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => aboutColorBlindness()));
                   },
                   child: Padding(
-                    padding:const EdgeInsets.only(left:300 , top:10),
+                    padding: const EdgeInsets.only(left: 300, top: 10),
                     child: Icon(
                       Icons.arrow_right,
                       color: const Color(0xff6a77ab),
                       size: 60.0,
                     ),
                   ),
-                ),//----------AboutColorBlindness Icon----------
+                ), //----------AboutColorBlindness Icon----------
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => aboutISee()));
                   },
                   child: Padding(
-                    padding:const EdgeInsets.only(left:300 , top:10),
+                    padding: const EdgeInsets.only(left: 300, top: 10),
                     child: Icon(
                       Icons.arrow_right,
                       color: const Color(0xff6a77ab),
                       size: 60.0,
                     ),
                   ),
-                ),//----------AboutISee Icon----------
+                ), //----------AboutISee Icon----------
               ],
             ),
-          ),//Fotter action (all the list)
+          ), //Fotter action (all the list)
         ],
       ),
     );

@@ -1,10 +1,8 @@
-//ALL DONE
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Test.dart';
 import 'package:flutter_app/testPlate1.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 
 class testInstructions extends StatefulWidget {
   @override
@@ -23,7 +21,6 @@ class _testInstructions extends State<testInstructions> {
 
   @override
   Widget build(BuildContext context) {
-
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWeidth = MediaQuery.of(context).size.width;
     double screenText = MediaQuery.textScaleFactorOf(context);
@@ -38,44 +35,45 @@ class _testInstructions extends State<testInstructions> {
                 fit: BoxFit.cover,
               ),
             ),
-          ),//----------Background----------
+          ), //----------Background----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.10 , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
-              child: Container(
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.10,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
+            child: Container(
               alignment: Alignment(-0.78, -0.37),
-                width:screenWeidth ,
-                height: screenHeight/13,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28.0),
-                  color: Colors.white.withOpacity(0.72),
-                  border: Border.all(
-                    width: 1.0,
-                    color: const Color(0xFF707070).withOpacity(0.72),
-
-                  ),
+              width: screenWeidth,
+              height: screenHeight / 13,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(28.0),
+                color: Colors.white.withOpacity(0.72),
+                border: Border.all(
+                  width: 1.0,
+                  color: const Color(0xFF707070).withOpacity(0.72),
                 ),
-
-                child: AutoSizeText(
-                  'Ishihara Test Instructions',
-                  style: TextStyle(
-                    fontFamily: 'Segoe UI',
-                //   fontSize: screenText * 12.0,
-                    color: const Color(0xFF6981B5).withOpacity(0.72),
-                    fontWeight: FontWeight.w900,
-                  ),
-
-                 minFontSize: 20,
-                 maxFontSize: 30,
-                  maxLines: 1,
-                ),
-
               ),
+              child: AutoSizeText(
+                'Ishihara Test Instructions',
+                style: TextStyle(
+                  fontFamily: 'Segoe UI',
+                  //   fontSize: screenText * 12.0,
+                  color: const Color(0xFF6981B5).withOpacity(0.72),
+                  fontWeight: FontWeight.w900,
+                ),
+                minFontSize: 20,
+                maxFontSize: 30,
+                maxLines: 1,
+              ),
+            ),
           ), //----------Header----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.73 ,top: screenHeight  * 0.09 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.73, top: screenHeight * 0.09),
             child: Container(
               width: screenWeidth * 0.20,
-              height: screenHeight* 0.09,
+              height: screenHeight * 0.09,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(178.0),
                 image: DecorationImage(
@@ -86,11 +84,14 @@ class _testInstructions extends State<testInstructions> {
             ),
           ), //----------ISee Logo----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.08 ,top: screenHeight  * 0.250 , right:screenWeidth * 0.08),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.08,
+                top: screenHeight * 0.250,
+                right: screenWeidth * 0.08),
             child: Container(
               alignment: Alignment.bottomCenter,
-              width:screenWeidth,
-              height: screenHeight/02,
+              width: screenWeidth,
+              height: screenHeight / 02,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(45.0),
                 color: Colors.white,
@@ -102,7 +103,7 @@ class _testInstructions extends State<testInstructions> {
               child: SizedBox(
                 width: 285.0,
                 height: 327.0,
-                child:AutoSizeText(
+                child: AutoSizeText(
                   'How the test works: \n\n There are 12 Plates, for each one you have to identify the correct number. \n\n If you do not see anything just select nothing from the menu.',
                   style: TextStyle(
                     fontFamily: 'Segoe UI',
@@ -117,11 +118,12 @@ class _testInstructions extends State<testInstructions> {
             ),
           ), //----------Description Box----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.70 ,top: screenHeight  * 0.850 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.70, top: screenHeight * 0.850),
             child: Container(
               child: SizedBox(
-             width: screenWeidth * 0.70,
-              height: screenHeight/02,
+                width: screenWeidth * 0.70,
+                height: screenHeight / 02,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -131,14 +133,13 @@ class _testInstructions extends State<testInstructions> {
                         'Start',
                         style: TextStyle(
                           fontFamily: 'Segoe UI',
-                      //    fontSize: 24,
+                          //    fontSize: 24,
                           color: Colors.white,
                           fontWeight: FontWeight.w700,
                         ),
                         textAlign: TextAlign.center,
-
-                     minFontSize: 16,
-                      maxFontSize: 25,
+                        minFontSize: 16,
+                        maxFontSize: 25,
                         maxLines: 1,
                       ),
                     ),
@@ -148,11 +149,12 @@ class _testInstructions extends State<testInstructions> {
             ),
           ), //----------Start Text----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.08 ,top: screenHeight  * 0.850 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.08, top: screenHeight * 0.850),
             child: Container(
               child: SizedBox(
-                width: screenWeidth/04,
-                height: screenHeight/02,
+                width: screenWeidth / 04,
+                height: screenHeight / 02,
                 child: Stack(
                   children: <Widget>[
                     Positioned(
@@ -161,13 +163,13 @@ class _testInstructions extends State<testInstructions> {
                         'Cancel',
                         style: TextStyle(
                           fontFamily: 'Segoe UI',
-                     //  fontSize: 24,
+                          //  fontSize: 24,
                           color: Colors.white,
                           fontWeight: FontWeight.w700,
                         ),
                         textAlign: TextAlign.center,
                         minFontSize: 16,
-                       maxFontSize: 25,
+                        maxFontSize: 25,
                         maxLines: 1,
                       ),
                     ),
@@ -177,7 +179,8 @@ class _testInstructions extends State<testInstructions> {
             ),
           ), //----------Cancel text----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.86 ,top: screenHeight  * 0.840 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.86, top: screenHeight * 0.840),
             child: Container(
               child: InkWell(
                 child: SvgPicture.string(
@@ -187,13 +190,15 @@ class _testInstructions extends State<testInstructions> {
                   height: 39.91,
                 ),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => testPlate1()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => testPlate1()));
                 },
               ),
             ),
           ), //----------Next Icon----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.840 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05, top: screenHeight * 0.840),
             child: Container(
               child: InkWell(
                 child: SvgPicture.string(
@@ -203,7 +208,8 @@ class _testInstructions extends State<testInstructions> {
                   height: 39.91,
                 ),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => Test()));
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Test()));
                 },
               ),
             ),

@@ -1,4 +1,3 @@
-//ALL DONE
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -10,15 +9,12 @@ class language extends StatefulWidget {
   @override
   _language createState() => _language();
 
-
 //---------- translate Method ----------
-static String translate(int languageNum) {
-
-  //if the lanugeNum = 0 then the current language is English otherwise it is in Arabic
+  static String translate(int languageNum) {
+    //if the lanugeNum = 0 then the current language is English otherwise it is in Arabic
     return languageNum == 0 ? 'Choose language' : 'اختر اللغة';
   }
 }
-
 
 class _language extends State<language> {
   void initState() {
@@ -34,8 +30,6 @@ class _language extends State<language> {
   String Language;
   String ChooseLanguage;
 
-
-
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -50,14 +44,14 @@ class _language extends State<language> {
                 ChooseLanguage = "Choose language";
               });
               return "";
-            }else{
+            } else {
               setState(() {
                 Language = 'اللغة';
                 ChooseLanguage = "اختر اللغة";
               });
               return "";
             }
-          })()),//----------Translations----------
+          })()), //----------Translations----------
           new Container(
             decoration: new BoxDecoration(
               image: new DecorationImage(
@@ -67,11 +61,15 @@ class _language extends State<language> {
             ),
           ), //----------Background----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.10 , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.10,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               alignment: Alignment(-0.78, -0.37),
-              width:screenWeidth ,
-              height: screenHeight/13,
+              width: screenWeidth,
+              height: screenHeight / 13,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(28.0),
                 color: Colors.white.withOpacity(0.72),
@@ -80,7 +78,6 @@ class _language extends State<language> {
                   color: const Color(0xFF707070).withOpacity(0.72),
                 ),
               ),
-
               child: AutoSizeText(
                 Language,
                 style: TextStyle(
@@ -89,19 +86,18 @@ class _language extends State<language> {
                   color: const Color(0xFF6981B5).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
-
                 minFontSize: 25,
                 maxFontSize: 30,
                 maxLines: 1,
               ),
-
             ),
           ), //----------Header----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.73 ,top: screenHeight  * 0.09 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.73, top: screenHeight * 0.09),
             child: Container(
               width: screenWeidth * 0.20,
-              height: screenHeight* 0.09,
+              height: screenHeight * 0.09,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(178.0),
                 image: DecorationImage(
@@ -112,18 +108,24 @@ class _language extends State<language> {
             ),
           ), //----------ISee Logo----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.08 ,top: screenHeight  * 0.300
-                , right:screenWeidth * 0.08 , bottom: screenHeight  * 0.200),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.08,
+                top: screenHeight * 0.300,
+                right: screenWeidth * 0.08,
+                bottom: screenHeight * 0.200),
             child: SvgPicture.string(
               _svg_32q5b6,
               allowDrawingOutsideViewBox: true,
             ),
           ), //----------Choose Language Rectangle----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.15 ,top: screenHeight  * 0.320
-                , right:screenWeidth * 0.08 , bottom: screenHeight  * 0.200),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.15,
+                top: screenHeight * 0.320,
+                right: screenWeidth * 0.08,
+                bottom: screenHeight * 0.200),
             child: AutoSizeText(
-             ChooseLanguage,
+              ChooseLanguage,
               style: TextStyle(
                 fontFamily: 'Segoe UI',
                 // fontSize: 24,
@@ -137,8 +139,11 @@ class _language extends State<language> {
             ),
           ), //----------Choose Language Text----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.15 ,top: screenHeight  * 0.450
-                , right:screenWeidth * 0.08 , bottom: screenHeight  * 0.200),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.15,
+                top: screenHeight * 0.450,
+                right: screenWeidth * 0.08,
+                bottom: screenHeight * 0.200),
             child: SizedBox(
               width: 259.0,
               height: 143.0,
@@ -184,7 +189,8 @@ class _language extends State<language> {
                           setState(() {
                             globals.language = 0;
                           });
-                          print ("language number:" + globals.language.toString());
+                          print(
+                              "language number:" + globals.language.toString());
                           Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -210,7 +216,8 @@ class _language extends State<language> {
                       child: InkWell(
                         onTap: () {
                           globals.language++;
-                          print ("language number:" + globals.language.toString());
+                          print(
+                              "language number:" + globals.language.toString());
                           Navigator.push(
                               context,
                               MaterialPageRoute(

@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_app/profile.dart';
 import 'package:flutter_app/signIn.dart';
 import 'package:flutter_app/Camera.dart';
 import 'package:camera/camera.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_app/signUp.dart';
-import 'package:flutter_app/testPlate1.dart';
-import 'package:flutter_app/testResult.dart';
-import 'package:styled_text/styled_text.dart';
 
 List<CameraDescription> cameras;
 
@@ -30,7 +25,6 @@ class MyApp extends StatelessWidget {
       builder: (context, snapshot) {
         // Check for errors
         if (snapshot.hasError) {
-          // return SomethingWentWrong();
           print("ERROR CONNECTION");
         }
         // Once complete, show your application
@@ -45,7 +39,7 @@ class MyApp extends StatelessWidget {
                 theme: ThemeData(
                   primarySwatch: Colors.blue,
                 ),
-                home: testPlate1());
+                home: Camera());
           } else {
             return MaterialApp(
                 debugShowCheckedModeBanner: false,

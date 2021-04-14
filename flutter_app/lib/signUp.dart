@@ -1,4 +1,3 @@
-//ALL DONE IN THIS CLASS
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -62,13 +61,6 @@ class _signUp extends State<signUp> {
   //variables
   final _formkey = GlobalKey<FormState>();
   user userObject = new user();
-//  TextEditingController _firstNamecontroller = TextEditingController();
-  // TextEditingController _lastNamecontroller = TextEditingController();
-//  TextEditingController _phoneNOcontroller = TextEditingController();
-//  TextEditingController _emailcontroller = TextEditingController();
-  //TextEditingController _gendercontroller = TextEditingController();
-  // TextEditingController _passwordcontroller = TextEditingController();
-  //TextEditingController _CVDTypecontroller = TextEditingController();
   int selectedRadio;
   String chooseCVD;
   bool _isObscure = true;
@@ -77,8 +69,6 @@ class _signUp extends State<signUp> {
 
   @override
   void dispose() {
-    //  _firstNamecontroller.dispose();
-
     userObject.getFirstNamecontroller.dispose();
     userObject.getLastNamecontroller.dispose();
     userObject.getPhoneNOcontroller.dispose();
@@ -110,29 +100,32 @@ class _signUp extends State<signUp> {
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-
-                  // padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
-                   AppBar(
-                     backgroundColor: Colors.white.withOpacity(0.72),
-                    title: AutoSizeText('Sign Up',
-                      style:TextStyle(
-                      fontFamily: 'Segoe UI',
-                      //   fontSize: screenText * 12.0,
-                      color: const Color(0xFF6981B5).withOpacity(0.72),
-                      fontWeight: FontWeight.w900,
+                  AppBar(
+                    backgroundColor: Colors.white.withOpacity(0.72),
+                    title: AutoSizeText(
+                      'Sign Up',
+                      style: TextStyle(
+                        fontFamily: 'Segoe UI',
+                        //   fontSize: screenText * 12.0,
+                        color: const Color(0xFF6981B5).withOpacity(0.72),
+                        fontWeight: FontWeight.w900,
+                      ),
+                      minFontSize: 25,
+                      maxFontSize: 30,
+                      maxLines: 1,
                     ),
-                    minFontSize: 25,
-                    maxFontSize: 30,
-                    maxLines: 1,),
                     centerTitle: true,
                   ),
 
                   Padding(
-                   // padding: EdgeInsets.only(top: screenHeight * 0.20),
-                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    padding: EdgeInsets.only(
+                        left: screenWeidth * 0.05,
+                        top: screenHeight * 0.02,
+                        right: screenWeidth * 0.05),
                     child: TextFormField(
                       controller: userObject.getFirstNamecontroller,
-                      decoration: InputDecoration(labelText: 'First Name',
+                      decoration: InputDecoration(
+                        labelText: 'First Name',
                         prefixIcon: Icon(Icons.drive_file_rename_outline),
                       ),
                       // ignore: missing_return
@@ -144,11 +137,16 @@ class _signUp extends State<signUp> {
                     ),
                   ), //----------Text First Name----------
                   Padding(
-                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    padding: EdgeInsets.only(
+                        left: screenWeidth * 0.05,
+                        top: screenHeight * 0.02,
+                        right: screenWeidth * 0.05),
                     child: TextFormField(
                       controller: userObject.getLastNamecontroller,
-                      decoration: InputDecoration(labelText: 'Last Name',
-                          prefixIcon: Icon(Icons.drive_file_rename_outline),),
+                      decoration: InputDecoration(
+                        labelText: 'Last Name',
+                        prefixIcon: Icon(Icons.drive_file_rename_outline),
+                      ),
                       // ignore: missing_return
                       validator: (value) {
                         if (value.isEmpty) {
@@ -158,11 +156,16 @@ class _signUp extends State<signUp> {
                     ),
                   ), //----------Text Last Name----------
                   Padding(
-                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    padding: EdgeInsets.only(
+                        left: screenWeidth * 0.05,
+                        top: screenHeight * 0.02,
+                        right: screenWeidth * 0.05),
                     child: TextFormField(
                       controller: userObject.getPhoneNOcontroller,
-                      decoration: InputDecoration(labelText: 'Phone Number',
-                        prefixIcon: Icon(Icons.phone),),
+                      decoration: InputDecoration(
+                        labelText: 'Phone Number',
+                        prefixIcon: Icon(Icons.phone),
+                      ),
                       // ignore: missing_return
                       validator: (value) {
                         if (value.isEmpty) {
@@ -172,11 +175,16 @@ class _signUp extends State<signUp> {
                     ),
                   ), //----------Text Phone Number----------
                   Padding(
-                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    padding: EdgeInsets.only(
+                        left: screenWeidth * 0.05,
+                        top: screenHeight * 0.02,
+                        right: screenWeidth * 0.05),
                     child: TextFormField(
                       controller: userObject.getEmailcontroller,
-                      decoration: InputDecoration(labelText: 'Email',
-                        prefixIcon: Icon(Icons.email),),
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                        prefixIcon: Icon(Icons.email),
+                      ),
                       // ignore: missing_return
                       validator: (value) {
                         return signUp.validateEmailFormat(value);
@@ -184,11 +192,16 @@ class _signUp extends State<signUp> {
                     ),
                   ), //----------Text Email----------
                   Padding(
-                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    padding: EdgeInsets.only(
+                        left: screenWeidth * 0.05,
+                        top: screenHeight * 0.02,
+                        right: screenWeidth * 0.05),
                     child: TextFormField(
                       controller: userObject.getGendercontroller,
-                      decoration: InputDecoration(labelText: 'Gender',
-                        prefixIcon: Icon(Icons.assignment_ind_rounded),),
+                      decoration: InputDecoration(
+                        labelText: 'Gender',
+                        prefixIcon: Icon(Icons.assignment_ind_rounded),
+                      ),
                       // ignore: missing_return
                       validator: (value) {
                         if (value.isEmpty) {
@@ -198,23 +211,25 @@ class _signUp extends State<signUp> {
                     ),
                   ), //----------Text Gender----------
                   Padding(
-                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.02, right:screenWeidth *0.05),
+                    padding: EdgeInsets.only(
+                        left: screenWeidth * 0.05,
+                        top: screenHeight * 0.02,
+                        right: screenWeidth * 0.05),
                     child: TextFormField(
                       controller: userObject.getPasswordcontroller,
                       obscureText: _isObscure,
-                      decoration: InputDecoration(labelText: 'Password',
-                        prefixIcon: Icon(Icons.vpn_key),
+                      decoration: InputDecoration(
+                          labelText: 'Password',
+                          prefixIcon: Icon(Icons.vpn_key),
                           suffixIcon: IconButton(
-                              icon: Icon(
-                                  _isObscure ? Icons.visibility : Icons.visibility_off),
+                              icon: Icon(_isObscure
+                                  ? Icons.visibility
+                                  : Icons.visibility_off),
                               onPressed: () {
                                 setState(() {
                                   _isObscure = !_isObscure;
                                 });
-                              })
-                      ),
-
-
+                              })),
 
                       // ignore: missing_return
                       validator: (value) {
@@ -226,7 +241,7 @@ class _signUp extends State<signUp> {
                   Stack(
                     children: <Widget>[
                       Padding(
-                        padding: EdgeInsets.only(right: 200.0, top: 30.0 ),
+                        padding: EdgeInsets.only(right: 200.0, top: 30.0),
                         child: Text(
                           'My CVD Type',
                           textAlign: TextAlign.left,
@@ -250,7 +265,8 @@ class _signUp extends State<signUp> {
                             value: chooseCVD,
                             onChanged: (newValue) {
                               setState(() {
-                                chooseCVD = userObject.getCVDTypecontroller.toString();
+                                chooseCVD =
+                                    userObject.getCVDTypecontroller.toString();
                                 chooseCVD = newValue;
                               });
                             },
@@ -269,10 +285,9 @@ class _signUp extends State<signUp> {
                   ), //---------- CVD drop down  ----------
 
                   ListTile(
-                    contentPadding: new EdgeInsets.only(right: 20.0 ),
-                    //    contentPadding: new EdgeInsets.only(left:screenWeidth * 0.20 ,top: screenHeight * 0.09),
+                    contentPadding: new EdgeInsets.only(right: 20.0),
                     title: const AutoSizeText(
-                        'I Don\'t Know My CVD Type,\nI Will Take The Test.',
+                      'I Don\'t Know My CVD Type,\nI Will Take The Test.',
                       maxLines: 2,
                     ),
                     leading: Radio(
@@ -288,11 +303,14 @@ class _signUp extends State<signUp> {
                     ),
                   ), //----------CVD Radio----------
                   Padding(
-                    padding: EdgeInsets.only(left:screenWeidth *0.05 ,top: screenHeight  * 0.01, right:screenWeidth *0.05),
+                    padding: EdgeInsets.only(
+                        left: screenWeidth * 0.05,
+                        top: screenHeight * 0.01,
+                        right: screenWeidth * 0.05),
                     child: RaisedButton(
                       color: const Color(0xff6981b5),
-                      padding:
-                          EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+                      padding: EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 30.0),
                       child: AutoSizeText(
                         'Sign UP',
                         style: TextStyle(color: Colors.white),
@@ -303,7 +321,8 @@ class _signUp extends State<signUp> {
                           var result = await FirebaseAuth.instance
                               .createUserWithEmailAndPassword(
                                   email: userObject.getEmailcontroller.text,
-                                  password: userObject.getPasswordcontroller.text);
+                                  password:
+                                      userObject.getPasswordcontroller.text);
 
                           if (result != null) {
                             //Check if Directed to Camera Or Test page based on CVD Radio
@@ -315,7 +334,8 @@ class _signUp extends State<signUp> {
                                   .set({
                                 'firstName':
                                     userObject.getFirstNamecontroller.text,
-                                'lastName': userObject.getLastNamecontroller.text,
+                                'lastName':
+                                    userObject.getLastNamecontroller.text,
                                 'phoneNo': userObject.getPhoneNOcontroller.text,
                                 'email': userObject.getEmailcontroller.text,
                                 'gender': userObject.getGendercontroller.text,
@@ -359,8 +379,10 @@ class _signUp extends State<signUp> {
                                   .collection("CVD_User")
                                   .doc(result.user.uid)
                                   .set({
-                                'firstName': userObject.getFirstNamecontroller.text,
-                                'lastName': userObject.getLastNamecontroller.text,
+                                'firstName':
+                                    userObject.getFirstNamecontroller.text,
+                                'lastName':
+                                    userObject.getLastNamecontroller.text,
                                 'phoneNo': userObject.getPhoneNOcontroller.text,
                                 'email': userObject.getEmailcontroller.text,
                                 'gender': userObject.getGendercontroller.text,
@@ -392,7 +414,8 @@ class _signUp extends State<signUp> {
                               //3-Direct the user to camera page
                               Navigator.pushReplacement(
                                 context,
-                                MaterialPageRoute(builder: (context) => Camera()),
+                                MaterialPageRoute(
+                                    builder: (context) => Camera()),
                               );
                               print("Directed to Camera page");
                             }
@@ -403,7 +426,8 @@ class _signUp extends State<signUp> {
                       },
                     ),
                   ), //----------SignUP Button----------
-                  Padding( padding: const EdgeInsets.only(top: 0.0, right: 300.0),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 0.0, right: 300.0),
                     child: InkWell(
                       child: SvgPicture.string(
                         // arrow-return-left

@@ -8,7 +8,7 @@ class support extends StatefulWidget {
   _support createState() => _support();
 }
 
-class  _support extends State<support> {
+class _support extends State<support> {
   void initState() {
     super.initState();
   }
@@ -32,26 +32,25 @@ class  _support extends State<support> {
                 fit: BoxFit.cover,
               ),
             ),
-          ),//----------Background----------
+          ), //----------Background----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.10 , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.10,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               alignment: Alignment(-0.78, -0.37),
-              //   width: 343.0,
-              //  height: 56.0,
-
-              width:screenWeidth ,
-              height: screenHeight/13,
+              width: screenWeidth,
+              height: screenHeight / 13,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(28.0),
                 color: Colors.white.withOpacity(0.72),
                 border: Border.all(
                   width: 1.0,
                   color: const Color(0xFF707070).withOpacity(0.72),
-
                 ),
               ),
-
               child: AutoSizeText(
                 'Support',
                 style: TextStyle(
@@ -60,19 +59,18 @@ class  _support extends State<support> {
                   color: const Color(0xFF6981B5).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
-
                 minFontSize: 25,
                 maxFontSize: 30,
                 maxLines: 1,
               ),
-
             ),
           ), //----------Header----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.73 ,top: screenHeight  * 0.09 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.73, top: screenHeight * 0.09),
             child: Container(
               width: screenWeidth * 0.20,
-              height: screenHeight* 0.09,
+              height: screenHeight * 0.09,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(178.0),
                 image: DecorationImage(
@@ -83,28 +81,29 @@ class  _support extends State<support> {
             ),
           ), //----------ISee Logo----------
           Padding(
-          padding: EdgeInsets.only(left:screenWeidth * 0.73 ,top: 665.0),
-          child:Container(
-            child: RaisedButton(
-              color: const Color(0xff6981b5),
-              child:Text(
-                'Send',
-                style: TextStyle(color: Colors.white),
+            padding: EdgeInsets.only(left: screenWeidth * 0.73, top: 665.0),
+            child: Container(
+              child: RaisedButton(
+                color: const Color(0xff6981b5),
+                child: Text(
+                  'Send',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () async {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => support()));
+                },
               ),
-              onPressed: () async {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => support()));
-              },
             ),
-          ),
-          ),//----------Send Button----------
+          ), //----------Send Button----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.0 ,top: screenHeight  * 0.27 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.0, top: screenHeight * 0.27),
             child: Container(
               child: SizedBox(
-                width:screenWeidth,
-                height: screenHeight/01,
-                child:AutoSizeText(
+                width: screenWeidth,
+                height: screenHeight / 01,
+                child: AutoSizeText(
                   'Need more help?',
                   style: TextStyle(
                     fontFamily: 'Segoe UI',
@@ -120,11 +119,14 @@ class  _support extends State<support> {
             ),
           ), //----------Need Help Label----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.10 ,top: screenHeight  * 0.34, right:screenWeidth * 0.10 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.10,
+                top: screenHeight * 0.34,
+                right: screenWeidth * 0.10),
             child: Container(
               alignment: Alignment(-1.0, 0.16),
-              width:screenWeidth,
-              height: screenHeight/13,
+              width: screenWeidth,
+              height: screenHeight / 13,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18.0),
                 color: Colors.white.withOpacity(0.74),
@@ -140,8 +142,11 @@ class  _support extends State<support> {
             ),
           ), //**********Subject Text Field***********
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.44 , right: screenWeidth * 0.05 ),
-            child:Container(
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.44,
+                right: screenWeidth * 0.05),
+            child: Container(
               child: SizedBox(
                 width: 322.0,
                 height: 357.0,
@@ -153,7 +158,7 @@ class  _support extends State<support> {
                       child: SizedBox(
                         width: 157.0,
                         height: 35.0,
-                        child:AutoSizeText(
+                        child: AutoSizeText(
                           'Description:',
                           style: TextStyle(
                             fontFamily: 'Segoe UI',
@@ -179,7 +184,8 @@ class  _support extends State<support> {
                       ),
                       child: TextField(
                         decoration: InputDecoration(
-                            border: InputBorder.none, hintText: ' Description:'),
+                            border: InputBorder.none,
+                            hintText: ' Description:'),
                       ),
                     ),
                   ],
@@ -193,14 +199,14 @@ class  _support extends State<support> {
                   MaterialPageRoute(builder: (context) => UserSettings()));
             },
             child: Padding(
-              padding:const EdgeInsets.only(left:30 , top:150),
+              padding: const EdgeInsets.only(left: 30, top: 150),
               child: SvgPicture.string(
                 '<svg viewBox="109.0 151.62 13.37 23.76" ><path transform="translate(109.0, 148.02)" d="M 13.37402248382568 5.08489990234375 L 13.37402248382568 25.87349510192871 C 13.37402248382568 26.2755184173584 13.22707462310791 26.6236457824707 12.9331750869751 26.91787528991699 C 12.63927745819092 27.21210670471191 12.29089164733887 27.35894775390625 11.88802051544189 27.35839653015137 C 11.48514842987061 27.35784530639648 11.13676357269287 27.21100807189941 10.84286499023438 26.91787528991699 L 0.4408473968505859 16.52357864379883 C 0.1469491124153137 16.22934722900391 0 15.88122081756592 0 15.47919845581055 C 0 15.07717514038086 0.1469491124153137 14.72904777526855 0.4408473968505859 14.43481826782227 L 10.84286499023438 4.040519237518311 C 11.13676357269287 3.746838808059692 11.48514842987061 3.599998712539673 11.88802051544189 3.599998712539673 C 12.29089164733887 3.599998712539673 12.63927745819092 3.746838808059692 12.9331750869751 4.040519237518311 C 13.22707462310791 4.33419942855835 13.37402248382568 4.682325839996338 13.37402248382568 5.084898471832275 Z" fill="#6981b5" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>',
                 width: 15.37,
                 height: 23.76,
               ),
             ),
-          ),//----------Back Icon----------
+          ), //----------Back Icon----------
         ],
       ),
     );

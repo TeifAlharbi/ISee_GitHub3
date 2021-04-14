@@ -1,4 +1,3 @@
-//ALL DONE
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,8 @@ class Test extends StatefulWidget {
   @override
   _Test createState() => _Test();
 }
-class  _Test extends State<Test> {
+
+class _Test extends State<Test> {
   void initState() {
     super.initState();
   }
@@ -24,6 +24,7 @@ class  _Test extends State<Test> {
   void dispose() {
     super.dispose();
   }
+
   int valid = 0;
 
   @override
@@ -40,24 +41,25 @@ class  _Test extends State<Test> {
                 fit: BoxFit.cover,
               ),
             ),
-          ),//----------Background----------
+          ), //----------Background----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.05 ,top: screenHeight  * 0.10
-                , right:screenWeidth * 0.10 , bottom:screenHeight  * 0.05  ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.05,
+                top: screenHeight * 0.10,
+                right: screenWeidth * 0.10,
+                bottom: screenHeight * 0.05),
             child: Container(
               alignment: Alignment(-0.78, -0.37),
-              width:screenWeidth ,
-              height: screenHeight/13,
+              width: screenWeidth,
+              height: screenHeight / 13,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(28.0),
                 color: Colors.white.withOpacity(0.72),
                 border: Border.all(
                   width: 1.0,
                   color: const Color(0xFF707070).withOpacity(0.72),
-
                 ),
               ),
-
               child: AutoSizeText(
                 'Test Page',
                 style: TextStyle(
@@ -66,19 +68,18 @@ class  _Test extends State<Test> {
                   color: const Color(0xFF6981B5).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
-
                 minFontSize: 25,
                 maxFontSize: 30,
                 maxLines: 1,
               ),
-
             ),
           ), //----------Header----------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.73 ,top: screenHeight  * 0.09 ),
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.73, top: screenHeight * 0.09),
             child: Container(
               width: screenWeidth * 0.20,
-              height: screenHeight* 0.09,
+              height: screenHeight * 0.09,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(178.0),
                 image: DecorationImage(
@@ -89,8 +90,9 @@ class  _Test extends State<Test> {
             ),
           ), //----------ISee Logo----------
           StreamBuilder(
-            stream:
-            FirebaseFirestore.instance.collection('Ishihara_Test').snapshots(),
+            stream: FirebaseFirestore.instance
+                .collection('Ishihara_Test')
+                .snapshots(),
             builder:
                 (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
               if (!snapshot.hasData) return Text('');
@@ -100,22 +102,23 @@ class  _Test extends State<Test> {
                 default:
                   return new ListView(
                     children:
-                    snapshot.data.docs.map((DocumentSnapshot document) {
-                      var currentUser =  FirebaseAuth.instance.currentUser;
+                        snapshot.data.docs.map((DocumentSnapshot document) {
+                      var currentUser = FirebaseAuth.instance.currentUser;
                       if (document.id == currentUser.uid) {
                         valid++;
                         return new ListTile();
-                      }else{
+                      } else {
                         return new ListTile();
                       }
                     }).toList(),
                   );
-               }
+              }
             },
           ), //------Check the user's tests--------
           Padding(
-            padding: EdgeInsets.only(left:screenWeidth * 0.15 ,top: screenHeight  * 0.35),
-            child:  Container(
+            padding: EdgeInsets.only(
+                left: screenWeidth * 0.15, top: screenHeight * 0.35),
+            child: Container(
               child: SizedBox(
                 width: 252.0,
                 height: 266.0,
@@ -124,16 +127,19 @@ class  _Test extends State<Test> {
                   children: <Widget>[
                     InkWell(
                       onTap: () {
-                        if (valid == 1){
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => IshiharaTest()));
-                        }else{
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => testInstructions()));
+                        if (valid == 1) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => IshiharaTest()));
+                        } else {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => testInstructions()));
                         }
                       },
-                      child:
-                      Container(
+                      child: Container(
                         alignment: Alignment.center,
                         width: 252.0,
                         height: 56.0,
@@ -145,7 +151,7 @@ class  _Test extends State<Test> {
                             color: const Color(0xFF707070),
                           ),
                         ),
-                        child:AutoSizeText(
+                        child: AutoSizeText(
                           'Take Ishihara Test',
                           style: TextStyle(
                             fontFamily: 'Segoe UI',
@@ -157,19 +163,22 @@ class  _Test extends State<Test> {
                           maxFontSize: 25,
                         ),
                       ),
-                    ),//Take Ishihara Test Button
+                    ), //Take Ishihara Test Button
                     InkWell(
                       onTap: () {
-                        if (valid == 1){
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => TestResult()));
-                        }else{
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => TestResultNew()));
+                        if (valid == 1) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TestResult()));
+                        } else {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TestResultNew()));
                         }
                       },
-                      child:
-                       Container(
+                      child: Container(
                         alignment: Alignment.center,
                         width: 252.0,
                         height: 56.0,
@@ -193,14 +202,15 @@ class  _Test extends State<Test> {
                           maxFontSize: 25,
                         ),
                       ),
-                    ),//Ishihara Test Result Button
+                    ), //Ishihara Test Result Button
                     InkWell(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => aboutIshihara()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => aboutIshihara()));
                       },
-                      child:
-                      Container(
+                      child: Container(
                         alignment: Alignment(0.05, 0.0),
                         width: 252.0,
                         height: 56.0,
@@ -224,19 +234,19 @@ class  _Test extends State<Test> {
                           maxFontSize: 25,
                         ),
                       ),
-                    ),//About Ishihara Test Button
+                    ), //About Ishihara Test Button
                   ],
                 ),
               ),
             ),
-          ),  //----------Buttons----------
+          ), //----------Buttons----------
           InkWell(
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => UserSettings()));
             },
             child: Padding(
-              padding:const EdgeInsets.only(left:30 , top:150),
+              padding: const EdgeInsets.only(left: 30, top: 150),
               child: SvgPicture.string(
                 '<svg viewBox="109.0 151.62 13.37 23.76" ><path transform="translate(109.0, 148.02)" d="M 13.37402248382568 5.08489990234375 L 13.37402248382568 25.87349510192871 C 13.37402248382568 26.2755184173584 13.22707462310791 26.6236457824707 12.9331750869751 26.91787528991699 C 12.63927745819092 27.21210670471191 12.29089164733887 27.35894775390625 11.88802051544189 27.35839653015137 C 11.48514842987061 27.35784530639648 11.13676357269287 27.21100807189941 10.84286499023438 26.91787528991699 L 0.4408473968505859 16.52357864379883 C 0.1469491124153137 16.22934722900391 0 15.88122081756592 0 15.47919845581055 C 0 15.07717514038086 0.1469491124153137 14.72904777526855 0.4408473968505859 14.43481826782227 L 10.84286499023438 4.040519237518311 C 11.13676357269287 3.746838808059692 11.48514842987061 3.599998712539673 11.88802051544189 3.599998712539673 C 12.29089164733887 3.599998712539673 12.63927745819092 3.746838808059692 12.9331750869751 4.040519237518311 C 13.22707462310791 4.33419942855835 13.37402248382568 4.682325839996338 13.37402248382568 5.084898471832275 Z" fill="#6981b5" stroke="none" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>',
                 width: 15.37,
