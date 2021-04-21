@@ -181,8 +181,7 @@ class _TestResult extends State<TestResult> {
                             correctAnswer = document.data()['correct_answer'];
                             incorrectanswer = document.data()['wrong_answer'];
                             finalResult = document.data()['final_result'];
-                            userObject.getDatecontroller.text =
-                                document.data()['Date'];
+                            userObject.getDatecontroller.text = document.data()['Date'];
                           });
                           return new ListTile();
                         });
@@ -211,8 +210,7 @@ class _TestResult extends State<TestResult> {
                       if (document.id == currentUser.uid) {
                         Future.delayed(Duration(), () async {
                           await setState(() {
-                            userObject.getCVDTypecontroller.text =
-                                document.data()['CVDType'];
+                            userObject.getCVDTypecontroller.text = document.data()['CVDType'];
                           });
                         });
                         return new ListTile();
@@ -274,7 +272,6 @@ class _TestResult extends State<TestResult> {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ), //My CVD Type text
-
           StreamBuilder(
             stream: FirebaseFirestore.instance
                 .collection('Ishihara_Test')
@@ -305,16 +302,14 @@ class _TestResult extends State<TestResult> {
                                   .update({'CVDType': "Normal vision"});
                             } else if (incorrectanswer >= 4) {
                               //2- Red_green (Portan -> makes red look more green)
-                              if (page11_choice1 == "Nothing" &&
-                                  page11_choice2 == "2") {
+                              if (page11_choice1 == "Nothing" && page11_choice2 == "2") {
                                 //update the CVDType value
                                 FirebaseFirestore.instance
                                     .collection("CVD_User")
                                     .doc(currentUser.uid)
                                     .update({'CVDType': "Protanopia"});
                                 //3- Red_green (Deutran -> common type makes green look more red)
-                              } else if (page11_choice1 == "4" &&
-                                  page11_choice2 == "Nothing") {
+                              } else if (page11_choice1 == "4" && page11_choice2 == "Nothing") {
                                 //update the CVDType value
                                 FirebaseFirestore.instance
                                     .collection("CVD_User")

@@ -13,6 +13,7 @@ class signUp extends StatefulWidget {
   @override
   _signUp createState() => _signUp();
 
+
   //---------- validateEmailFormat Method ----------
   static String validateEmailFormat(String email) {
     if (email.isEmpty) {

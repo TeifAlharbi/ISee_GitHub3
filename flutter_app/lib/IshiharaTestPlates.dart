@@ -10,8 +10,7 @@ class IshiharaTestPlates {
 
   //getter
   TextEditingController get getFirstNumbercontroller => _firstNumbercontroller;
-  TextEditingController get getSecondNumbercontroller =>
-      _secondNumbercontroller;
+  TextEditingController get getSecondNumbercontroller => _secondNumbercontroller;
 
   static String ishiharaTestResult(
       int wrongAnswersCounter, String page11_choice1, String page11_choice2) {
@@ -33,19 +32,7 @@ class IshiharaTestPlates {
   }
 
   static bool testUserSelection(String choice) {
-    List listItem = [
-      "Nothing",
-      "0",
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9"
-    ];
+    List listItem = ["Nothing", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
     //user did not enter a value
     if (choice == null) {

@@ -164,9 +164,7 @@ class _testPlate2 extends State<testPlate2> {
                   value: IshiharaTestPlatesObject.valueChoose1,
                   onChanged: (newValue) {
                     setState(() {
-                      IshiharaTestPlatesObject.valueChoose1 =
-                          IshiharaTestPlatesObject.getFirstNumbercontroller
-                              .toString();
+                      IshiharaTestPlatesObject.valueChoose1 = IshiharaTestPlatesObject.getFirstNumbercontroller.toString();
                       IshiharaTestPlatesObject.valueChoose1 = newValue;
                     });
                   },

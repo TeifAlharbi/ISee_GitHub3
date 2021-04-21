@@ -11,26 +11,26 @@ main(){
   //----------First Test----------
   test("You Must Enter a Correct Email Format",(){
 
-    //variable
+    //1-variable
     String email = "bayan#baz";
 
-    //call the method and assign a value to it
+    //2-call the method and assign a value to it
     String enteredEmail = signUp.validateEmailFormat(email);
 
-    //check if the actual result matches the expected result
+    //3-check if the actual result matches the expected result
     expect(enteredEmail,'The Email is badly formatted.');
   });
 
   //----------Second Test----------
   test("You Must Enter a Correct Password",(){
 
-    //variable
+    //1-variable
     String password = "bfb12";
 
-    //call the method and assign a value to it
+    //2-call the method and assign a value to it
     String enteredPassword =  signUp.validatePasswordFormat(password);
 
-    //check if the actual result matches the expected result
+    //3-check if the actual result matches the expected result
     expect(enteredPassword,'Password should be at least 6 characters');
   });
 
