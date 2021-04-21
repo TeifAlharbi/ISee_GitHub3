@@ -9,13 +9,13 @@ main(){
   //----------First Test----------
   test("Drop-Down Menu Empty Selection",(){
 
-    //variable
+    //1-variable
     String choice = "";
 
-    //call the method and assign a value to it
+    //2-call the method and assign a value to it
     bool value = IshiharaTestPlates.testUserSelection(choice);
 
-    //check if the actual result matches the expected result
+    //3-check if the actual result matches the expected result
     expect(value,false);
   });
 
@@ -23,13 +23,13 @@ main(){
   //----------Second Test----------
   test("Drop-Down Menu Correct Selection",(){
 
-    //variable
+    //1-variable
     String choice = "4";
 
-    //call the method and assign a value to it
+    //2-call the method and assign a value to it
     bool value = IshiharaTestPlates.testUserSelection(choice);
 
-    //check if the actual result matches the expected result
+    //3-check if the actual result matches the expected result
     expect(value,true);
   });
 
@@ -37,13 +37,13 @@ main(){
   //----------Second Test----------
   test("Drop-Down Menu Wrong Selection",(){
 
-    //variable
+    //1-variable
     String choice = "20";
 
-    //call the method and assign a value to it
+    //2-call the method and assign a value to it
     bool value = IshiharaTestPlates.testUserSelection(choice);
 
-    //check if the actual result matches the expected result
+    //3-check if the actual result matches the expected result
     expect(value,false);
   });
 
@@ -55,31 +55,31 @@ main(){
   //----------Fourth Test----------
   test("Test Result Normale",(){
 
-    //variables
+    //1-variables
     int wrongAnswersCounter = 2 ;
     String page11_choice1 = "4";
     String page11_choice2 = "2";
 
-    //call the method and assign a value to it
+    //2-call the method and assign a value to it
     String CVDType = IshiharaTestPlates.ishiharaTestResult(wrongAnswersCounter, page11_choice1, page11_choice2);
 
-    //check if the actual result matches the expected result
+    //3-check if the actual result matches the expected result
     expect(CVDType,'Normal vision');
   });
 
   //----------Fifth Test----------
   test("Test Result Red_Green (Protan)",(){
 
-    //variables
+    //1-variables
     int wrongAnswersCounter = 7 ;
     String page11_choice1 = "Nothing";
     String page11_choice2 = "2";
 
-    //call the method and assign a value to it
+    //2-call the method and assign a value to it
     String CVDType = IshiharaTestPlates.ishiharaTestResult(wrongAnswersCounter,
         page11_choice1, page11_choice2);
 
-    //check if the actual result matches the expected result
+    //3-check if the actual result matches the expected result
     expect(CVDType,'Protanopia');
   });
 
@@ -87,15 +87,15 @@ main(){
   //----------Sixth Test----------
   test("Test Result Red_Green (Deutran)",(){
 
-    //variables
+    //1-variables
     int wrongAnswersCounter = 9 ;
     String page11_choice1 = "4";
     String page11_choice2 = "Nothing";
 
-    //call the method and assign a value to it
+    //2-call the method and assign a value to it
     String CVDType = IshiharaTestPlates.ishiharaTestResult(wrongAnswersCounter, page11_choice1, page11_choice2);
 
-    //check if the actual result matches the expected result
+    //3-check if the actual result matches the expected result
     expect(CVDType,'Duetronopia');
   });
 

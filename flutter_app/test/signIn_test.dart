@@ -10,26 +10,26 @@ main(){
   //----------First Test----------
   test("You Must Enter An Email",(){
 
-    //variable
+    //1-variable
     String email = "teifalharbi@gmail.com";
 
-    //call the method and assign a value to it
+    //2-call the method and assign a value to it
     String enteredEmail = signIn.validateEmail(email);
 
-    //check if the actual result matches the expected result
+    //3-check if the actual result matches the expected result
     expect(enteredEmail,null);
   });
 
   //----------Second Test----------
   test("You Must Enter A Password",(){
 
-    //variable
+    //1-variable
     String password = "";
 
-    //call the method and assign a value to it
+    //2-call the method and assign a value to it
     String enteredPassword =  signIn.validatePassword(password);
 
-    //check if the actual result matches the expected result
+    //3-check if the actual result matches the expected result
     expect(enteredPassword,'Please Fill The Password Field');
   });
 
