@@ -23,10 +23,10 @@ main(){
   test("Switch Between Arabic/English --> English",(){
 
     //1-variable
-    int arabicLanguageNum = 0;
+    int englishLanguageNum = 0;
 
     //2-call the method and assign a value to it
-    String expectedLanguage = language.translate(arabicLanguageNum);
+    String expectedLanguage = language.translate(englishLanguageNum);
 
     //3-check if the actual result matches the expected result
     expect(expectedLanguage,'Choose language');
