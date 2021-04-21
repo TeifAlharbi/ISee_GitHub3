@@ -196,7 +196,7 @@ class _testPlate2 extends State<testPlate2> {
                       globals.wrongAnswerCount++;
                     }
 
-                    //2-Add user information into CVD_User table
+                    //2-Add user information into Ishihara_Test table
                     var current_user = await FirebaseAuth.instance.currentUser;
                     FirebaseFirestore.instance
                         .collection("Ishihara_Test")

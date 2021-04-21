@@ -21,11 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fa067046-78a8-43ca-b295-161f9927cbef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/IshiharaTestPlates.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/IshiharaTestPlates.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/signUp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/signUp.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate2.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testResult.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testResult.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/test/signUp_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/test/signUp_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
