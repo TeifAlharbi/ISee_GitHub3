@@ -45,7 +45,7 @@ class _TestResult extends State<TestResult> {
           new Container(
             decoration: new BoxDecoration(
               image: new DecorationImage(
-                image: new AssetImage("images/fram2.png"),
+                image: new AssetImage("images/fram3.png"),
                 fit: BoxFit.cover,
               ),
             ),
