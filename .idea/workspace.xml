@@ -20,7 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa067046-78a8-43ca-b295-161f9927cbef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/UserSettings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/UserSettings.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/security.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/security.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate1.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate5.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate5.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate9.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate9.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,12 +58,12 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/flutter_app/images" />
-      <recent name="$PROJECT_DIR$/flutter_app/test" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/flutter_app/lib" />
+      <recent name="$PROJECT_DIR$/flutter_app/test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/flutter_app/images" />
       <recent name="$PROJECT_DIR$/flutter_app/test" />
     </key>
   </component>
