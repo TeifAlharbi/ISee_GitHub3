@@ -187,14 +187,14 @@ class _Test extends State<Test> {
                           color: Colors.white,
                           border: Border.all(
                             width: 1.0,
-                            color: const Color(0xFF707070),
+                            color: const Color(0xFFC3BABA),
                           ),
                         ),
                         child: AutoSizeText(
                           'Ishihara Test Result',
                           style: TextStyle(
                             fontFamily: 'Segoe UI',
-                            color: const Color(0xFF6A77AB),
+                            color: const Color(0xFFC3BABA),
                             fontWeight: FontWeight.w900,
                           ),
                           maxLines: 1,
@@ -226,7 +226,7 @@ class _Test extends State<Test> {
                           'About Ishihara Test',
                           style: TextStyle(
                             fontFamily: 'Segoe UI',
-                            color: const Color(0xFF6A77AB),
+                            color: const Color(0xFFC3BABA),
                             fontWeight: FontWeight.w900,
                           ),
                           maxLines: 1,
