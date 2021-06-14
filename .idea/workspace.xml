@@ -20,11 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa067046-78a8-43ca-b295-161f9927cbef" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/images/fram3.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/images/fram3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/lib/UserSettings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/UserSettings.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/security.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/security.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate1.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate5.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate5.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate9.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate9.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/profile.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +66,11 @@
       <recent name="$PROJECT_DIR$/flutter_app/test" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter Test.Switch Between Arabic/English --&gt; English">
+  <component name="RunManager" selected="Flutter.main.dart">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/flutter_app/lib/main.dart" />
+      <method v="2" />
+    </configuration>
     <configuration name="Switch Between Arabic/English --&gt; Arabic" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="Switch Between Arabic/English --&gt; Arabic" />
       <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/language_test.dart" />
@@ -83,22 +86,17 @@
       <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/IshiharaTestPlates_test.dart" />
       <method v="2" />
     </configuration>
-    <configuration name="Test Result Red_Green (Protan)" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="Test Result Red_Green (Protan)" />
-      <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/IshiharaTestPlates_test.dart" />
-      <method v="2" />
-    </configuration>
     <configuration name="tests in IshiharaTestPlates_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testFile" value="$PROJECT_DIR$/flutter_app/test/IshiharaTestPlates_test.dart" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Flutter Test.Switch Between Arabic/English --&gt; English" />
         <item itemvalue="Flutter Test.Switch Between Arabic/English --&gt; Arabic" />
         <item itemvalue="Flutter Test.tests in IshiharaTestPlates_test.dart" />
         <item itemvalue="Flutter Test.Test Result Red_Green (Deutran)" />
-        <item itemvalue="Flutter Test.Test Result Red_Green (Protan)" />
       </list>
     </recent_temporary>
   </component>
@@ -146,45 +144,45 @@
     <state x="118" y="124" width="1033" height="501" key="AVDManager/0.25.1280.701@0.25.1280.701" timestamp="1618441366440" />
     <state x="118" y="125" width="1033" height="503" key="AVDManager/0.25.1280.703@0.25.1280.703" timestamp="1617868959003" />
     <state x="118" y="125" width="1033" height="505" key="AVDManager/0.25.1280.707@0.25.1280.707" timestamp="1618176067791" />
-    <state width="1233" height="187" key="GridCell.Tab.0.bottom" timestamp="1623589751288">
-      <screen x="0" y="25" width="1280" height="710" />
+    <state width="1233" height="94" key="GridCell.Tab.0.bottom" timestamp="1623661211779">
+      <screen x="0" y="25" width="1280" height="702" />
     </state>
     <state width="1238" height="113" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1618041912894" />
     <state width="1233" height="218" key="GridCell.Tab.0.bottom/0.25.1280.701@0.25.1280.701" timestamp="1618242407702" />
-    <state width="1233" height="162" key="GridCell.Tab.0.bottom/0.25.1280.702@0.25.1280.702" timestamp="1618974104223" />
+    <state width="1233" height="94" key="GridCell.Tab.0.bottom/0.25.1280.702@0.25.1280.702" timestamp="1623661211779" />
     <state width="1233" height="179" key="GridCell.Tab.0.bottom/0.25.1280.703@0.25.1280.703" timestamp="1618045344944" />
     <state width="1233" height="170" key="GridCell.Tab.0.bottom/0.25.1280.705@0.25.1280.705" timestamp="1618972428894" />
     <state width="1233" height="343" key="GridCell.Tab.0.bottom/0.25.1280.707@0.25.1280.707" timestamp="1618176475103" />
     <state width="1233" height="216" key="GridCell.Tab.0.bottom/0.25.1280.709@0.25.1280.709" timestamp="1618182169170" />
     <state width="1233" height="187" key="GridCell.Tab.0.bottom/0.25.1280.710@0.25.1280.710" timestamp="1623589751288" />
-    <state width="1233" height="187" key="GridCell.Tab.0.center" timestamp="1623589751285">
-      <screen x="0" y="25" width="1280" height="710" />
+    <state width="1233" height="94" key="GridCell.Tab.0.center" timestamp="1623661211779">
+      <screen x="0" y="25" width="1280" height="702" />
     </state>
     <state width="1238" height="113" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1618041912893" />
     <state width="1233" height="218" key="GridCell.Tab.0.center/0.25.1280.701@0.25.1280.701" timestamp="1618242407702" />
-    <state width="1233" height="162" key="GridCell.Tab.0.center/0.25.1280.702@0.25.1280.702" timestamp="1618974104222" />
+    <state width="1233" height="94" key="GridCell.Tab.0.center/0.25.1280.702@0.25.1280.702" timestamp="1623661211779" />
     <state width="1233" height="179" key="GridCell.Tab.0.center/0.25.1280.703@0.25.1280.703" timestamp="1618045344943" />
     <state width="1233" height="170" key="GridCell.Tab.0.center/0.25.1280.705@0.25.1280.705" timestamp="1618972428893" />
     <state width="1233" height="343" key="GridCell.Tab.0.center/0.25.1280.707@0.25.1280.707" timestamp="1618176475102" />
     <state width="1233" height="216" key="GridCell.Tab.0.center/0.25.1280.709@0.25.1280.709" timestamp="1618182169169" />
     <state width="1233" height="187" key="GridCell.Tab.0.center/0.25.1280.710@0.25.1280.710" timestamp="1623589751285" />
-    <state width="1233" height="187" key="GridCell.Tab.0.left" timestamp="1623589751283">
-      <screen x="0" y="25" width="1280" height="710" />
+    <state width="1233" height="94" key="GridCell.Tab.0.left" timestamp="1623661211778">
+      <screen x="0" y="25" width="1280" height="702" />
     </state>
     <state width="1238" height="113" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1618041912893" />
     <state width="1233" height="218" key="GridCell.Tab.0.left/0.25.1280.701@0.25.1280.701" timestamp="1618242407701" />
-    <state width="1233" height="162" key="GridCell.Tab.0.left/0.25.1280.702@0.25.1280.702" timestamp="1618974104220" />
+    <state width="1233" height="94" key="GridCell.Tab.0.left/0.25.1280.702@0.25.1280.702" timestamp="1623661211778" />
     <state width="1233" height="179" key="GridCell.Tab.0.left/0.25.1280.703@0.25.1280.703" timestamp="1618045344943" />
     <state width="1233" height="170" key="GridCell.Tab.0.left/0.25.1280.705@0.25.1280.705" timestamp="1618972428893" />
     <state width="1233" height="343" key="GridCell.Tab.0.left/0.25.1280.707@0.25.1280.707" timestamp="1618176475102" />
     <state width="1233" height="216" key="GridCell.Tab.0.left/0.25.1280.709@0.25.1280.709" timestamp="1618182169169" />
     <state width="1233" height="187" key="GridCell.Tab.0.left/0.25.1280.710@0.25.1280.710" timestamp="1623589751283" />
-    <state width="1233" height="187" key="GridCell.Tab.0.right" timestamp="1623589751286">
-      <screen x="0" y="25" width="1280" height="710" />
+    <state width="1233" height="94" key="GridCell.Tab.0.right" timestamp="1623661211779">
+      <screen x="0" y="25" width="1280" height="702" />
     </state>
     <state width="1238" height="113" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1618041912894" />
     <state width="1233" height="218" key="GridCell.Tab.0.right/0.25.1280.701@0.25.1280.701" timestamp="1618242407702" />
-    <state width="1233" height="162" key="GridCell.Tab.0.right/0.25.1280.702@0.25.1280.702" timestamp="1618974104223" />
+    <state width="1233" height="94" key="GridCell.Tab.0.right/0.25.1280.702@0.25.1280.702" timestamp="1623661211779" />
     <state width="1233" height="179" key="GridCell.Tab.0.right/0.25.1280.703@0.25.1280.703" timestamp="1618045344944" />
     <state width="1233" height="170" key="GridCell.Tab.0.right/0.25.1280.705@0.25.1280.705" timestamp="1618972428894" />
     <state width="1233" height="343" key="GridCell.Tab.0.right/0.25.1280.707@0.25.1280.707" timestamp="1618176475103" />
