@@ -58,7 +58,7 @@ class _aboutIshihara extends State<aboutIshihara> {
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
                   //   fontSize: screenText * 12.0,
-                  color: const Color(0xFF6981B5).withOpacity(0.72),
+                  color: const Color(0xFFC3BABA).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
                 minFontSize: 25,
@@ -122,7 +122,7 @@ class _aboutIshihara extends State<aboutIshihara> {
                         style: TextStyle(
                           fontFamily: 'Segoe UI',
                           fontSize: 24,
-                          color: const Color(0xff6981b5),
+                          color: const Color(0xFFC3BABA),
                         ),
                         textAlign: TextAlign.center,
                         maxLines: 16,

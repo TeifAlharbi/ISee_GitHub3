@@ -108,7 +108,7 @@ class _signUp extends State<signUp> {
                       style: TextStyle(
                         fontFamily: 'Segoe UI',
                         //   fontSize: screenText * 12.0,
-                        color: const Color(0xFF6981B5).withOpacity(0.72),
+                        color: const Color(0xFFC3BABA).withOpacity(0.72),
                         fontWeight: FontWeight.w900,
                       ),
                       minFontSize: 25,
@@ -309,7 +309,7 @@ class _signUp extends State<signUp> {
                         top: screenHeight * 0.01,
                         right: screenWeidth * 0.05),
                     child: RaisedButton(
-                      color: const Color(0xff6981b5),
+                      color: const Color(0xFFC3BABA),
                       padding: EdgeInsets.symmetric(
                           vertical: 10.0, horizontal: 30.0),
                       child: AutoSizeText(

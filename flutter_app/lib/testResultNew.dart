@@ -57,7 +57,7 @@ class _TestResultNew extends State<TestResultNew> {
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
                   //   fontSize: screenText * 12.0,
-                  color: const Color(0xFF6981B5).withOpacity(0.72),
+                  color: const Color(0xFFC3BABA).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
                 minFontSize: 25,
@@ -106,7 +106,7 @@ class _TestResultNew extends State<TestResultNew> {
                   'You Have no previous tests.',
                   style: TextStyle(
                     fontFamily: 'Segoe UI',
-                    color: const Color(0xFF6981B5),
+                    color: const Color(0xFFC3BABA),
                     fontWeight: FontWeight.w600,
                   ),
                   textAlign: TextAlign.center,
@@ -147,7 +147,7 @@ class _TestResultNew extends State<TestResultNew> {
                     'Take Ishihara Test',
                     style: TextStyle(
                       fontFamily: 'Segoe UI',
-                      color: const Color(0xFF6981B5),
+                      color: const Color(0xFFC3BABA),
                     ),
                     textAlign: TextAlign.center,
                     maxLines: 1,
