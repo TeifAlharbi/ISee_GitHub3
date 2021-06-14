@@ -23,8 +23,31 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/IshiharaTest.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/IshiharaTest.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/Test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/Test.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/lib/aboutColorBlindness.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/aboutColorBlindness.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/lib/aboutISee.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/aboutISee.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/aboutIshihara.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/aboutIshihara.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/language.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/language.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/security.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/security.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/signIn.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/signIn.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/signUp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/signUp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/support.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/support.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testInstructions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testInstructions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate1.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate10.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate10.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate11.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate11.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate12.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate12.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate3.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate4.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate4.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate5.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate5.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate6.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate6.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate7.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate7.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate8.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate8.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testPlate9.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testPlate9.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testResult.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testResult.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/testResultNew.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/testResultNew.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,9 +162,10 @@
       <screen x="0" y="25" width="1280" height="703" />
     </state>
     <state x="379" y="235" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.25.1280.703@0.25.1280.703" timestamp="1617486505673" />
-    <state x="118" y="124" width="1033" height="501" key="AVDManager" timestamp="1618441366440">
-      <screen x="0" y="25" width="1280" height="701" />
+    <state x="126" y="108" width="1102" height="549" key="AVDManager" timestamp="1623664033784">
+      <screen x="0" y="0" width="1365" height="768" />
     </state>
+    <state x="126" y="108" width="1102" height="549" key="AVDManager/0.0.1365.768@0.0.1365.768" timestamp="1623664033784" />
     <state x="118" y="124" width="1033" height="501" key="AVDManager/0.25.1280.701@0.25.1280.701" timestamp="1618441366440" />
     <state x="118" y="125" width="1033" height="503" key="AVDManager/0.25.1280.703@0.25.1280.703" timestamp="1617868959003" />
     <state x="118" y="125" width="1033" height="505" key="AVDManager/0.25.1280.707@0.25.1280.707" timestamp="1618176067791" />
