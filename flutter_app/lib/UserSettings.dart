@@ -72,7 +72,7 @@ class _UserSettings extends State<UserSettings> {
           new Container(
             decoration: new BoxDecoration(
               image: new DecorationImage(
-                image: new AssetImage("images/frame3.png"),
+                image: new AssetImage("images/fram3.png"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -479,7 +479,7 @@ class _UserSettings extends State<UserSettings> {
                         ),
                         textAlign: TextAlign.center,
                         // maxLines: 1,
-                        minFontSize: 15,
+                        minFontSize: 10,
                         maxFontSize: 20,
                       ),
                     ),

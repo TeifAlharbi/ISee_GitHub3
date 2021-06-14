@@ -450,7 +450,7 @@ class _Profile extends State<Profile> {
                     controller: userObject.getEmailcontroller,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.only(
-                          left: screenWeidth * 0.35, top: screenHeight * 0.06),
+                          left: screenWeidth * 0.35, top: screenHeight * 0.03),
                       hintText: email.toString(),
                     ),
                     onTap: () {
@@ -460,7 +460,7 @@ class _Profile extends State<Profile> {
                     controller: userObject.getPhoneNOcontroller,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.only(
-                          left: screenWeidth * 0.35, top: screenHeight * 0.06),
+                          left: screenWeidth * 0.35, top: screenHeight * 0.04),
                       hintText: phone.toString(),
                     ),
                     onTap: () {
@@ -470,7 +470,7 @@ class _Profile extends State<Profile> {
                     controller: userObject.getGendercontroller,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.only(
-                          left: screenWeidth * 0.35, top: screenHeight * 0.06),
+                          left: screenWeidth * 0.35, top: screenHeight * 0.05),
                       hintText: gender.toString(),
                     ),
                     onTap: () {
