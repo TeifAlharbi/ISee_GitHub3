@@ -210,7 +210,7 @@ class _signIn extends State<signIn> {
                   Padding(
                     padding: EdgeInsets.only(top: 30.0),
                     child: RaisedButton(
-                      color: const Color(0xff6981b5),
+                      color: const Color(0xFFC3BABA),
                       padding: EdgeInsets.symmetric(vertical: 13.0),
                       child: Text(
                         'Sign In',
@@ -226,7 +226,7 @@ class _signIn extends State<signIn> {
                     ),
                   ), //----------SignIn Button----------
                   RaisedButton(
-                    color: const Color(0xff6981b5),
+                    color: const Color(0xFFC3BABA),
                     child: Text(
                       'Or Sign Up Here',
                       style: TextStyle(color: Colors.white),

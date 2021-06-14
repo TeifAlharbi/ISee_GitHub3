@@ -67,7 +67,7 @@ class _testPlate5 extends State<testPlate5> {
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
                   //   fontSize: screenText * 12.0,
-                  color: const Color(0xFF6981B5).withOpacity(0.72),
+                  color: const Color(0xFFC3BABA).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
                 minFontSize: 20,
@@ -313,7 +313,7 @@ class _testPlate5 extends State<testPlate5> {
                 },
                 child: Icon(
                   Icons.cancel,
-                  color: const Color(0xff6a77ab),
+                  color: const Color(0xFFC3BABA),
                   size: 40.0,
                 ),
               ),

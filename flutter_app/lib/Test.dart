@@ -65,7 +65,7 @@ class _Test extends State<Test> {
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
                   //   fontSize: screenText * 12.0,
-                  color: const Color(0xFF6981B5).withOpacity(0.72),
+                  color: const Color(0xFFC3BABA).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
                 minFontSize: 25,
@@ -155,7 +155,7 @@ class _Test extends State<Test> {
                           'Take Ishihara Test',
                           style: TextStyle(
                             fontFamily: 'Segoe UI',
-                            color: const Color(0xFF6A77AB),
+                            color: const Color(0xFFC3BABA),
                             fontWeight: FontWeight.w900,
                           ),
                           maxLines: 1,

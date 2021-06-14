@@ -83,7 +83,7 @@ class _language extends State<language> {
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
                   //   fontSize: screenText * 12.0,
-                  color: const Color(0xFF6981B5).withOpacity(0.72),
+                  color: const Color(0xFFC3BABA).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
                 minFontSize: 25,
@@ -129,7 +129,7 @@ class _language extends State<language> {
               style: TextStyle(
                 fontFamily: 'Segoe UI',
                 // fontSize: 24,
-                color: const Color(0xff6a77ab),
+                color: const Color(0xFFC3BABA),
                 fontWeight: FontWeight.w600,
               ),
               textAlign: TextAlign.center,
@@ -200,7 +200,7 @@ class _language extends State<language> {
                           'English',
                           style: TextStyle(
                             fontFamily: 'Segoe UI',
-                            color: const Color(0xff6a77ab),
+                            color: const Color(0xFFC3BABA),
                           ),
                           textAlign: TextAlign.left,
                           maxLines: 1,
@@ -227,7 +227,7 @@ class _language extends State<language> {
                           'عربي',
                           style: TextStyle(
                             fontFamily: 'Segoe UI',
-                            color: const Color(0xff6a77ab),
+                            color: const Color(0xFFC3BABA),
                           ),
                           textAlign: TextAlign.left,
                           maxLines: 1,

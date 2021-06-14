@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa067046-78a8-43ca-b295-161f9927cbef" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/images/fram3.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/images/fram3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/UserSettings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/UserSettings.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/aboutColorBlindness.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/aboutColorBlindness.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/aboutISee.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/aboutISee.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/flutter_app/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>

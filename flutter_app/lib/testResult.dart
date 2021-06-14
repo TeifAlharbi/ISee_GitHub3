@@ -73,7 +73,7 @@ class _TestResult extends State<TestResult> {
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
                   //   fontSize: screenText * 12.0,
-                  color: const Color(0xFF6981B5).withOpacity(0.72),
+                  color: const Color(0xFFC3BABA).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
                 minFontSize: 20,
@@ -131,7 +131,7 @@ class _TestResult extends State<TestResult> {
                         style: TextStyle(
                           fontFamily: 'Segoe UI',
                           //   fontSize: 24.0,
-                          color: const Color(0xFF6A77AB),
+                          color: const Color(0xFFC3BABA),
                           fontWeight: FontWeight.w600,
                         ),
                         textAlign: TextAlign.center,
@@ -149,7 +149,7 @@ class _TestResult extends State<TestResult> {
             padding: EdgeInsets.only(
                 left: screenWeidth * 0.700, top: screenHeight * 0.910),
             child: RaisedButton(
-              color: const Color(0xff6981b5),
+              color: const Color(0xFFC3BABA),
               child: Text(
                 'Done',
                 style: TextStyle(color: Colors.white),

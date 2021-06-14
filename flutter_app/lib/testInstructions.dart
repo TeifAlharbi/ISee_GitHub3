@@ -59,7 +59,7 @@ class _testInstructions extends State<testInstructions> {
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
                   //   fontSize: screenText * 12.0,
-                  color: const Color(0xFF6981B5).withOpacity(0.72),
+                  color: const Color(0xFFC3BABA).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
                 minFontSize: 20,
@@ -108,7 +108,7 @@ class _testInstructions extends State<testInstructions> {
                   style: TextStyle(
                     fontFamily: 'Segoe UI',
                     fontSize: screenText * 24.0,
-                    color: const Color(0xFF6981B5),
+                    color: const Color(0xFFC3BABA),
                     fontStyle: FontStyle.italic,
                   ),
                   textAlign: TextAlign.center,

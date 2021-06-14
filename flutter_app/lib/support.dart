@@ -56,7 +56,7 @@ class _support extends State<support> {
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
                   //   fontSize: screenText * 12.0,
-                  color: const Color(0xFF6981B5).withOpacity(0.72),
+                  color: const Color(0xFFC3BABA).withOpacity(0.72),
                   fontWeight: FontWeight.w900,
                 ),
                 minFontSize: 25,
@@ -84,7 +84,7 @@ class _support extends State<support> {
             padding: EdgeInsets.only(left: screenWeidth * 0.73, top: 665.0),
             child: Container(
               child: RaisedButton(
-                color: const Color(0xff6981b5),
+                color: const Color(0xFFC3BABA),
                 child: Text(
                   'Send',
                   style: TextStyle(color: Colors.white),
@@ -107,7 +107,7 @@ class _support extends State<support> {
                   'Need more help?',
                   style: TextStyle(
                     fontFamily: 'Segoe UI',
-                    color: const Color(0xff6981b5),
+                    color: const Color(0xFFC3BABA),
                     fontWeight: FontWeight.w600,
                   ),
                   textAlign: TextAlign.center,
@@ -162,7 +162,7 @@ class _support extends State<support> {
                           'Description:',
                           style: TextStyle(
                             fontFamily: 'Segoe UI',
-                            color: const Color(0xFF6981B5),
+                            color: const Color(0xFFC3BABA),
                           ),
                           textAlign: TextAlign.center,
                           maxLines: 1,
